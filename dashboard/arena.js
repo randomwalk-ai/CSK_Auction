@@ -95,6 +95,14 @@ const Arena = (() => {
         return 'base';
     }
 
+    function bubbleBaseZIndex(priceCr) {
+        return 3 + Math.round(priceToUnit(priceCr) * 14);
+    }
+
+    function setBubbleZIndex(el, z) {
+        el.style.zIndex = String(z);
+    }
+
     function bindAvatarImg(img, name, initialsEl, facecardUrl) {
         CSKAvatars.bind(img, name, {
             loadedClass: 'arena-bubble__face--loaded',
@@ -298,7 +306,9 @@ const Arena = (() => {
         el.draggable = true;
         el.style.width = `${size}px`;
         el.style.height = `${size}px`;
-        el.style.zIndex = String(3 + Math.round(priceToUnit(price) * 14));
+        const baseZ = bubbleBaseZIndex(price);
+        el.dataset.baseZIndex = String(baseZ);
+        setBubbleZIndex(el, baseZ);
         el.innerHTML = `
             <div class="arena-bubble__face-wrap">
                 <img class="arena-bubble__face" alt="" draggable="false">
@@ -317,10 +327,19 @@ const Arena = (() => {
         const initials = el.querySelector('.arena-bubble__initials');
         bindAvatarImg(img, player.player_name, initials, player.facecard_url);
 
+        el.addEventListener('mouseenter', () => {
+            setBubbleZIndex(el, 500);
+        });
+        el.addEventListener('mouseleave', () => {
+            if (el.classList.contains('arena-bubble--dragging')) return;
+            setBubbleZIndex(el, Number(el.dataset.baseZIndex) || bubbleBaseZIndex(price));
+        });
+
         el.addEventListener('dragstart', e => {
             e.dataTransfer.setData('text/plain', player.player_name);
             e.dataTransfer.effectAllowed = 'move';
             el.classList.add('arena-bubble--dragging');
+            setBubbleZIndex(el, 600);
             bubbleStates.get(player.player_name)?.pause();
             requestAnimationFrame(() => { el.style.visibility = 'hidden'; });
         });
@@ -332,6 +351,7 @@ const Arena = (() => {
                 return;
             }
             el.style.visibility = '';
+            setBubbleZIndex(el, Number(el.dataset.baseZIndex) || bubbleBaseZIndex(price));
             bubbleStates.get(player.player_name)?.resume();
         });
         el.addEventListener('dblclick', () => {

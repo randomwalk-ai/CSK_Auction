@@ -2977,7 +2977,7 @@ body {
 }
 
 .arena-bubble:hover {
-    z-index: 20;
+    z-index: 500;
     transform: scale(1.05);
     box-shadow:
         0 8px 24px rgba(0, 74, 153, 0.2),
@@ -3086,7 +3086,7 @@ body {
     position: absolute;
     left: 50%;
     bottom: calc(100% + 8px);
-    z-index: 30;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;

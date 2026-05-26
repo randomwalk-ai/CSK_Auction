@@ -1,0 +1,7 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,PBKS,65,Sunrisers Hyderabad,Vishal Nishad,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,PBKS,65,Sunrisers Hyderabad,Praveen Dubey,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,PBKS,65,Sunrisers Hyderabad,Ben Dwarshuis,Allrounder,Australia,12,4.40 Cr,4.4,won,cricbuzz_all_bids_playwright
+2026,PBKS,65,Sunrisers Hyderabad,Rahul Chahar,Bowler,India,13,5.00 Cr,5.0,lost,cricbuzz_all_bids_playwright
+2026,PBKS,65,Sunrisers Hyderabad,Cooper Connolly,Allrounder,Australia,3,3.00 Cr,3.0,won,cricbuzz_all_bids_playwright
+2026,PBKS,65,Sunrisers Hyderabad,Aman Khan,Allrounder,India,1,35.00 L,0.35,lost,cricbuzz_all_bids_playwright

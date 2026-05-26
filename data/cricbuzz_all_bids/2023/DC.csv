@@ -1,0 +1,9 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2023,DC,61,Sunrisers Hyderabad,Rilee Rossouw,Batter,South Africa,7,4.60 Cr,4.6,won,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Manish Pandey,Batter,India,7,2.40 Cr,2.4,won,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Mukesh Kumar,Bowler,India,22,5.50 Cr,5.5,won,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Ishant Sharma,Bowler,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Nicholas Pooran,WK-Batter,West Indies,26,15.75 Cr,15.75,lost,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Philip Salt,Batter,England,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Heinrich Klaasen,WK-Batter,South Africa,13,5.00 Cr,5.0,lost,cricbuzz_all_bids_playwright
+2023,DC,61,Sunrisers Hyderabad,Cameron Green,Allrounder,Australia,21,17.25 Cr,17.25,lost,cricbuzz_all_bids_playwright

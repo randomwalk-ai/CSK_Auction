@@ -1,0 +1,8 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2021,CSK,58,Sunrisers Hyderabad,Hari Nishanth,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,CSK,58,Sunrisers Hyderabad,Bhagath Verma,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,CSK,58,Sunrisers Hyderabad,Harishankar Reddy,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,CSK,58,Sunrisers Hyderabad,Cheteshwar Pujara,Batter,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2021,CSK,58,Sunrisers Hyderabad,Krishnappa Gowtham,Allrounder,India,4,9.25 Cr,9.25,won,cricbuzz_all_bids_playwright
+2021,CSK,58,Sunrisers Hyderabad,Moeen Ali,Allrounder,England,12,7.00 Cr,7.0,won,cricbuzz_all_bids_playwright
+2021,CSK,58,Sunrisers Hyderabad,Glenn Maxwell,Allrounder,Australia,20,14.00 Cr,14.0,lost,cricbuzz_all_bids_playwright

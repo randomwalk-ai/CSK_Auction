@@ -1,0 +1,38 @@
+name: Update Cricket Data
+
+on:
+  schedule:
+    - cron: '0 21 * * *'  # Runs daily at 9 PM UTC (2:30 AM IST next day)
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    
+    - name: Download Cricsheet data
+      run: python scripts/download_cricsheet.py
+    
+    - name: Process data
+      run: python scripts/process_data.py
+    
+    - name: Calculate player statistics
+      run: python scripts/calculate_stats.py
+    
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "actions@github.com"
+        git add data/ database/
+        git commit -m "Auto-update cricket data $(date +'%Y-%m-%d')" || echo "No changes to commit"
+        git push

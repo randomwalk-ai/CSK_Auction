@@ -1,0 +1,11 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,RCB,59,Sunrisers Hyderabad,Kanishk Chouhan,Allrounder,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Vihaan Malhotra,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Vicky Ostwal,Allrounder,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Jordan Cox,WK-Batter,England,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Ravi Singh,WK-Batter,India,7,90.00 L,0.9,lost,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Mangesh Yadav,Allrounder,India,21,5.20 Cr,5.2,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Satvik Deswal,Allrounder,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Auqib Nabi Dar,Allrounder,India,5,1.90 Cr,1.9,lost,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Jacob Duffy,Bowler,New Zealand,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,RCB,59,Sunrisers Hyderabad,Venkatesh Iyer,Allrounder,India,11,7.00 Cr,7.0,won,cricbuzz_all_bids_playwright

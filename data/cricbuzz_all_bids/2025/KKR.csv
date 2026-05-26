@@ -1,0 +1,26 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2025,KKR,63,Sunrisers Hyderabad,Umran Malik,Bowler,India,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Moeen Ali,Allrounder,England,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Anukul Roy,Allrounder,India,2,40.00 L,0.4,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Ajinkya Rahane,Batter,India,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Luvnith Sisodia,WK-Batter,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Spencer Johnson,Bowler,Australia,3,2.80 Cr,2.8,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Manish Pandey,Batter,India,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Allah Ghazanfar,Bowler,Afghanistan,15,4.60 Cr,4.6,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Rovman Powell,Allrounder,West Indies,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Mayank Markande,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Vaibhav Arora,Bowler,India,12,1.80 Cr,1.8,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Vishnu Vinod,WK-Batter,India,2,40.00 L,0.4,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Abhinav Manohar,Batter,India,1,3.00 Cr,3.0,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Angkrish Raghuvanshi,Batter,India,15,3.00 Cr,3.0,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Anrich Nortje,Bowler,South Africa,11,6.50 Cr,6.5,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Josh Hazlewood,Bowler,Australia,13,7.50 Cr,7.5,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Rahmanullah Gurbaz,WK-Batter,Afghanistan,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Philip Salt,WK-Batter,England,15,11.25 Cr,11.25,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Quinton de Kock,WK-Batter,South Africa,2,3.60 Cr,3.6,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Shreyas Iyer,Batter,India,18,9.75 Cr,9.75,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Venkatesh Iyer,Allrounder,India,46,23.75 Cr,23.75,won,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Mohammed Shami,Bowler,India,18,9.75 Cr,9.75,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Rahul Tripathi,Batter,India,11,3.20 Cr,3.2,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,KL Rahul,WK-Batter,India,22,11.75 Cr,11.75,lost,cricbuzz_all_bids_playwright
+2025,KKR,63,Sunrisers Hyderabad,Mitchell Starc,Bowler,Australia,18,10.00 Cr,10.0,lost,cricbuzz_all_bids_playwright

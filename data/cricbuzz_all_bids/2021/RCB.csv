@@ -1,0 +1,15 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2021,RCB,59,Sunrisers Hyderabad,Srikar Bharat,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Suyash Prabhudessai,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Daniel Christian,Allrounder,Australia,15,4.80 Cr,4.8,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Moises Henriques,Allrounder,Australia,11,4.00 Cr,4.0,lost,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Kyle Jamieson,Bowler,New Zealand,36,15.00 Cr,15.0,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Chetan Sakariya,Bowler,India,9,1.10 Cr,1.1,lost,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Mohammed Azharuddeen,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Shahrukh Khan,Allrounder,India,21,5.00 Cr,5.0,lost,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Rajat Patidar,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Sachin Baby,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Jhye Richardson,Allrounder,Australia,27,13.75 Cr,13.75,lost,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Chris Morris,Allrounder,South Africa,25,9.75 Cr,9.75,lost,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Glenn Maxwell,Allrounder,Australia,24,14.25 Cr,14.25,won,cricbuzz_all_bids_playwright
+2021,RCB,59,Sunrisers Hyderabad,Steven Smith,Batter,Australia,1,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright

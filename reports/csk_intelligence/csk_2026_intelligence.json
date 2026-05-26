@@ -1,0 +1,540 @@
+{
+  "team": "CSK",
+  "year": 2026,
+  "summary": {
+    "targets": 16,
+    "won": 9,
+    "lost": 7,
+    "win_rate_pct": 56.2,
+    "spend_won_cr": 41.0,
+    "avg_won_price_cr": 4.56,
+    "avg_lost_exit_cr": 7.54,
+    "overseas_chased": 9,
+    "overseas_won": 4,
+    "indian_chased": 7,
+    "indian_won": 5,
+    "highest_win_cr": 14.2,
+    "highest_loss_exit_cr": 25.0,
+    "roles_chased": {
+      "All Rounder": 7,
+      "Bowler": 6,
+      "Batter": 2,
+      "Wicket Keeper": 1
+    },
+    "roles_won": {
+      "All Rounder": 4,
+      "Bowler": 3,
+      "Batter": 1,
+      "Wicket Keeper": 1
+    }
+  },
+  "squad_gap_signals": [
+    {
+      "signal": "premium_bowling_miss",
+      "priority": "Critical",
+      "players": [
+        "Mustafizur Rahman",
+        "Ravi Bishnoi"
+      ],
+      "insight": "Lost expensive bowling targets (Mustafizur Rahman, Ravi Bishnoi) — likely death / strike bowling gap."
+    },
+    {
+      "signal": "role_gap",
+      "role": "Batter",
+      "ideal": 6,
+      "targets_chased": 2,
+      "won": 1,
+      "still_need": 5,
+      "priority": "High",
+      "insight": "CSK entered bid wars for 2 Batter(s) but only won 1. Ideal squad needs 6; still short by ~5."
+    },
+    {
+      "signal": "role_gap",
+      "role": "Bowler",
+      "ideal": 6,
+      "targets_chased": 6,
+      "won": 3,
+      "still_need": 3,
+      "priority": "High",
+      "insight": "CSK entered bid wars for 6 Bowler(s) but only won 3. Ideal squad needs 6; still short by ~3."
+    },
+    {
+      "signal": "role_gap",
+      "role": "All Rounder",
+      "ideal": 5,
+      "targets_chased": 7,
+      "won": 4,
+      "still_need": 1,
+      "priority": "High",
+      "insight": "CSK entered bid wars for 7 All Rounder(s) but only won 4. Ideal squad needs 5; still short by ~1."
+    },
+    {
+      "signal": "overseas_pivot",
+      "targets_chased": 9,
+      "won_overseas": 4,
+      "priority": "High",
+      "insight": "CSK chased 9 overseas players (won 4). Suggests active overseas upgrade / backup planning."
+    }
+  ],
+  "won_targets": [
+    {
+      "player_name": "Kartik Sharma",
+      "role": "Wicket Keeper",
+      "country": "India",
+      "num_bids": 29,
+      "price_cr": 14.2
+    },
+    {
+      "player_name": "Prashant Veer",
+      "role": "All Rounder",
+      "country": "India",
+      "num_bids": 35,
+      "price_cr": 14.2
+    },
+    {
+      "player_name": "Rahul Chahar",
+      "role": "Bowler",
+      "country": "India",
+      "num_bids": 14,
+      "price_cr": 5.2
+    },
+    {
+      "player_name": "Matt Henry",
+      "role": "Bowler",
+      "country": "New Zealand",
+      "num_bids": 1,
+      "price_cr": 2.0
+    },
+    {
+      "player_name": "Akeal Hosein",
+      "role": "Bowler",
+      "country": "West Indies",
+      "num_bids": 1,
+      "price_cr": 2.0
+    },
+    {
+      "player_name": "Matthew Short",
+      "role": "All Rounder",
+      "country": "Australia",
+      "num_bids": 1,
+      "price_cr": 1.5
+    },
+    {
+      "player_name": "Zakary Foulkes",
+      "role": "All Rounder",
+      "country": "New Zealand",
+      "num_bids": 1,
+      "price_cr": 0.75
+    },
+    {
+      "player_name": "Sarfaraz Khan",
+      "role": "Batter",
+      "country": "India",
+      "num_bids": 1,
+      "price_cr": 0.75
+    },
+    {
+      "player_name": "Aman Khan",
+      "role": "All Rounder",
+      "country": "India",
+      "num_bids": 2,
+      "price_cr": 0.4
+    }
+  ],
+  "lost_targets": [
+    {
+      "player": "Cameron Green",
+      "role": "Batter",
+      "country": "Australia",
+      "csk_last_bid_cr": 25.0,
+      "csk_bids": 29,
+      "winner": "KKR",
+      "winner_price_cr": 25.2,
+      "franchises_bidding": 4,
+      "league_total_bids": 117,
+      "other_losing_bidders": [
+        "MI",
+        "RR"
+      ],
+      "demand_tier": "Premium",
+      "why_csk_wanted": "Fierce bid war (29 CSK bids); 4 franchises in the fight; KKR paid 25.20 Cr (+0.20 vs CSK exit); Overseas slot / impact player hunt"
+    },
+    {
+      "player": "Mustafizur Rahman",
+      "role": "Bowler",
+      "country": "Bangladesh",
+      "csk_last_bid_cr": 9.0,
+      "csk_bids": 18,
+      "winner": "KKR",
+      "winner_price_cr": 9.2,
+      "franchises_bidding": 3,
+      "league_total_bids": 37,
+      "other_losing_bidders": [
+        "DC"
+      ],
+      "demand_tier": "Premium",
+      "why_csk_wanted": "Fierce bid war (18 CSK bids); KKR paid 9.20 Cr (+0.20 vs CSK exit); Premium bowler — core squad need; Overseas slot / impact player hunt"
+    },
+    {
+      "player": "Jason Holder",
+      "role": "All Rounder",
+      "country": "West Indies",
+      "csk_last_bid_cr": 6.8,
+      "csk_bids": 13,
+      "winner": "GT",
+      "winner_price_cr": 7.0,
+      "franchises_bidding": 2,
+      "league_total_bids": 26,
+      "other_losing_bidders": [],
+      "demand_tier": "Premium",
+      "why_csk_wanted": "Moderate competition (13 CSK bids); GT paid 7.00 Cr (+0.20 vs CSK exit); Premium all rounder — core squad need; Overseas slot / impact player hunt"
+    },
+    {
+      "player": "Ravi Bishnoi",
+      "role": "Bowler",
+      "country": "India",
+      "csk_last_bid_cr": 5.8,
+      "csk_bids": 10,
+      "winner": "RR",
+      "winner_price_cr": 7.2,
+      "franchises_bidding": 3,
+      "league_total_bids": 27,
+      "other_losing_bidders": [
+        "SRH"
+      ],
+      "demand_tier": "Premium",
+      "why_csk_wanted": "Moderate competition (10 CSK bids); RR paid 7.20 Cr (+1.40 vs CSK exit); Premium bowler — core squad need"
+    },
+    {
+      "player": "Ben Dwarshuis",
+      "role": "All Rounder",
+      "country": "Australia",
+      "csk_last_bid_cr": 3.0,
+      "csk_bids": 8,
+      "winner": "PBKS",
+      "winner_price_cr": 4.4,
+      "franchises_bidding": 3,
+      "league_total_bids": 23,
+      "other_losing_bidders": [
+        "GT"
+      ],
+      "demand_tier": "Standard",
+      "why_csk_wanted": "Moderate competition (8 CSK bids); PBKS paid 4.40 Cr (+1.40 vs CSK exit); Overseas slot / impact player hunt"
+    },
+    {
+      "player": "Jack Edwards",
+      "role": "All Rounder",
+      "country": "Australia",
+      "csk_last_bid_cr": 2.8,
+      "csk_bids": 13,
+      "winner": "SRH",
+      "winner_price_cr": 3.0,
+      "franchises_bidding": 3,
+      "league_total_bids": 26,
+      "other_losing_bidders": [
+        "GT"
+      ],
+      "demand_tier": "Premium",
+      "why_csk_wanted": "Moderate competition (13 CSK bids); SRH paid 3.00 Cr (+0.20 vs CSK exit); Overseas slot / impact player hunt"
+    },
+    {
+      "player": "Ashok Sharma",
+      "role": "Bowler",
+      "country": "India",
+      "csk_last_bid_cr": 0.35,
+      "csk_bids": 1,
+      "winner": "GT",
+      "winner_price_cr": 0.9,
+      "franchises_bidding": 4,
+      "league_total_bids": 13,
+      "other_losing_bidders": [
+        "KKR",
+        "RR"
+      ],
+      "demand_tier": "Standard",
+      "why_csk_wanted": "4 franchises in the fight; GT paid 0.90 Cr (+0.55 vs CSK exit)"
+    }
+  ],
+  "high_demand_misses": [
+    {
+      "player": "Cameron Green",
+      "role": "Batter",
+      "csk_exit_cr": 25.0,
+      "winner": "KKR",
+      "winning_price_cr": 25.2,
+      "league_total_bids": 117,
+      "franchises": 4
+    },
+    {
+      "player": "Mustafizur Rahman",
+      "role": "Bowler",
+      "csk_exit_cr": 9.0,
+      "winner": "KKR",
+      "winning_price_cr": 9.2,
+      "league_total_bids": 37,
+      "franchises": 3
+    },
+    {
+      "player": "Ravi Bishnoi",
+      "role": "Bowler",
+      "csk_exit_cr": 5.8,
+      "winner": "RR",
+      "winning_price_cr": 7.2,
+      "league_total_bids": 27,
+      "franchises": 3
+    },
+    {
+      "player": "Jason Holder",
+      "role": "All Rounder",
+      "csk_exit_cr": 6.8,
+      "winner": "GT",
+      "winning_price_cr": 7.0,
+      "league_total_bids": 26,
+      "franchises": 2
+    },
+    {
+      "player": "Jack Edwards",
+      "role": "All Rounder",
+      "csk_exit_cr": 2.8,
+      "winner": "SRH",
+      "winning_price_cr": 3.0,
+      "league_total_bids": 26,
+      "franchises": 3
+    },
+    {
+      "player": "Ben Dwarshuis",
+      "role": "All Rounder",
+      "csk_exit_cr": 3.0,
+      "winner": "PBKS",
+      "winning_price_cr": 4.4,
+      "league_total_bids": 23,
+      "franchises": 3
+    },
+    {
+      "player": "Ashok Sharma",
+      "role": "Bowler",
+      "csk_exit_cr": 0.35,
+      "winner": "GT",
+      "winning_price_cr": 0.9,
+      "league_total_bids": 13,
+      "franchises": 4
+    }
+  ],
+  "rival_head_to_head": [
+    {
+      "rival": "KKR",
+      "players_won_vs_csk": 2,
+      "examples": [
+        "Mustafizur Rahman (9.20 Cr)",
+        "Cameron Green (25.20 Cr)"
+      ]
+    },
+    {
+      "rival": "GT",
+      "players_won_vs_csk": 2,
+      "examples": [
+        "Jason Holder (7.00 Cr)",
+        "Ashok Sharma (0.90 Cr)"
+      ]
+    },
+    {
+      "rival": "SRH",
+      "players_won_vs_csk": 1,
+      "examples": [
+        "Jack Edwards (3.00 Cr)"
+      ]
+    },
+    {
+      "rival": "PBKS",
+      "players_won_vs_csk": 1,
+      "examples": [
+        "Ben Dwarshuis (4.40 Cr)"
+      ]
+    },
+    {
+      "rival": "RR",
+      "players_won_vs_csk": 1,
+      "examples": [
+        "Ravi Bishnoi (7.20 Cr)"
+      ]
+    }
+  ],
+  "role_win_rates": [
+    {
+      "role": "All Rounder",
+      "targets": 7,
+      "won": 4,
+      "lost": 3,
+      "win_rate_pct": 57.1,
+      "avg_price_won_cr": 4.21,
+      "avg_price_lost_cr": 4.2
+    },
+    {
+      "role": "Bowler",
+      "targets": 6,
+      "won": 3,
+      "lost": 3,
+      "win_rate_pct": 50.0,
+      "avg_price_won_cr": 3.07,
+      "avg_price_lost_cr": 5.05
+    },
+    {
+      "role": "Batter",
+      "targets": 2,
+      "won": 1,
+      "lost": 1,
+      "win_rate_pct": 50.0,
+      "avg_price_won_cr": 0.75,
+      "avg_price_lost_cr": 25.0
+    },
+    {
+      "role": "Wicket Keeper",
+      "targets": 1,
+      "won": 1,
+      "lost": 0,
+      "win_rate_pct": 100.0,
+      "avg_price_won_cr": 14.2,
+      "avg_price_lost_cr": 0
+    }
+  ],
+  "recommendations": [
+    "Lost expensive bowling targets (Mustafizur Rahman, Ravi Bishnoi) — likely death / strike bowling gap. → Pre-set walk-away price + backup list at 30% lower band.",
+    "Head-to-head: KKR beat CSK on 2 shared targets (Mustafizur Rahman (9.20 Cr), Cameron Green (25.20 Cr)). Scout their remaining purse timing.",
+    "Head-to-head: GT beat CSK on 2 shared targets (Jason Holder (7.00 Cr), Ashok Sharma (0.90 Cr)). Scout their remaining purse timing.",
+    "Head-to-head: SRH beat CSK on 1 shared targets (Jack Edwards (3.00 Cr)). Scout their remaining purse timing.",
+    "Cameron Green: league-wide heat (117 total bids). Either commit ceiling early or pivot to same-role Plan B before auction day.",
+    "Mustafizur Rahman: league-wide heat (37 total bids). Either commit ceiling early or pivot to same-role Plan B before auction day.",
+    "Ravi Bishnoi: league-wide heat (27 total bids). Either commit ceiling early or pivot to same-role Plan B before auction day.",
+    "Average won price 4.56 Cr — heavy top-heavy spend. Reserve ₹15–20 Cr for late uncapped / RTM-style value picks."
+  ],
+  "historical_trends": {
+    "by_year": [
+      {
+        "year": 2018,
+        "targets": 39,
+        "won": 22,
+        "win_rate_pct": 56.4,
+        "spend_won_cr": 40.5,
+        "top_role_chased": "Bowler"
+      },
+      {
+        "year": 2019,
+        "targets": 7,
+        "won": 2,
+        "win_rate_pct": 28.6,
+        "spend_won_cr": 5.2,
+        "top_role_chased": "Bowler"
+      },
+      {
+        "year": 2020,
+        "targets": 5,
+        "won": 4,
+        "win_rate_pct": 80.0,
+        "spend_won_cr": 14.45,
+        "top_role_chased": "Bowler"
+      },
+      {
+        "year": 2021,
+        "targets": 7,
+        "won": 6,
+        "win_rate_pct": 85.7,
+        "spend_won_cr": 17.35,
+        "top_role_chased": "All Rounder"
+      },
+      {
+        "year": 2022,
+        "targets": 50,
+        "won": 21,
+        "win_rate_pct": 42.0,
+        "spend_won_cr": 45.05,
+        "top_role_chased": "Bowler"
+      },
+      {
+        "year": 2023,
+        "targets": 16,
+        "won": 7,
+        "win_rate_pct": 43.8,
+        "spend_won_cr": 18.95,
+        "top_role_chased": "All Rounder"
+      },
+      {
+        "year": 2024,
+        "targets": 12,
+        "won": 6,
+        "win_rate_pct": 50.0,
+        "spend_won_cr": 30.4,
+        "top_role_chased": "Bowler"
+      },
+      {
+        "year": 2025,
+        "targets": 45,
+        "won": 20,
+        "win_rate_pct": 44.4,
+        "spend_won_cr": 54.95,
+        "top_role_chased": "Bowler"
+      },
+      {
+        "year": 2026,
+        "targets": 16,
+        "won": 9,
+        "win_rate_pct": 56.2,
+        "spend_won_cr": 41.0,
+        "top_role_chased": "All Rounder"
+      }
+    ],
+    "role_career": [
+      {
+        "role_bucket": "All Rounder",
+        "targets": 59,
+        "wins": 34,
+        "win_rate_pct": 57.6
+      },
+      {
+        "role_bucket": "Batter",
+        "targets": 39,
+        "wins": 21,
+        "win_rate_pct": 53.8
+      },
+      {
+        "role_bucket": "Bowler",
+        "targets": 74,
+        "wins": 34,
+        "win_rate_pct": 45.9
+      },
+      {
+        "role_bucket": "Bowler Allrounder",
+        "targets": 1,
+        "wins": 0,
+        "win_rate_pct": 0.0
+      },
+      {
+        "role_bucket": "Wicket Keeper",
+        "targets": 24,
+        "wins": 8,
+        "win_rate_pct": 33.3
+      }
+    ],
+    "most_chased_players": [
+      {
+        "player_name": "Sam Curran",
+        "times_targeted": 3
+      },
+      {
+        "player_name": "Jason Holder",
+        "times_targeted": 3
+      },
+      {
+        "player_name": "Jaydev Unadkat",
+        "times_targeted": 3
+      },
+      {
+        "player_name": "Deepak Chahar",
+        "times_targeted": 3
+      },
+      {
+        "player_name": "Shardul Thakur",
+        "times_targeted": 3
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2025,RCB,59,Sunrisers Hyderabad,Rishabh Pant,WK-Batter,India,20,11.00 Cr,11.0,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Bhuvneshwar Kumar,Bowler,India,1,10.75 Cr,10.75,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Mohit Rathee,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Abhinandan Singh,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Lungi Ngidi,Bowler,South Africa,1,1.00 Cr,1.0,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Kwena Maphaka,Bowler,South Africa,5,1.40 Cr,1.4,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Swastik Chikara,Batter,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Devdutt Padikkal,Batter,India,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Jacob Bethell,Allrounder,England,6,2.60 Cr,2.6,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Manoj Bhandage,Allrounder,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Priyansh Arya,Allrounder,India,11,3.60 Cr,3.6,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Nuwan Thushara,Bowler,Sri Lanka,6,1.60 Cr,1.6,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Romario Shepherd,Allrounder,West Indies,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Tim David,Allrounder,Australia,3,3.00 Cr,3.0,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Swapnil Singh,Allrounder,India,3,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Shubham Dubey,Batter,India,5,75.00 L,0.75,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Allah Ghazanfar,Bowler,Afghanistan,8,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Nitish Rana,Allrounder,India,5,4.00 Cr,4.0,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Krunal Pandya,Allrounder,India,10,5.75 Cr,5.75,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Suyash Sharma,Bowler,India,14,2.60 Cr,2.6,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Rasikh Dar Salam,Bowler,India,14,6.00 Cr,6.0,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Ashutosh Sharma,Allrounder,India,10,1.40 Cr,1.4,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Abdul Samad,Allrounder,India,10,1.40 Cr,1.4,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Naman Dhir,Allrounder,India,8,1.10 Cr,1.1,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Ravichandran Ashwin,Allrounder,India,2,4.20 Cr,4.2,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Abhinav Manohar,Batter,India,8,1.00 Cr,1.0,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Karun Nair,Batter,India,2,45.00 L,0.45,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,T Natarajan,Bowler,India,19,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Josh Hazlewood,Bowler,Australia,10,12.50 Cr,12.5,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Jitesh Sharma,WK-Batter,India,7,11.00 Cr,11.0,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Philip Salt,WK-Batter,England,21,11.50 Cr,11.5,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Marcus Stoinis,Allrounder,Australia,20,10.75 Cr,10.75,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Venkatesh Iyer,Allrounder,India,32,23.50 Cr,23.5,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Liam Livingstone,Allrounder,England,16,8.75 Cr,8.75,won,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,KL Rahul,WK-Batter,India,19,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Yuzvendra Chahal,Bowler,India,1,14.25 Cr,14.25,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,David Miller,Batter,South Africa,15,7.25 Cr,7.25,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Kagiso Rabada,Bowler,South Africa,13,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Mitchell Starc,Bowler,Australia,3,11.50 Cr,11.5,lost,cricbuzz_all_bids_playwright
+2025,RCB,59,Sunrisers Hyderabad,Arshdeep Singh,Bowler,India,2,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright

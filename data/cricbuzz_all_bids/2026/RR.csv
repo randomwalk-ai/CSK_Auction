@@ -1,0 +1,16 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,RR,64,Sunrisers Hyderabad,Kuldeep Sen,Bowler,India,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Adam Milne,Bowler,New Zealand,2,2.40 Cr,2.4,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Brijesh Sharma,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Aman Rao,Batter,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Ravi Singh,WK-Batter,India,7,95.00 L,0.95,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Vignesh Puthur,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Yash Raj Punja,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Sushant Mishra,Bowler,India,7,90.00 L,0.9,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Naman Tiwari,Bowler,India,7,95.00 L,0.95,lost,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Ashok Sharma,Bowler,India,4,75.00 L,0.75,lost,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Mukul Choudhary,WK-Batter,India,14,2.40 Cr,2.4,lost,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Prashant Veer,Allrounder,India,6,6.40 Cr,6.4,lost,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Auqib Nabi Dar,Allrounder,India,7,95.00 L,0.95,lost,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Ravi Bishnoi,Bowler,India,14,7.20 Cr,7.2,won,cricbuzz_all_bids_playwright
+2026,RR,64,Sunrisers Hyderabad,Cameron Green,Batter,Australia,29,13.40 Cr,13.4,lost,cricbuzz_all_bids_playwright

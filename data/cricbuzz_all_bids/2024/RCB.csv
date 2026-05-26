@@ -1,0 +1,12 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2024,RCB,59,Sunrisers Hyderabad,Pat Cummins,Bowler,Australia,34,20.25 Cr,20.25,lost,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Saurav Chauhan,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Swapnil Singh,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Lockie Ferguson,Bowler,New Zealand,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Nuwan Thushara,Bowler,Sri Lanka,17,4.60 Cr,4.6,lost,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Jhye Richardson,Bowler,Australia,10,4.80 Cr,4.8,lost,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Tom Curran,Allrounder,England,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Manimaran Siddharth,Bowler,India,14,2.20 Cr,2.2,lost,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Yash Dayal,Bowler,India,21,5.00 Cr,5.0,won,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Shivam Mavi,Bowler,India,21,6.20 Cr,6.2,lost,cricbuzz_all_bids_playwright
+2024,RCB,59,Sunrisers Hyderabad,Alzarri Joseph,Bowler,West Indies,12,11.50 Cr,11.5,won,cricbuzz_all_bids_playwright

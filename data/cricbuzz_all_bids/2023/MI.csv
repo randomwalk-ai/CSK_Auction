@@ -1,0 +1,12 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2023,MI,62,Sunrisers Hyderabad,Raghav Goyal,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Nehal Wadhera,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Shams Mulani,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Vishnu Vinod,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Duan Jansen,Allrounder,South Africa,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Piyush Chawla,Bowler,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Upendra Yadav,WK-Batter,India,1,20.00 L,0.2,lost,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Jhye Richardson,Bowler,Australia,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Reece Topley,Bowler,England,5,1.40 Cr,1.4,lost,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Cameron Green,Allrounder,Australia,33,17.50 Cr,17.5,won,cricbuzz_all_bids_playwright
+2023,MI,62,Sunrisers Hyderabad,Sam Curran,Allrounder,England,25,18.25 Cr,18.25,lost,cricbuzz_all_bids_playwright

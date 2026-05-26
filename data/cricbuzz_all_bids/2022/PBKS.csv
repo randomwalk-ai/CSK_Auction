@@ -1,0 +1,45 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2022,PBKS,65,Sunrisers Hyderabad,Matthew Wade,WK-Batter,Australia,1,2.20 Cr,2.2,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Raj Bawa,Bowler,India,5,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Vaibhav Arora,Bowler,India,14,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Writtick Chatterjee,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Benny Howell,Allrounder,England,1,40.00 L,0.4,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Atharva Taide,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Baltej Singh,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Prerak Mankad,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Ishan Kishan,WK-Batter,India,13,7.50 Cr,7.5,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Liam Livingstone,Allrounder,England,15,11.50 Cr,11.5,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Shahrukh Khan,Batter,India,15,9.00 Cr,9.0,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Bhanuka Rajapaksa,Batter,Sri Lanka,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Nathan Ellis,Bowler,Australia,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Tim David,Allrounder,Singapore,2,70.00 L,0.7,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Ansh Patel,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Alzarri Joseph,Bowler,West Indies,7,2.20 Cr,2.2,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Sean Abbott,Allrounder,Australia,7,2.20 Cr,2.2,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Harpreet Brar,Bowler,India,14,3.80 Cr,3.8,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Jitesh Sharma,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Odean Smith,Bowler,West Indies,12,6.00 Cr,6.0,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Shivam Mavi,Bowler,India,6,2.20 Cr,2.2,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Adam Milne,Bowler,New Zealand,2,1.80 Cr,1.8,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Tymal Mills,Bowler,England,2,1.40 Cr,1.4,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Yash Dhull,Batter,India,3,45.00 L,0.45,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Rishi Dhawan,Allrounder,India,1,55.00 L,0.55,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Sanjay Yadav,Allrounder,India,3,45.00 L,0.45,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Sandeep Sharma,Bowler,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Chetan Sakariya,Bowler,India,1,55.00 L,0.55,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Shivam Dube,Allrounder,India,13,3.80 Cr,3.8,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Aiden Markram,Batter,South Africa,6,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Ravisrinivasan Sai Kishore,Bowler,India,3,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Ishan Porel,Bowler,India,1,25.00 L,0.25,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Prabhsimran Singh,WK-Batter,India,5,60.00 L,0.6,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Abhishek Sharma,Allrounder,India,22,5.25 Cr,5.25,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Dewald Brevis,Batter,South Africa,11,1.50 Cr,1.5,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Rahul Chahar,Bowler,India,6,5.25 Cr,5.25,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Kuldeep Yadav,Bowler,India,5,1.90 Cr,1.9,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Shardul Thakur,Bowler,India,14,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Wanindu Hasaranga,Allrounder,Sri Lanka,24,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Jonny Bairstow,WK-Batter,England,14,6.75 Cr,6.75,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Krunal Pandya,Allrounder,India,9,5.25 Cr,5.25,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Washington Sundar,Allrounder,India,4,2.60 Cr,2.6,lost,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Shikhar Dhawan,Batter,India,7,8.25 Cr,8.25,won,cricbuzz_all_bids_playwright
+2022,PBKS,65,Sunrisers Hyderabad,Kagiso Rabada,Bowler,South Africa,3,9.25 Cr,9.25,won,cricbuzz_all_bids_playwright

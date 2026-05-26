@@ -1,0 +1,13 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2024,MI,62,Sunrisers Hyderabad,Pat Cummins,Bowler,Australia,7,4.60 Cr,4.6,lost,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Shivalik Sharma,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Mohammad Nabi,Allrounder,Afghanistan,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Robin Minz,WK-Batter,India,15,2.60 Cr,2.6,lost,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Nuwan Thushara,Bowler,Sri Lanka,12,4.80 Cr,4.8,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Anshul Kamboj,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Naman Dhir,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Shreyas Gopal,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Sushant Mishra,Bowler,India,14,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Mitchell Starc,Bowler,Australia,19,9.60 Cr,9.6,lost,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Dilshan Madushanka,Bowler,Sri Lanka,17,4.60 Cr,4.6,won,cricbuzz_all_bids_playwright
+2024,MI,62,Sunrisers Hyderabad,Gerald Coetzee,Allrounder,South Africa,8,5.00 Cr,5.0,won,cricbuzz_all_bids_playwright

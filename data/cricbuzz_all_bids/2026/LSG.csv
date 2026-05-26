@@ -1,0 +1,12 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,LSG,966,Sunrisers Hyderabad,Josh Inglis,WK-Batter,Australia,17,8.60 Cr,8.6,won,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Liam Livingstone,Allrounder,England,22,12.80 Cr,12.8,lost,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Akshat Raghuwanshi,Batter,India,13,2.20 Cr,2.2,won,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Naman Tiwari,Bowler,India,6,1.00 Cr,1.0,won,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Mukul Choudhary,WK-Batter,India,7,2.60 Cr,2.6,won,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Kartik Sharma,WK-Batter,India,14,2.60 Cr,2.6,lost,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Prashant Veer,Allrounder,India,18,4.00 Cr,4.0,lost,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Anrich Nortje,Bowler,South Africa,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Matheesha Pathirana,Bowler,Sri Lanka,41,17.80 Cr,17.8,lost,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Venkatesh Iyer,Allrounder,India,4,3.20 Cr,3.2,lost,cricbuzz_all_bids_playwright
+2026,LSG,966,Sunrisers Hyderabad,Wanindu Hasaranga,Allrounder,Sri Lanka,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright

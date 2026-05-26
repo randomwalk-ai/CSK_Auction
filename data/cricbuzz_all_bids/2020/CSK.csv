@@ -1,0 +1,6 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2020,CSK,58,Sunrisers Hyderabad,Ravisrinivasan Sai Kishore,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,CSK,58,Sunrisers Hyderabad,Josh Hazlewood,Bowler,Australia,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2020,CSK,58,Sunrisers Hyderabad,Piyush Chawla,Bowler,India,14,6.75 Cr,6.75,won,cricbuzz_all_bids_playwright
+2020,CSK,58,Sunrisers Hyderabad,Nathan Coulter-Nile,Bowler,Australia,18,7.75 Cr,7.75,lost,cricbuzz_all_bids_playwright
+2020,CSK,58,Sunrisers Hyderabad,Sam Curran,Allrounder,England,14,5.50 Cr,5.5,won,cricbuzz_all_bids_playwright

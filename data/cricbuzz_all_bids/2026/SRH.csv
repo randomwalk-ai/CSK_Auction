@@ -1,0 +1,18 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,SRH,255,Sunrisers Hyderabad,Jack Edwards,Allrounder,Australia,5,3.00 Cr,3.0,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Josh Inglis,WK-Batter,Australia,17,8.40 Cr,8.4,lost,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Shivam Mavi,Bowler,India,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Liam Livingstone,Allrounder,England,28,13.00 Cr,13.0,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Krains Fuletra,Allrounder,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Praful Hinge,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Amit Kumar,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Onkar Tukaram Tarmale,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Sakib Hussain,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Salil Arora,WK-Batter,India,10,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Mangesh Yadav,Allrounder,India,20,5.00 Cr,5.0,lost,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Akshat Raghuwanshi,Batter,India,13,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Kartik Sharma,WK-Batter,India,3,14.00 Cr,14.0,lost,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Shivang Kumar,Allrounder,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Prashant Veer,Allrounder,India,19,14.00 Cr,14.0,lost,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Auqib Nabi Dar,Allrounder,India,16,8.20 Cr,8.2,lost,cricbuzz_all_bids_playwright
+2026,SRH,255,Sunrisers Hyderabad,Ravi Bishnoi,Bowler,India,3,7.00 Cr,7.0,lost,cricbuzz_all_bids_playwright

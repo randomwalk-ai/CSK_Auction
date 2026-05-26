@@ -1,0 +1,18 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2020,KXIP,65,Sunrisers Hyderabad,Simran Singh,WK-Batter,India,4,55.00 L,0.55,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Tajinder Singh,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Chris Jordan,Bowler,England,11,3.00 Cr,3.0,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,James Neesham,Allrounder,New Zealand,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Ravi Bishnoi,Bowler,India,14,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Ishan Porel,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Kartik Tyagi,Bowler,India,10,1.20 Cr,1.2,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Yashasvi Jaiswal,Batter,India,7,1.80 Cr,1.8,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Deepak Hooda,Allrounder,India,2,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Priyam Garg,Batter,India,13,1.80 Cr,1.8,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Virat Singh,Allrounder,India,13,1.80 Cr,1.8,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Piyush Chawla,Bowler,India,16,6.50 Cr,6.5,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Sheldon Cottrell,Bowler,West Indies,25,8.50 Cr,8.5,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Jaydev Unadkat,Bowler,India,7,2.80 Cr,2.8,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Chris Morris,Allrounder,South Africa,16,7.75 Cr,7.75,lost,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Glenn Maxwell,Allrounder,Australia,20,10.75 Cr,10.75,won,cricbuzz_all_bids_playwright
+2020,KXIP,65,Sunrisers Hyderabad,Robin Uthappa,WK-Batter,India,5,2.80 Cr,2.8,lost,cricbuzz_all_bids_playwright

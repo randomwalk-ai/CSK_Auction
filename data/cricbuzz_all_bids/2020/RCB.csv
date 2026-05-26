@@ -1,0 +1,14 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2020,RCB,59,Sunrisers Hyderabad,Isuru Udana,Allrounder,Sri Lanka,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Shahbaz Ahmed,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Dale Steyn,Bowler,South Africa,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Pavan Deshpande,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Kane Richardson,Bowler,Australia,8,4.00 Cr,4.0,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Chris Jordan,Bowler,England,10,2.80 Cr,2.8,lost,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Josh Philippe,WK-Batter,Australia,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Varun Chakravarthy,Bowler,India,17,3.80 Cr,3.8,lost,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Rahul Tripathi,Batter,India,4,55.00 L,0.55,lost,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Alex Carey,WK-Batter,Australia,11,2.00 Cr,2.0,lost,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Chris Morris,Allrounder,South Africa,20,10.00 Cr,10.0,won,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Pat Cummins,Bowler,Australia,29,15.25 Cr,15.25,lost,cricbuzz_all_bids_playwright
+2020,RCB,59,Sunrisers Hyderabad,Aaron Finch,Batter,Australia,36,4.40 Cr,4.4,won,cricbuzz_all_bids_playwright

@@ -1,0 +1,13 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2019,RCB,59,Sunrisers Hyderabad,Akshdeep Nath,Batter,India,18,3.60 Cr,3.6,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Prayas Barman,Batter,India,11,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,PrabhSimran Singh,WK-Batter,India,15,2.60 Cr,2.6,lost,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Milind Kumar,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Himmat Singh,Batter,India,5,65.00 L,0.65,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Heinrich Klaasen,WK-Batter,South Africa,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Sam Curran,Allrounder,England,13,7.00 Cr,7.0,lost,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Shivam Dube,Batter,India,20,5.00 Cr,5.0,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Devdutt Padikkal,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Nicholas Pooran,WK-Batter,West Indies,14,4.00 Cr,4.0,lost,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Gurkeerat Singh Mann,Batter,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2019,RCB,59,Sunrisers Hyderabad,Shimron Hetmyer,Batter,West Indies,1,4.20 Cr,4.2,won,cricbuzz_all_bids_playwright

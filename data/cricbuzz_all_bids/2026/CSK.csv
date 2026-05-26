@@ -1,0 +1,17 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,CSK,58,Sunrisers Hyderabad,Zakary Foulkes,Allrounder,New Zealand,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Jack Edwards,Allrounder,Australia,13,2.80 Cr,2.8,lost,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Ben Dwarshuis,Allrounder,Australia,8,3.00 Cr,3.0,lost,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Rahul Chahar,Bowler,India,14,5.20 Cr,5.2,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Matt Henry,Bowler,New Zealand,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Sarfaraz Khan,Batter,India,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Aman Khan,Allrounder,India,2,40.00 L,0.4,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Mustafizur Rahman,Bowler,Bangladesh,18,9.00 Cr,9.0,lost,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Matthew Short,Allrounder,Australia,1,1.50 Cr,1.5,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Jason Holder,Allrounder,West Indies,13,6.80 Cr,6.8,lost,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Ashok Sharma,Bowler,India,1,35.00 L,0.35,lost,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Kartik Sharma,WK-Batter,India,29,14.20 Cr,14.2,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Prashant Veer,Allrounder,India,35,14.20 Cr,14.2,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Akeal Hosein,Bowler,West Indies,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Ravi Bishnoi,Bowler,India,10,5.80 Cr,5.8,lost,cricbuzz_all_bids_playwright
+2026,CSK,58,Sunrisers Hyderabad,Cameron Green,Batter,Australia,29,25.00 Cr,25.0,lost,cricbuzz_all_bids_playwright

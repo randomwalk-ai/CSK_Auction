@@ -1,0 +1,7 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2024,RR,64,Sunrisers Hyderabad,Nandre Burger,Bowler,South Africa,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2024,RR,64,Sunrisers Hyderabad,Abid Mushtaq,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,RR,64,Sunrisers Hyderabad,Tom Kohler-Cadmore,WK-Batter,England,1,40.00 L,0.4,won,cricbuzz_all_bids_playwright
+2024,RR,64,Sunrisers Hyderabad,Shubham Dubey,Batter,India,23,5.80 Cr,5.8,won,cricbuzz_all_bids_playwright
+2024,RR,64,Sunrisers Hyderabad,Rovman Powell,Batter,West Indies,19,7.40 Cr,7.4,won,cricbuzz_all_bids_playwright
+2024,RR,64,Sunrisers Hyderabad,Harry Brook,Batter,England,5,3.80 Cr,3.8,lost,cricbuzz_all_bids_playwright

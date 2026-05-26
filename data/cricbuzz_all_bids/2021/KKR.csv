@@ -1,0 +1,12 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2021,KKR,63,Sunrisers Hyderabad,Pawan Negi,Allrounder,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Venkatesh Iyer,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Ben Cutting,Allrounder,Australia,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Harbhajan Singh,Bowler,India,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Karun Nair,Batter,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Daniel Christian,Allrounder,Australia,15,4.60 Cr,4.6,lost,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Vaibhav Arora,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Sheldon Jackson,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Krishnappa Gowtham,Allrounder,India,26,7.25 Cr,7.25,lost,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Shakib Al Hasan,Allrounder,Bangladesh,4,3.20 Cr,3.2,won,cricbuzz_all_bids_playwright
+2021,KKR,63,Sunrisers Hyderabad,Glenn Maxwell,Allrounder,Australia,6,4.20 Cr,4.2,lost,cricbuzz_all_bids_playwright

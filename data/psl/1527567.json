@@ -1,0 +1,2229 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2026-04-09",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Karachi",
+    "dates": [
+      "2026-04-09"
+    ],
+    "event": {
+      "name": "Pakistan Super League",
+      "match_number": 16
+    },
+    "gender": "male",
+    "match_type": "T20",
+    "officials": {
+      "match_referees": [
+        "Kamran Chaudary"
+      ],
+      "reserve_umpires": [
+        "Aaley Haider"
+      ],
+      "tv_umpires": [
+        "Nasir Hussain"
+      ],
+      "umpires": [
+        "CM Brown",
+        "Faisal Afridi"
+      ]
+    },
+    "outcome": {
+      "winner": "Islamabad United",
+      "by": {
+        "wickets": 9
+      }
+    },
+    "overs": 20,
+    "player_of_match": [
+      "CJ Green"
+    ],
+    "players": {
+      "Lahore Qalandars": [
+        "Haseebullah Khan",
+        "Muhammad Naeem",
+        "Abdullah Shafique",
+        "RA Herman",
+        "Sikandar Raza",
+        "Asif Ali",
+        "RP Burl",
+        "Shaheen Shah Afridi",
+        "Haris Rauf",
+        "Ubaid Shah",
+        "Mustafizur Rahman"
+      ],
+      "Islamabad United": [
+        "DP Conway",
+        "Sameer Minhas",
+        "Mohammad Faiq",
+        "Haider Ali",
+        "MS Chapman",
+        "Shadab Khan",
+        "Faheem Ashraf",
+        "Imad Wasim",
+        "RJ Gleeson",
+        "Salman Irshad",
+        "CJ Green"
+      ]
+    },
+    "registry": {
+      "people": {
+        "Aaley Haider": "de1ae33e",
+        "Abdullah Shafique": "fc2fffb5",
+        "Asif Ali": "0a4736eb",
+        "CJ Green": "19b9f399",
+        "CM Brown": "448f4f1c",
+        "DP Conway": "df5a6881",
+        "Faheem Ashraf": "bd4ea627",
+        "Faisal Afridi": "ed0bc503",
+        "Haider Ali": "c13e34f4",
+        "Haris Rauf": "24bb1c2f",
+        "Haseebullah Khan": "5691931a",
+        "Imad Wasim": "9cb8d7a6",
+        "Kamran Chaudary": "77817be7",
+        "MS Chapman": "7fa12533",
+        "Mohammad Faiq": "4f77a235",
+        "Muhammad Naeem": "e35b7b91",
+        "Mustafizur Rahman": "0a8fce53",
+        "Nasir Hussain": "5b2fe85b",
+        "RA Herman": "9c821d2e",
+        "RJ Gleeson": "402f8494",
+        "RP Burl": "b08252b8",
+        "Salman Irshad": "30afc92b",
+        "Sameer Minhas": "62fd0c5e",
+        "Shadab Khan": "9de62878",
+        "Shaheen Shah Afridi": "45a7e761",
+        "Sikandar Raza": "26d041c4",
+        "Ubaid Shah": "cc535250"
+      }
+    },
+    "season": "2026",
+    "team_type": "club",
+    "teams": [
+      "Lahore Qalandars",
+      "Islamabad United"
+    ],
+    "toss": {
+      "decision": "field",
+      "winner": "Islamabad United"
+    },
+    "venue": "National Stadium, Karachi"
+  },
+  "innings": [
+    {
+      "team": "Lahore Qalandars",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Imad Wasim",
+              "non_striker": "Muhammad Naeem",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Muhammad Naeem",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Muhammad Naeem",
+                  "fielders": [
+                    {
+                      "name": "Sameer Minhas"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Imad Wasim",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Imad Wasim",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Imad Wasim",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Faheem Ashraf",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "RJ Gleeson",
+              "extras": {
+                "legbyes": 4
+              },
+              "non_striker": "Abdullah Shafique",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Abdullah Shafique",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Abdullah Shafique",
+                  "fielders": [
+                    {
+                      "name": "Shadab Khan"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Imad Wasim",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "CJ Green",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "CJ Green",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "CJ Green",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "CJ Green",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "CJ Green",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "CJ Green",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Shadab Khan",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "Shadab Khan",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "RA Herman",
+              "bowler": "CJ Green",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "CJ Green",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "CJ Green",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RA Herman",
+              "bowler": "CJ Green",
+              "non_striker": "Haseebullah Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "CJ Green",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Haseebullah Khan",
+              "bowler": "CJ Green",
+              "non_striker": "RA Herman",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Haseebullah Khan",
+                  "kind": "bowled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "RA Herman",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "RA Herman",
+                  "fielders": [
+                    {
+                      "name": "Sameer Minhas"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Shadab Khan",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Imad Wasim",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Imad Wasim",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Shadab Khan",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Shadab Khan",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Shadab Khan",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Shadab Khan",
+              "non_striker": "Asif Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Asif Ali",
+              "bowler": "Shadab Khan",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Asif Ali",
+                  "fielders": [
+                    {
+                      "name": "Mohammad Faiq"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Imad Wasim",
+              "non_striker": "RP Burl",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RP Burl",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RP Burl",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RP Burl",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "RP Burl",
+              "bowler": "Imad Wasim",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Imad Wasim",
+              "non_striker": "RP Burl",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "RP Burl",
+              "bowler": "CJ Green",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "CJ Green",
+              "non_striker": "RP Burl",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "RP Burl",
+              "bowler": "CJ Green",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "RP Burl",
+                  "kind": "caught and bowled"
+                }
+              ]
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "CJ Green",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "CJ Green",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "CJ Green",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Salman Irshad",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Salman Irshad",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Salman Irshad",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Salman Irshad",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Salman Irshad",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "Salman Irshad",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "CJ Green",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "CJ Green",
+              "non_striker": "Sikandar Raza",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sikandar Raza",
+              "bowler": "CJ Green",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Sikandar Raza",
+                  "fielders": [
+                    {
+                      "name": "Salman Irshad"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Haris Rauf",
+              "bowler": "CJ Green",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "CJ Green",
+              "non_striker": "Haris Rauf",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "CJ Green",
+              "extras": {
+                "byes": 2
+              },
+              "non_striker": "Haris Rauf",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Haris Rauf",
+              "bowler": "Shadab Khan",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haris Rauf",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haris Rauf",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haris Rauf",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haris Rauf",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Shadab Khan",
+              "non_striker": "Haris Rauf",
+              "review": {
+                "by": "Islamabad United",
+                "umpire": "Faisal Afridi",
+                "batter": "Shaheen Shah Afridi",
+                "decision": "struck down",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Haris Rauf",
+              "bowler": "RJ Gleeson",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Haris Rauf",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Haris Rauf",
+                  "kind": "bowled"
+                }
+              ]
+            },
+            {
+              "batter": "Ubaid Shah",
+              "bowler": "RJ Gleeson",
+              "extras": {
+                "noballs": 1
+              },
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ubaid Shah",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Ubaid Shah",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Ubaid Shah",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ubaid Shah",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Ubaid Shah",
+                  "kind": "bowled"
+                }
+              ]
+            },
+            {
+              "batter": "Mustafizur Rahman",
+              "bowler": "RJ Gleeson",
+              "non_striker": "Shaheen Shah Afridi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Faheem Ashraf",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Mustafizur Rahman",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Mustafizur Rahman",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Mustafizur Rahman",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shaheen Shah Afridi",
+              "bowler": "Faheem Ashraf",
+              "non_striker": "Mustafizur Rahman",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Shaheen Shah Afridi",
+                  "fielders": [
+                    {
+                      "name": "DP Conway"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "team": "Islamabad United",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Sameer Minhas",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Sameer Minhas",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Shaheen Shah Afridi",
+              "extras": {
+                "legbyes": 4
+              },
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Sameer Minhas",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Sameer Minhas",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Ubaid Shah",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Ubaid Shah",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Ubaid Shah",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Sameer Minhas",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Sameer Minhas",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Sameer Minhas",
+                  "fielders": [
+                    {
+                      "name": "Ubaid Shah"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Ubaid Shah",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Ubaid Shah",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Ubaid Shah",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Shaheen Shah Afridi",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Haris Rauf",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Haris Rauf",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Haris Rauf",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Haris Rauf",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Haris Rauf",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Haris Rauf",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Haris Rauf",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Sikandar Raza",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Sikandar Raza",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "Mustafizur Rahman",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "DP Conway",
+              "bowler": "Sikandar Raza",
+              "non_striker": "Mohammad Faiq",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "RP Burl",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Mohammad Faiq",
+              "bowler": "RP Burl",
+              "non_striker": "DP Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        }
+      ],
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.7,
+          "type": "mandatory"
+        }
+      ],
+      "target": {
+        "overs": 20,
+        "runs": 101
+      }
+    }
+  ]
+}

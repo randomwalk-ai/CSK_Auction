@@ -1,0 +1,15 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2023,LSG,966,Sunrisers Hyderabad,Yudhvir Singh Charak,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Naveen-ul-Haq,Allrounder,Afghanistan,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Swapnil Singh,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Joshua Little,Bowler,Ireland,16,4.20 Cr,4.2,lost,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Prerak Mankad,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Amit Mishra,Bowler,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Daniel Sams,Allrounder,Australia,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Romario Shepherd,Bowler,West Indies,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Yash Thakur,Bowler,India,3,45.00 L,0.45,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Vaibhav Arora,Allrounder,India,4,55.00 L,0.55,lost,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Jaydev Unadkat,Bowler,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Nicholas Pooran,WK-Batter,West Indies,18,16.00 Cr,16.0,won,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Ben Stokes,Allrounder,England,19,16.00 Cr,16.0,lost,cricbuzz_all_bids_playwright
+2023,LSG,966,Sunrisers Hyderabad,Sam Curran,Allrounder,England,2,16.25 Cr,16.25,lost,cricbuzz_all_bids_playwright

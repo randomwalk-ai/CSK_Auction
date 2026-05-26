@@ -1,0 +1,682 @@
+{
+  "team": "CSK",
+  "from_year": 2018,
+  "to_year": 2026,
+  "summary": {
+    "targets": 197,
+    "won": 97,
+    "lost": 100,
+    "win_rate_pct": 49.2,
+    "spend_won_cr": 267.85,
+    "avg_won_price_cr": 2.76,
+    "avg_lost_exit_cr": 4.66,
+    "overseas_chased": 71,
+    "overseas_won": 33,
+    "years_active": 9,
+    "roles_chased": {
+      "Bowler": 74,
+      "All Rounder": 59,
+      "Batter": 39,
+      "Wicket Keeper": 24,
+      "Bowler Allrounder": 1
+    },
+    "roles_won": {
+      "Bowler": 34,
+      "All Rounder": 34,
+      "Batter": 21,
+      "Wicket Keeper": 8
+    }
+  },
+  "strategy_profile": {
+    "archetype": "Bowling-depth value builder",
+    "career_win_rate_pct": 49.2,
+    "total_spend_won_cr": 267.85,
+    "avg_targets_per_year": 21.9,
+    "top_chased_role": "Bowler",
+    "role_mix_pct": {
+      "Bowler": 37.6,
+      "All Rounder": 29.9,
+      "Batter": 19.8,
+      "Wicket Keeper": 12.2,
+      "Bowler Allrounder": 0.5
+    },
+    "snipe_win_count": 51,
+    "snipe_win_pct_of_wins": 52.6,
+    "bid_wars_lost": 47,
+    "close_losses_under_50L": 45,
+    "close_loss_examples": [
+      "Andrew Tye",
+      "Barinder Sran",
+      "Pat Cummins",
+      "Moeen Ali",
+      "Chris Woakes",
+      "Akshdeep Nath",
+      "Barinder Sran",
+      "Mohammed Shami"
+    ],
+    "premium_chase_win_rate_pct": 31.7,
+    "overseas_premium_losses": 19,
+    "overseas_chase_win_rate_pct": 46.5,
+    "indian_chase_win_rate_pct": 50.8
+  },
+  "era_playbooks": [
+    {
+      "era": "2018 mega auction",
+      "years": "2018–2018",
+      "targets": 39,
+      "won": 22,
+      "win_rate_pct": 56.4,
+      "spend_won_cr": 40.5,
+      "top_role_chased": "Bowler",
+      "overseas_target_pct": 41.0,
+      "inferred_strategy": [
+        "Wide net — entered many bid sheets (mega-auction / full rebuild mode).",
+        "Bowling-first shopping list — depth and strike options prioritized.",
+        "Value sniper — 14/22 wins at ≤1 bid (no fight).",
+        "Lost 9 bid wars (10+ bids) — outgunned on marquee names."
+      ]
+    },
+    {
+      "era": "2019–2021 retention era",
+      "years": "2019–2021",
+      "targets": 19,
+      "won": 12,
+      "win_rate_pct": 63.2,
+      "spend_won_cr": 37.0,
+      "top_role_chased": "Bowler",
+      "overseas_target_pct": 26.3,
+      "inferred_strategy": [
+        "Bowling-first shopping list — depth and strike options prioritized.",
+        "Value sniper — 7/12 wins at ≤1 bid (no fight).",
+        "Lost 6 bid wars (10+ bids) — outgunned on marquee names."
+      ]
+    },
+    {
+      "era": "2022 mega rebuild",
+      "years": "2022–2022",
+      "targets": 50,
+      "won": 21,
+      "win_rate_pct": 42.0,
+      "spend_won_cr": 45.05,
+      "top_role_chased": "Bowler",
+      "overseas_target_pct": 34.0,
+      "inferred_strategy": [
+        "Wide net — entered many bid sheets (mega-auction / full rebuild mode).",
+        "Bowling-first shopping list — depth and strike options prioritized.",
+        "Value sniper — 11/21 wins at ≤1 bid (no fight).",
+        "Lost 11 bid wars (10+ bids) — outgunned on marquee names."
+      ]
+    },
+    {
+      "era": "2023–2024 surgical window",
+      "years": "2023–2024",
+      "targets": 28,
+      "won": 13,
+      "win_rate_pct": 46.4,
+      "spend_won_cr": 49.35,
+      "top_role_chased": "All Rounder",
+      "overseas_target_pct": 46.4,
+      "inferred_strategy": [
+        "Flexibility-first — chased multi-role profiles for balance.",
+        "Heavy overseas focus (46.4% of targets).",
+        "Value sniper — 7/13 wins at ≤1 bid (no fight).",
+        "Lost 4 bid wars (10+ bids) — outgunned on marquee names."
+      ]
+    },
+    {
+      "era": "2025–2026 core + overseas hunt",
+      "years": "2025–2026",
+      "targets": 61,
+      "won": 29,
+      "win_rate_pct": 47.5,
+      "spend_won_cr": 95.95,
+      "top_role_chased": "Bowler",
+      "overseas_target_pct": 32.8,
+      "inferred_strategy": [
+        "Wide net — entered many bid sheets (mega-auction / full rebuild mode).",
+        "Bowling-first shopping list — depth and strike options prioritized.",
+        "Value sniper — 12/29 wins at ≤1 bid (no fight).",
+        "Lost 17 bid wars (10+ bids) — outgunned on marquee names."
+      ]
+    }
+  ],
+  "price_band_analysis": [
+    {
+      "band": "Value",
+      "range_cr": "₹0–1.0",
+      "targets": 50,
+      "won": 42,
+      "win_rate_pct": 84.0,
+      "spend_won_cr": 13.85
+    },
+    {
+      "band": "Mid",
+      "range_cr": "₹1.0–5.0",
+      "targets": 87,
+      "won": 36,
+      "win_rate_pct": 41.4,
+      "spend_won_cr": 82.3
+    },
+    {
+      "band": "Premium",
+      "range_cr": "₹5.0–10.0",
+      "targets": 49,
+      "won": 13,
+      "win_rate_pct": 26.5,
+      "spend_won_cr": 89.05
+    },
+    {
+      "band": "Marquee",
+      "range_cr": "₹10.0–∞",
+      "targets": 11,
+      "won": 6,
+      "win_rate_pct": 54.5,
+      "spend_won_cr": 82.65
+    }
+  ],
+  "role_win_rates": [
+    {
+      "role": "Bowler",
+      "targets": 74,
+      "won": 34,
+      "lost": 40,
+      "win_rate_pct": 45.9,
+      "avg_price_won_cr": 2.3,
+      "avg_price_lost_cr": 4.41
+    },
+    {
+      "role": "All Rounder",
+      "targets": 59,
+      "won": 34,
+      "lost": 25,
+      "win_rate_pct": 57.6,
+      "avg_price_won_cr": 3.76,
+      "avg_price_lost_cr": 5.29
+    },
+    {
+      "role": "Batter",
+      "targets": 39,
+      "won": 21,
+      "lost": 18,
+      "win_rate_pct": 53.8,
+      "avg_price_won_cr": 1.73,
+      "avg_price_lost_cr": 5.51
+    },
+    {
+      "role": "Wicket Keeper",
+      "targets": 24,
+      "won": 8,
+      "lost": 16,
+      "win_rate_pct": 33.3,
+      "avg_price_won_cr": 3.16,
+      "avg_price_lost_cr": 3.31
+    },
+    {
+      "role": "Bowler Allrounder",
+      "targets": 1,
+      "won": 0,
+      "lost": 1,
+      "win_rate_pct": 0.0,
+      "avg_price_won_cr": 0,
+      "avg_price_lost_cr": 4.6
+    }
+  ],
+  "recurring_misses": [
+    {
+      "year": 2026,
+      "player": "Cameron Green",
+      "role": "Batter",
+      "overseas": true,
+      "csk_exit_cr": 25.0,
+      "csk_bids": 29,
+      "winner": "KKR",
+      "winner_price_cr": 25.2,
+      "miss_margin_cr": 0.2,
+      "profile": "Batter · Overseas · Marquee"
+    },
+    {
+      "year": 2023,
+      "player": "Sam Curran",
+      "role": "All Rounder",
+      "overseas": true,
+      "csk_exit_cr": 15.25,
+      "csk_bids": 8,
+      "winner": "PBKS",
+      "winner_price_cr": 18.5,
+      "miss_margin_cr": 3.25,
+      "profile": "All Rounder · Overseas · Marquee"
+    },
+    {
+      "year": 2021,
+      "player": "Glenn Maxwell",
+      "role": "All Rounder",
+      "overseas": true,
+      "csk_exit_cr": 14.0,
+      "csk_bids": 20,
+      "winner": "RCB",
+      "winner_price_cr": 14.25,
+      "miss_margin_cr": 0.25,
+      "profile": "All Rounder · Overseas · Marquee"
+    },
+    {
+      "year": 2025,
+      "player": "KL Rahul",
+      "role": "Wicket Keeper",
+      "overseas": false,
+      "csk_exit_cr": 13.75,
+      "csk_bids": 4,
+      "winner": "DC",
+      "winner_price_cr": 14.0,
+      "miss_margin_cr": 0.25,
+      "profile": "Wicket Keeper · Indian · Marquee"
+    },
+    {
+      "year": 2018,
+      "player": "Jaydev Unadkat",
+      "role": "Bowler",
+      "overseas": false,
+      "csk_exit_cr": 10.5,
+      "csk_bids": 24,
+      "winner": "RR",
+      "winner_price_cr": 11.5,
+      "miss_margin_cr": 1.0,
+      "profile": "Bowler · Indian · Marquee"
+    },
+    {
+      "year": 2025,
+      "player": "Deepak Chahar",
+      "role": "Bowler",
+      "overseas": false,
+      "csk_exit_cr": 9.0,
+      "csk_bids": 3,
+      "winner": "MI",
+      "winner_price_cr": 9.25,
+      "miss_margin_cr": 0.25,
+      "profile": "Bowler · Indian · Premium"
+    },
+    {
+      "year": 2026,
+      "player": "Mustafizur Rahman",
+      "role": "Bowler",
+      "overseas": true,
+      "csk_exit_cr": 9.0,
+      "csk_bids": 18,
+      "winner": "KKR",
+      "winner_price_cr": 9.2,
+      "miss_margin_cr": 0.2,
+      "profile": "Bowler · Overseas · Premium"
+    },
+    {
+      "year": 2022,
+      "player": "Shahrukh Khan",
+      "role": "Batter",
+      "overseas": false,
+      "csk_exit_cr": 8.75,
+      "csk_bids": 27,
+      "winner": "PBKS",
+      "winner_price_cr": 9.0,
+      "miss_margin_cr": 0.25,
+      "profile": "Batter · Indian · Premium"
+    },
+    {
+      "year": 2022,
+      "player": "Rahul Tewatia",
+      "role": "All Rounder",
+      "overseas": false,
+      "csk_exit_cr": 8.75,
+      "csk_bids": 27,
+      "winner": "GT",
+      "winner_price_cr": 9.0,
+      "miss_margin_cr": 0.25,
+      "profile": "All Rounder · Indian · Premium"
+    },
+    {
+      "year": 2025,
+      "player": "Marcus Stoinis",
+      "role": "All Rounder",
+      "overseas": true,
+      "csk_exit_cr": 8.5,
+      "csk_bids": 16,
+      "winner": "PBKS",
+      "winner_price_cr": 11.0,
+      "miss_margin_cr": 2.5,
+      "profile": "All Rounder · Overseas · Premium"
+    },
+    {
+      "year": 2025,
+      "player": "Liam Livingstone",
+      "role": "All Rounder",
+      "overseas": true,
+      "csk_exit_cr": 8.5,
+      "csk_bids": 4,
+      "winner": "RCB",
+      "winner_price_cr": 8.75,
+      "miss_margin_cr": 0.25,
+      "profile": "All Rounder · Overseas · Premium"
+    },
+    {
+      "year": 2022,
+      "player": "Rahul Tripathi",
+      "role": "Batter",
+      "overseas": false,
+      "csk_exit_cr": 8.25,
+      "csk_bids": 26,
+      "winner": "SRH",
+      "winner_price_cr": 8.5,
+      "miss_margin_cr": 0.25,
+      "profile": "Batter · Indian · Premium"
+    },
+    {
+      "year": 2025,
+      "player": "Mohammed Shami",
+      "role": "Bowler",
+      "overseas": false,
+      "csk_exit_cr": 8.0,
+      "csk_bids": 14,
+      "winner": "SRH",
+      "winner_price_cr": 10.0,
+      "miss_margin_cr": 2.0,
+      "profile": "Bowler · Indian · Premium"
+    },
+    {
+      "year": 2025,
+      "player": "Mohammed Siraj",
+      "role": "Bowler",
+      "overseas": false,
+      "csk_exit_cr": 8.0,
+      "csk_bids": 14,
+      "winner": "GT",
+      "winner_price_cr": 12.25,
+      "miss_margin_cr": 4.25,
+      "profile": "Bowler · Indian · Premium"
+    },
+    {
+      "year": 2023,
+      "player": "Mayank Agarwal",
+      "role": "Batter",
+      "overseas": false,
+      "csk_exit_cr": 8.0,
+      "csk_bids": 12,
+      "winner": "SRH",
+      "winner_price_cr": 8.25,
+      "miss_margin_cr": 0.25,
+      "profile": "Batter · Indian · Premium"
+    },
+    {
+      "year": 2020,
+      "player": "Nathan Coulter-Nile",
+      "role": "Bowler",
+      "overseas": true,
+      "csk_exit_cr": 7.75,
+      "csk_bids": 18,
+      "winner": "MI",
+      "winner_price_cr": 8.0,
+      "miss_margin_cr": 0.25,
+      "profile": "Bowler · Overseas · Premium"
+    },
+    {
+      "year": 2024,
+      "player": "Pat Cummins",
+      "role": "Bowler",
+      "overseas": true,
+      "csk_exit_cr": 7.6,
+      "csk_bids": 15,
+      "winner": "SRH",
+      "winner_price_cr": 20.5,
+      "miss_margin_cr": 12.9,
+      "profile": "Bowler · Overseas · Premium"
+    },
+    {
+      "year": 2025,
+      "player": "Arshdeep Singh",
+      "role": "Bowler",
+      "overseas": false,
+      "csk_exit_cr": 7.25,
+      "csk_bids": 13,
+      "winner": "PBKS",
+      "winner_price_cr": 18.0,
+      "miss_margin_cr": 10.75,
+      "profile": "Bowler · Indian · Premium"
+    },
+    {
+      "year": 2018,
+      "player": "Chris Woakes",
+      "role": "All Rounder",
+      "overseas": true,
+      "csk_exit_cr": 7.2,
+      "csk_bids": 14,
+      "winner": "RCB",
+      "winner_price_cr": 7.4,
+      "miss_margin_cr": 0.2,
+      "profile": "All Rounder · Overseas · Premium"
+    },
+    {
+      "year": 2022,
+      "player": "Shardul Thakur",
+      "role": "Bowler",
+      "overseas": false,
+      "csk_exit_cr": 7.0,
+      "csk_bids": 2,
+      "winner": "DC",
+      "winner_price_cr": 10.75,
+      "miss_margin_cr": 3.75,
+      "profile": "Bowler · Indian · Premium"
+    }
+  ],
+  "career_rivals": [
+    {
+      "rival": "RCB",
+      "career_wins_vs_team": 13,
+      "notable_wins": [
+        "Mohammed Siraj (2018, 2.60 Cr)",
+        "Moeen Ali (2018, 1.70 Cr)",
+        "Chris Woakes (2018, 7.40 Cr)",
+        "Akshdeep Nath (2019, 3.60 Cr)",
+        "Glenn Maxwell (2021, 14.25 Cr)"
+      ]
+    },
+    {
+      "rival": "SRH",
+      "career_wins_vs_team": 12,
+      "notable_wins": [
+        "Manish Pandey (2018, 11.00 Cr)",
+        "Romario Shepherd (2022, 7.75 Cr)",
+        "Kartik Tyagi (2022, 4.00 Cr)",
+        "Rahul Tripathi (2022, 8.50 Cr)",
+        "Nicholas Pooran (2022, 10.75 Cr)"
+      ]
+    },
+    {
+      "rival": "GT",
+      "career_wins_vs_team": 12,
+      "notable_wins": [
+        "Vijay Shankar (2022, 1.40 Cr)",
+        "Wriddhiman Saha (2022, 1.90 Cr)",
+        "Ravisrinivasan Sai Kishore (2022, 3.00 Cr)",
+        "Rahul Tewatia (2022, 9.00 Cr)",
+        "Shivam Mavi (2023, 6.00 Cr)"
+      ]
+    },
+    {
+      "rival": "RR",
+      "career_wins_vs_team": 11,
+      "notable_wins": [
+        "Jaydev Unadkat (2018, 11.50 Cr)",
+        "Jofra Archer (2018, 7.20 Cr)",
+        "D Arcy Short (2018, 4.00 Cr)",
+        "Ben Stokes (2018, 12.50 Cr)",
+        "Jaydev Unadkat (2019, 8.40 Cr)"
+      ]
+    },
+    {
+      "rival": "PBKS",
+      "career_wins_vs_team": 11,
+      "notable_wins": [
+        "Liam Livingstone (2022, 11.50 Cr)",
+        "Shahrukh Khan (2022, 9.00 Cr)",
+        "Sam Curran (2023, 18.50 Cr)",
+        "Kuldeep Sen (2025, 0.80 Cr)",
+        "Azmatullah Omarzai (2025, 2.40 Cr)"
+      ]
+    },
+    {
+      "rival": "MI",
+      "career_wins_vs_team": 10,
+      "notable_wins": [
+        "Ishan Kishan (2018, 6.20 Cr)",
+        "Pat Cummins (2018, 5.40 Cr)",
+        "Barinder Sran (2019, 3.40 Cr)",
+        "Nathan Coulter-Nile (2020, 8.00 Cr)",
+        "Tilak Varma (2022, 1.70 Cr)"
+      ]
+    },
+    {
+      "rival": "DC",
+      "career_wins_vs_team": 10,
+      "notable_wins": [
+        "Rovman Powell (2022, 2.80 Cr)",
+        "Srikar Bharat (2022, 2.00 Cr)",
+        "Shardul Thakur (2022, 10.75 Cr)",
+        "David Warner (2022, 6.25 Cr)",
+        "Mukesh Kumar (2023, 5.50 Cr)"
+      ]
+    },
+    {
+      "rival": "KKR",
+      "career_wins_vs_team": 7,
+      "notable_wins": [
+        "Piyush Chawla (2018, 4.20 Cr)",
+        "Dinesh Karthik (2018, 7.40 Cr)",
+        "Nitish Rana (2022, 8.00 Cr)",
+        "N Jagadeesan (2023, 0.90 Cr)",
+        "Angkrish Raghuvanshi (2025, 3.00 Cr)"
+      ]
+    },
+    {
+      "rival": "LSG",
+      "career_wins_vs_team": 7,
+      "notable_wins": [
+        "Avesh Khan (2022, 10.00 Cr)",
+        "Krunal Pandya (2022, 8.25 Cr)",
+        "Deepak Hooda (2022, 5.75 Cr)",
+        "Jason Holder (2022, 8.75 Cr)",
+        "Quinton de Kock (2022, 6.75 Cr)"
+      ]
+    },
+    {
+      "rival": "KXIP",
+      "career_wins_vs_team": 6,
+      "notable_wins": [
+        "Andrew Tye (2018, 7.20 Cr)",
+        "Barinder Sran (2018, 2.20 Cr)",
+        "Mohit Sharma (2018, 2.40 Cr)",
+        "Ravichandran Ashwin (2018, 7.60 Cr)",
+        "Varun Chakravarthy (2019, 8.40 Cr)"
+      ]
+    }
+  ],
+  "what_works": [
+    "Value band (₹0–1.0): 84.0% win rate, ₹13.85 Cr acquired",
+    "All Rounder: 57.6% win rate on 59 career targets",
+    "Batter: 53.8% win rate on 39 career targets",
+    "Single-bid snipes: 52.6% of all CSK wins"
+  ],
+  "what_fails": [
+    "Wicket Keeper: only 33.3% win rate despite 24 chases (avg lost exit ₹3.31 Cr)",
+    "Premium chases (≥₹5 Cr): 31.7% win rate"
+  ],
+  "strategy_narrative": [
+    "**Identified archetype: Bowling-depth value builder** — over 2018–2026, CSK entered 197 bid sheets, winning 49.2% and spending ₹267.85 Cr on acquisitions.",
+    "**Primary shopping lens: Bowler** (37.6% of all targets). CSK's bid history reads as a franchise that builds around bowling depth first, then adds allround flexibility — batters are targeted selectively, often only when a marquee overseas slot opens.",
+    "**Value-sniping is core to CSK's wins** — 52.6% of successful bids needed ≤1 raise (51 players). Strategy: identify uncapped / undervalued names early, don't engage in wars unless the player fills a declared gap.",
+    "**Marquee misses are often margin calls, not budget failures** — 45 losses where the winner paid ≤₹0.50 Cr more (Andrew Tye, Barinder Sran, Pat Cummins, Moeen Ali). CSK likely had the right target but exited one increment early — auction-room hesitation on premium names, not wrong profiling.",
+    "**Premium band (≥₹5 Cr) is CSK's weakest zone** — only 31.7% win rate. When CSK chases expensive overseas batters or strike bowlers, multiple franchises pile in. Historical pattern: commit a hard ceiling pre-auction or pivot to Plan B in the same role at ₹3–4 Cr.",
+    "**2018 mega auction (2018–2018)**: Wide net — entered many bid sheets (mega-auction / full rebuild mode). Bowling-first shopping list — depth and strike options prioritized.",
+    "**2019–2021 retention era (2019–2021)**: Bowling-first shopping list — depth and strike options prioritized. Value sniper — 7/12 wins at ≤1 bid (no fight).",
+    "**2022 mega rebuild (2022–2022)**: Wide net — entered many bid sheets (mega-auction / full rebuild mode). Bowling-first shopping list — depth and strike options prioritized.",
+    "**2023–2024 surgical window (2023–2024)**: Flexibility-first — chased multi-role profiles for balance. Heavy overseas focus (46.4% of targets).",
+    "**2025–2026 core + overseas hunt (2025–2026)**: Wide net — entered many bid sheets (mega-auction / full rebuild mode). Bowling-first shopping list — depth and strike options prioritized."
+  ],
+  "forward_playbook": [
+    "Run a two-tier purse model: Tier A (2 slots, ₹20+ Cr combined ceiling) for declared gaps only; Tier B (remaining purse) for snipe targets at ≤₹2 Cr — this mirrors CSK's highest win-rate band.",
+    "Double down on Value band (≤₹1 Cr): 84.0% career win rate on 50 targets — assign a dedicated scout list of 15 names before the auction.",
+    "Track RCB purse in real time — career leader in beating CSK (13 wins on shared targets).",
+    "Wicket Keeper: 33.3% career win rate despite 24 chases — stop entering late; either lead the bid or pre-identify alternate profile.",
+    "Overseas premium plan: pick max 2 overseas marquee targets pre-auction with absolute ceilings; maintain 3 same-role backups at 40–50% of that price — CSK loses overseas wars when improvising.",
+    "Post-auction review metric: track 'close loss' count (≤₹0.5 Cr gap) — if >3 in a window, train auctioneer on increment discipline for Tier A names."
+  ],
+  "yearly_trends": [
+    {
+      "year": 2018,
+      "targets": 39,
+      "won": 22,
+      "win_rate_pct": 56.4,
+      "spend_won_cr": 40.5,
+      "top_role_chased": "Bowler"
+    },
+    {
+      "year": 2019,
+      "targets": 7,
+      "won": 2,
+      "win_rate_pct": 28.6,
+      "spend_won_cr": 5.2,
+      "top_role_chased": "Bowler"
+    },
+    {
+      "year": 2020,
+      "targets": 5,
+      "won": 4,
+      "win_rate_pct": 80.0,
+      "spend_won_cr": 14.45,
+      "top_role_chased": "Bowler"
+    },
+    {
+      "year": 2021,
+      "targets": 7,
+      "won": 6,
+      "win_rate_pct": 85.7,
+      "spend_won_cr": 17.35,
+      "top_role_chased": "All Rounder"
+    },
+    {
+      "year": 2022,
+      "targets": 50,
+      "won": 21,
+      "win_rate_pct": 42.0,
+      "spend_won_cr": 45.05,
+      "top_role_chased": "Bowler"
+    },
+    {
+      "year": 2023,
+      "targets": 16,
+      "won": 7,
+      "win_rate_pct": 43.8,
+      "spend_won_cr": 18.95,
+      "top_role_chased": "All Rounder"
+    },
+    {
+      "year": 2024,
+      "targets": 12,
+      "won": 6,
+      "win_rate_pct": 50.0,
+      "spend_won_cr": 30.4,
+      "top_role_chased": "Bowler"
+    },
+    {
+      "year": 2025,
+      "targets": 45,
+      "won": 20,
+      "win_rate_pct": 44.4,
+      "spend_won_cr": 54.95,
+      "top_role_chased": "Bowler"
+    },
+    {
+      "year": 2026,
+      "targets": 16,
+      "won": 9,
+      "win_rate_pct": 56.2,
+      "spend_won_cr": 41.0,
+      "top_role_chased": "All Rounder"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2023,PBKS,65,Sunrisers Hyderabad,Shivam Singh,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Mohit Rathee,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Vidhwath Kaverappa,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Harpreet Singh Bhatia,Batter,India,3,40.00 L,0.4,won,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Mukesh Kumar,Bowler,India,13,5.25 Cr,5.25,lost,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Yash Thakur,Bowler,India,3,40.00 L,0.4,lost,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Mayank Agarwal,Batter,India,10,3.60 Cr,3.6,lost,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Sikandar Raza,Allrounder,Zimbabwe,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,PBKS,65,Sunrisers Hyderabad,Sam Curran,Allrounder,England,11,18.50 Cr,18.5,won,cricbuzz_all_bids_playwright

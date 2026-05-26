@@ -1,0 +1,13 @@
+.env
+*.db
+auction_data.db
+api/auction_data.db
+models/*.joblib
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+data/player_portraits/*
+!data/player_portraits/.gitkeep
+!data/player_portraits/manifest.json

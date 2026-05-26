@@ -1,0 +1,8 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2023,GT,971,Sunrisers Hyderabad,Mohit Sharma,Bowler,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,GT,971,Sunrisers Hyderabad,Joshua Little,Bowler,Ireland,17,4.40 Cr,4.4,won,cricbuzz_all_bids_playwright
+2023,GT,971,Sunrisers Hyderabad,Urvil Patel,WK-Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2023,GT,971,Sunrisers Hyderabad,Shivam Mavi,Bowler,India,15,6.00 Cr,6.0,won,cricbuzz_all_bids_playwright
+2023,GT,971,Sunrisers Hyderabad,Srikar Bharat,WK-Batter,India,9,1.20 Cr,1.2,won,cricbuzz_all_bids_playwright
+2023,GT,971,Sunrisers Hyderabad,Odean Smith,Allrounder,West Indies,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2023,GT,971,Sunrisers Hyderabad,Kane Williamson,Batter,New Zealand,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright

@@ -1,0 +1,14 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2024,GT,971,Sunrisers Hyderabad,Robin Minz,WK-Batter,India,8,3.60 Cr,3.6,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Spencer Johnson,Bowler,Australia,31,10.00 Cr,10.0,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Manav Suthar,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Kartik Tyagi,Bowler,India,2,60.00 L,0.6,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Sushant Mishra,Bowler,India,14,2.20 Cr,2.2,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Yash Dayal,Bowler,India,21,4.80 Cr,4.8,lost,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Kumar Kushagra,WK-Batter,India,26,7.00 Cr,7.0,lost,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Shahrukh Khan,Allrounder,India,25,7.40 Cr,7.4,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Sameer Rizvi,Batter,India,27,7.40 Cr,7.4,lost,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Mitchell Starc,Bowler,Australia,30,24.50 Cr,24.5,lost,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Umesh Yadav,Bowler,India,10,5.80 Cr,5.8,won,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Harshal Patel,Bowler,India,22,10.50 Cr,10.5,lost,cricbuzz_all_bids_playwright
+2024,GT,971,Sunrisers Hyderabad,Azmatullah Omarzai,Allrounder,Afghanistan,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright

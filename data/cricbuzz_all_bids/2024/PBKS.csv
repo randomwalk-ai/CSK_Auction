@@ -1,0 +1,12 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2024,PBKS,65,Sunrisers Hyderabad,Rilee Rossouw,Batter,South Africa,16,8.00 Cr,8.0,won,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Prince Choudhary,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Tanay Thyagarajan,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Vishwanath Singh,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Ashutosh Sharma,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Shashank Singh,Allrounder,India,1,20.00 L,0.2,lost,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Shahrukh Khan,Allrounder,India,25,7.20 Cr,7.2,lost,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Chris Woakes,Allrounder,England,6,4.20 Cr,4.2,won,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Daryl Mitchell,Allrounder,New Zealand,33,13.75 Cr,13.75,lost,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Rachin Ravindra,Allrounder,New Zealand,4,1.70 Cr,1.7,lost,cricbuzz_all_bids_playwright
+2024,PBKS,65,Sunrisers Hyderabad,Harshal Patel,Bowler,India,25,11.75 Cr,11.75,won,cricbuzz_all_bids_playwright

@@ -1,0 +1,14 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,DC,61,Sunrisers Hyderabad,Kyle Jamieson,Bowler,New Zealand,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Adam Milne,Bowler,New Zealand,1,2.20 Cr,2.2,lost,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Prithvi Shaw,Batter,India,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Sahil Parakh,Batter,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Lungi Ngidi,Bowler,South Africa,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Mustafizur Rahman,Bowler,Bangladesh,9,5.20 Cr,5.2,lost,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Pathum Nissanka,Batter,Sri Lanka,13,4.00 Cr,4.0,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Sushant Mishra,Bowler,India,2,45.00 L,0.45,lost,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Naman Tiwari,Bowler,India,2,40.00 L,0.4,lost,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Auqib Nabi Dar,Allrounder,India,29,8.40 Cr,8.4,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Matheesha Pathirana,Bowler,Sri Lanka,35,15.60 Cr,15.6,lost,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,Ben Duckett,WK-Batter,England,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,DC,61,Sunrisers Hyderabad,David Miller,Batter,South Africa,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright

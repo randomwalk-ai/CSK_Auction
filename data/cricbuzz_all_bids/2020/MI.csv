@@ -1,0 +1,11 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2020,MI,62,Sunrisers Hyderabad,Prince Balwant Rai,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Digvijay Deshmukh,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Mohsin Khan,Bowler,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Saurabh Tiwary,Batter,India,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Ravi Bishnoi,Bowler,India,13,1.90 Cr,1.9,lost,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Yashasvi Jaiswal,Batter,India,6,70.00 L,0.7,lost,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Piyush Chawla,Bowler,India,3,1.40 Cr,1.4,lost,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Nathan Coulter-Nile,Bowler,Australia,19,8.00 Cr,8.0,won,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Chris Morris,Allrounder,South Africa,4,9.75 Cr,9.75,lost,cricbuzz_all_bids_playwright
+2020,MI,62,Sunrisers Hyderabad,Chris Lynn,Batter,Australia,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright

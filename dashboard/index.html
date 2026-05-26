@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSK | IPL Auction Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=21">
+</head>
+<body>
+    <div class="app-shell">
+        <!-- Executive header -->
+        <header class="exec-header">
+            <div class="exec-header-inner">
+                <div class="brand-block">
+                    <div class="brand-mark">CSK</div>
+                    <div class="brand-text">
+                        <h1>Chennai Super Kings</h1>
+                        <p>IPL Auction Intelligence Platform</p>
+                    </div>
+                </div>
+                <div class="header-meta">
+                    <span class="meta-chip meta-chip--live">Auction Ready</span>
+                    <span class="meta-date" id="lastUpdate">Loading…</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-container">
+            <!-- Executive KPI strip -->
+            <section class="kpi-strip" aria-label="Squad overview">
+                <div class="kpi-card">
+                    <span class="kpi-label">Squad</span>
+                    <span class="kpi-value" id="kpiSquadSize">0 / 25</span>
+                    <span class="kpi-sub" id="kpiPlayingXi">Playing XI: 0</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Purse Used</span>
+                    <span class="kpi-value" id="kpiPursePct">0%</span>
+                    <div class="budget-bar"><div class="budget-bar-fill" id="budgetBarFill"></div></div>
+                </div>
+                <div class="kpi-card kpi-card--roles">
+                    <span class="kpi-label">Role Balance</span>
+                    <div class="role-pills" id="kpiRolePills">
+                        <span class="role-pill role-pill--bat">BAT 0</span>
+                        <span class="role-pill role-pill--bowl">BOWL 0</span>
+                        <span class="role-pill role-pill--ar">AR 0</span>
+                        <span class="role-pill role-pill--wk">WK 0</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Overseas</span>
+                    <span class="kpi-value" id="kpiOverseas">0 / 8</span>
+                    <span class="kpi-sub">Max 8 slots</span>
+                </div>
+            </section>
+
+            <!-- Purse cards -->
+            <section class="purse-grid" aria-label="Budget">
+                <div class="purse-card purse-card--total">
+                    <div class="purse-icon">₹</div>
+                    <div>
+                        <div class="purse-label">Total Purse</div>
+                        <div class="purse-value">125 Cr</div>
+                    </div>
+                </div>
+                <div class="purse-card purse-card--spent">
+                    <div class="purse-icon">↓</div>
+                    <div>
+                        <div class="purse-label">Committed</div>
+                        <div class="purse-value" id="spentAmount">₹0 Cr</div>
+                    </div>
+                </div>
+                <div class="purse-card purse-card--remain">
+                    <div class="purse-icon">✓</div>
+                    <div>
+                        <div class="purse-label">Available</div>
+                        <div class="purse-value" id="remainingAmount">₹125 Cr</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="nav-block">
+                <nav class="nav-tabs" aria-label="Dashboard sections">
+                    <button class="nav-tab active" data-tab="squad">
+                        <span class="nav-tab-icon">◆</span> Squad
+                    </button>
+                    <button class="nav-tab" data-tab="bidadvisor">
+                        <span class="nav-tab-icon">◆</span> Bid Advisor
+                    </button>
+                    <button class="nav-tab" data-tab="players">
+                        <span class="nav-tab-icon">◆</span> Scout
+                    </button>
+                    <button class="nav-tab" data-tab="arena">
+                        <span class="nav-tab-icon">◎</span> Arena
+                    </button>
+                    <button class="nav-tab" data-tab="compare">
+                        <span class="nav-tab-icon">◆</span> Compare
+                    </button>
+                    <button class="nav-tab" data-tab="valuation">
+                        <span class="nav-tab-icon">◆</span> Valuation
+                    </button>
+                </nav>
+                <p class="nav-hint" id="tabHint">Build your retained XI, then use Bid Advisor when a player comes up at auction.</p>
+            </div>
+
+            <main id="contentArea" class="content-area">
+                <div class="loading">Loading…</div>
+            </main>
+
+            <div id="apiStatusWarn" class="file-protocol-warn" hidden></div>
+            <div id="fileProtocolWarn" class="file-protocol-warn" hidden></div>
+
+            <footer class="exec-footer">
+                CSK Auction Intelligence · Valuation Engine + Bid History 2018–2026 · For internal auction planning
+            </footer>
+        </div>
+    </div>
+
+    <script src="avatars.js?v=17"></script>
+    <script src="arena.js?v=21"></script>
+    <script src="script.js?v=15"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "n_samples": 351,
+  "n_train": 280,
+  "n_test": 71,
+  "mae_cr": 1.567,
+  "r2": -0.007,
+  "best_params": {
+    "gbr__learning_rate": 0.05,
+    "gbr__max_depth": 3,
+    "gbr__min_samples_leaf": 4,
+    "gbr__n_estimators": 80
+  }
+}

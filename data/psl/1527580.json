@@ -1,0 +1,2894 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2026-04-20",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Karachi",
+    "dates": [
+      "2026-04-19"
+    ],
+    "event": {
+      "name": "Pakistan Super League",
+      "match_number": 29
+    },
+    "gender": "male",
+    "match_type": "T20",
+    "officials": {
+      "match_referees": [
+        "Kamran Chaudary"
+      ],
+      "reserve_umpires": [
+        "Nasir Hussain"
+      ],
+      "tv_umpires": [
+        "A Paleker"
+      ],
+      "umpires": [
+        "CM Brown",
+        "Faisal Afridi"
+      ]
+    },
+    "outcome": {
+      "winner": "Peshawar Zalmi",
+      "by": {
+        "runs": 118
+      }
+    },
+    "overs": 20,
+    "player_of_match": [
+      "Babar Azam"
+    ],
+    "players": {
+      "Peshawar Zalmi": [
+        "Mohammad Haris",
+        "Babar Azam",
+        "BKG Mendis",
+        "Farhan Yousaf",
+        "AM Hardie",
+        "MG Bracewell",
+        "Iftikhar Ahmed",
+        "Abdul Samad",
+        "Sufiyan Muqeem",
+        "Mohammad Basit",
+        "Ali Raza"
+      ],
+      "Quetta Gladiators": [
+        "Shamyl Hussain",
+        "Saud Shakeel",
+        "RR Rossouw",
+        "Hassan Nawaz",
+        "LD Chandimal",
+        "BJ Jacobs",
+        "Jahandad Khan",
+        "Saqib Khan",
+        "AS Joseph",
+        "Abrar Ahmed",
+        "Usman Tariq"
+      ]
+    },
+    "registry": {
+      "people": {
+        "A Paleker": "634b11ac",
+        "AM Hardie": "d405c0d5",
+        "AS Joseph": "b0946605",
+        "Aamer Jamal": "a8e54ef4",
+        "Abdul Samad": "8e554b6b",
+        "Abrar Ahmed": "abb7c76c",
+        "Ali Raza": "53834b36",
+        "BJ Jacobs": "972f217b",
+        "BKG Mendis": "5d1e7582",
+        "Babar Azam": "8a75e999",
+        "CM Brown": "448f4f1c",
+        "Faisal Afridi": "ed0bc503",
+        "Farhan Yousaf": "2d4dc51e",
+        "Hassan Nawaz": "26a8b2fe",
+        "Iftikhar Ahmed": "29e253dd",
+        "Jahandad Khan": "22d73540",
+        "Kamran Chaudary": "77817be7",
+        "LD Chandimal": "8dd02a98",
+        "MG Bracewell": "e38bce7a",
+        "Mohammad Basit": "3cbef804",
+        "Mohammad Haris": "ff3f6fc1",
+        "Nasir Hussain": "5b2fe85b",
+        "RR Rossouw": "cad00a4d",
+        "Saqib Khan": "8a8d0649",
+        "Saud Shakeel": "d07c1b2f",
+        "Shamyl Hussain": "d3395043",
+        "Sufiyan Muqeem": "4277234d",
+        "Usman Tariq": "e94d1dcd"
+      }
+    },
+    "season": "2026",
+    "team_type": "club",
+    "teams": [
+      "Peshawar Zalmi",
+      "Quetta Gladiators"
+    ],
+    "toss": {
+      "decision": "field",
+      "winner": "Quetta Gladiators"
+    },
+    "venue": "National Stadium, Karachi"
+  },
+  "innings": [
+    {
+      "team": "Peshawar Zalmi",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "Jahandad Khan",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Mohammad Haris",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "Jahandad Khan",
+              "extras": {
+                "wides": 5
+              },
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 5,
+                "total": 5
+              }
+            },
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "Mohammad Haris",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "Mohammad Haris",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "Mohammad Haris",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Mohammad Haris",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Mohammad Haris",
+                  "fielders": [
+                    {
+                      "name": "LD Chandimal"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saud Shakeel",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saqib Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saqib Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saqib Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saqib Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saqib Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saqib Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saqib Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saqib Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saqib Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saqib Khan",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saqib Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saqib Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saud Shakeel",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saud Shakeel",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Saud Shakeel",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Saud Shakeel",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BKG Mendis",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "BKG Mendis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "BKG Mendis",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "BKG Mendis",
+                  "fielders": [
+                    {
+                      "name": "Hassan Nawaz"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "Farhan Yousaf",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Farhan Yousaf",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Farhan Yousaf",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Farhan Yousaf",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Farhan Yousaf",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Farhan Yousaf",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Farhan Yousaf",
+                  "fielders": [
+                    {
+                      "name": "Hassan Nawaz"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "Abrar Ahmed",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "Usman Tariq",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Usman Tariq",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "AS Joseph",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "AS Joseph",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "AM Hardie",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "Jahandad Khan",
+              "extras": {
+                "byes": 1
+              },
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AM Hardie",
+              "bowler": "Jahandad Khan",
+              "non_striker": "Babar Azam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Babar Azam",
+              "bowler": "Jahandad Khan",
+              "non_striker": "AM Hardie",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        }
+      ],
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ]
+    },
+    {
+      "team": "Quetta Gladiators",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Saud Shakeel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Saud Shakeel",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Saud Shakeel",
+                  "fielders": [
+                    {
+                      "name": "Aamer Jamal",
+                      "substitute": true
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "RR Rossouw",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "RR Rossouw",
+                  "fielders": [
+                    {
+                      "name": "MG Bracewell"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Hassan Nawaz",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Hassan Nawaz",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Hassan Nawaz",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Hassan Nawaz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Hassan Nawaz",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Hassan Nawaz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Hassan Nawaz",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Hassan Nawaz",
+              "bowler": "Iftikhar Ahmed",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Hassan Nawaz",
+              "bowler": "Ali Raza",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Hassan Nawaz",
+              "bowler": "Ali Raza",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Hassan Nawaz",
+                  "fielders": [
+                    {
+                      "name": "Mohammad Haris"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "Ali Raza",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "Ali Raza",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "Ali Raza",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "Ali Raza",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "MG Bracewell",
+              "non_striker": "Shamyl Hussain",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shamyl Hussain",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Shamyl Hussain",
+                  "fielders": [
+                    {
+                      "name": "Babar Azam"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Ali Raza",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Ali Raza",
+              "extras": {
+                "byes": 4
+              },
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Ali Raza",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Ali Raza",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Ali Raza",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Ali Raza",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "LD Chandimal",
+              "bowler": "MG Bracewell",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "MG Bracewell",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "MG Bracewell",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "MG Bracewell",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "MG Bracewell",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "LD Chandimal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "LD Chandimal",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "LD Chandimal",
+                  "fielders": [
+                    {
+                      "name": "Farhan Yousaf"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Jahandad Khan",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "Jahandad Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Jahandad Khan",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Jahandad Khan",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Jahandad Khan",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "AM Hardie",
+              "non_striker": "Jahandad Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Jahandad Khan",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Jahandad Khan",
+                  "fielders": [
+                    {
+                      "name": "BKG Mendis"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Saqib Khan",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Saqib Khan",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Saqib Khan",
+                  "fielders": [
+                    {
+                      "name": "Mohammad Haris"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "AS Joseph",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Sufiyan Muqeem",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "AM Hardie",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "AM Hardie",
+              "extras": {
+                "legbyes": 4
+              },
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "AM Hardie",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "AM Hardie",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "AM Hardie",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "AS Joseph",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Mohammad Basit",
+              "non_striker": "BJ Jacobs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Mohammad Basit",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BJ Jacobs",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "BJ Jacobs",
+                  "fielders": [
+                    {
+                      "name": "Iftikhar Ahmed"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Abrar Ahmed",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Abrar Ahmed",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Abrar Ahmed",
+              "bowler": "Ali Raza",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Abrar Ahmed",
+                  "fielders": [
+                    {
+                      "name": "BKG Mendis"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Ali Raza",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Ali Raza",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Ali Raza",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Ali Raza",
+              "non_striker": "Usman Tariq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Ali Raza",
+              "non_striker": "Usman Tariq",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Mohammad Basit",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Mohammad Basit",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AS Joseph",
+              "bowler": "Mohammad Basit",
+              "non_striker": "Usman Tariq",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Sufiyan Muqeem",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Usman Tariq",
+              "bowler": "Ali Raza",
+              "non_striker": "AS Joseph",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Usman Tariq",
+                  "fielders": [
+                    {
+                      "name": "Farhan Yousaf"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ],
+      "target": {
+        "overs": 20,
+        "runs": 256
+      }
+    }
+  ]
+}

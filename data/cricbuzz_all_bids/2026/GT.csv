@@ -1,0 +1,10 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2026,GT,971,Sunrisers Hyderabad,Luke Wood,Bowler,England,1,75.00 L,0.75,won,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Prithvi Raj Yarra,Bowler,India,1,30.00 L,0.3,won,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Tom Banton,WK-Batter,England,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Jack Edwards,Allrounder,Australia,8,1.50 Cr,1.5,lost,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Ben Dwarshuis,Allrounder,Australia,3,4.20 Cr,4.2,lost,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Liam Livingstone,Allrounder,England,3,4.00 Cr,4.0,lost,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Jason Holder,Allrounder,West Indies,13,7.00 Cr,7.0,won,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Ashok Sharma,Bowler,India,2,90.00 L,0.9,won,cricbuzz_all_bids_playwright
+2026,GT,971,Sunrisers Hyderabad,Venkatesh Iyer,Allrounder,India,2,2.60 Cr,2.6,lost,cricbuzz_all_bids_playwright

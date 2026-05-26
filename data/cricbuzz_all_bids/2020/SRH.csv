@@ -1,0 +1,8 @@
+year,viewing_team_code,viewing_team_id,viewing_team_name,player_name,role,country,num_bids,last_bid_raw,last_bid_cr,bid_war,source
+2020,SRH,255,Sunrisers Hyderabad,Sanjay Yadav,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,SRH,255,Sunrisers Hyderabad,Abdul Samad,Batter,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,SRH,255,Sunrisers Hyderabad,Fabian Allen,Allrounder,West Indies,1,50.00 L,0.5,won,cricbuzz_all_bids_playwright
+2020,SRH,255,Sunrisers Hyderabad,Bavanaka Sandeep,Allrounder,India,1,20.00 L,0.2,won,cricbuzz_all_bids_playwright
+2020,SRH,255,Sunrisers Hyderabad,Mitchell Marsh,Allrounder,Australia,1,2.00 Cr,2.0,won,cricbuzz_all_bids_playwright
+2020,SRH,255,Sunrisers Hyderabad,Priyam Garg,Batter,India,13,1.90 Cr,1.9,won,cricbuzz_all_bids_playwright
+2020,SRH,255,Sunrisers Hyderabad,Virat Singh,Allrounder,India,13,1.90 Cr,1.9,won,cricbuzz_all_bids_playwright

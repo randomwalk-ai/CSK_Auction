@@ -7,12 +7,13 @@ Flow:
   3. Cache image in player_portraits + data/player_portraits/
   4. Else → initials SVG only
 
-Priority (first hit wins):
-  1. ESPN Cricinfo (uniform square headshots via hscicdn)
-  2. Cricbuzz CDN (player ID from auction_prices_full)
-  3. TheSportsDB strThumb (cricket + name match)
-  4. Wikipedia / Wikimedia (verified cricketer page)
-  5. Initials SVG fallback
+Portrait fetch priority (arena / avatar API — no Cricbuzz):
+  1. IPL face card URL when stored (see ipl_facecards; arena uses CDN directly)
+  2. ESPN Cricinfo (only when no IPL face card)
+  3. Initials SVG fallback
+
+  Cricbuzz IDs in auction_prices_full are for auction data / name aliases only.
+  TheSportsDB and Wikipedia are not used for arena portraits.
 
 Name resolution (v3 — zero hardcoding):
   - Canonical names fetched live from Cricbuzz profile API using cricbuzz_player_id.
@@ -97,6 +98,9 @@ def _skip_espn_portraits() -> bool:
 
 def _use_cached_photo(cached: Optional[Tuple[bytes, str, str]]) -> bool:
     if not cached or cached[2] not in PHOTO_SOURCES:
+        return False
+    # Never serve Cricbuzz (or other non-ESPN CDN) for arena / avatar API
+    if cached[2] in ("cricbuzz", "thesportsdb", "wikipedia"):
         return False
     if cached[2] == "espncricinfo":
         return True
@@ -675,6 +679,11 @@ def _lookup_cricbuzz_id(conn: sqlite3.Connection, display_name: str) -> Optional
 
     return None
 
+def _skip_cricbuzz_portraits() -> bool:
+    """Always true — Cricbuzz is not used for player portraits (IPL → ESPN → initials)."""
+    return True
+
+
 def _cricbuzz_urls(player_id: str) -> List[str]:
     pid_s = quote(str(player_id).strip())
     try:
@@ -1217,39 +1226,28 @@ def _try_sources(
             seen.add(k)
             lookup_names.append(candidate)
 
-    # 1. ESPN Cricinfo (uniform headshots) — optional; often blocked without browser token
+    # 1. ESPN Cricinfo — only when no IPL face card (auction pool uses IPL CDN first)
     if not _skip_espn_portraits():
         try:
+            from ipl_facecards import has_ipl_facecard
             from espn_cricinfo import fetch_and_store_espn_portrait
-            espn_hit = fetch_and_store_espn_portrait(conn, client, display_name, force=False)
-            if espn_hit:
-                return espn_hit
-            if search_name != display_name:
-                espn_hit = fetch_and_store_espn_portrait(conn, client, search_name, force=False)
+
+            if not has_ipl_facecard(conn, display_name):
+                espn_hit = fetch_and_store_espn_portrait(conn, client, display_name, force=False)
                 if espn_hit:
                     return espn_hit
+                if search_name != display_name:
+                    espn_hit = fetch_and_store_espn_portrait(
+                        conn, client, search_name, force=False,
+                    )
+                    if espn_hit:
+                        return espn_hit
         except Exception as exc:
             logger.debug("ESPN portrait fetch failed for %s: %s", display_name, exc)
 
-    # 2. Cricbuzz
-    cric_id = None
-    for candidate in lookup_names:
-        cric_id = _lookup_cricbuzz_id(conn, candidate)
-        if cric_id:
-            break
-    if cric_id:
-        for url in _cricbuzz_urls(cric_id):
-            got = _download_image(client, url, headers=CRICBUZZ_HEADERS)
-            if got:
-                cached = _cache_portrait(
-                    conn, player_key=player_key, display_name=display_name,
-                    source="cricbuzz", image_url=url,
-                    content_type=got[1], image_data=got[0],
-                )
-                if cached:
-                    return cached
+    # Cricbuzz portraits disabled (_skip_cricbuzz_portraits always True)
 
-    # 3. TheSportsDB
+    # 3. TheSportsDB (not used for arena — kept for legacy warm_portrait_cache only)
     sports_url = _thesportsdb_thumb(client, search_name, conn=conn)
     for candidate in lookup_names[1:]:
         if sports_url:
@@ -1303,8 +1301,10 @@ def fetch_cricbuzz_portrait_only(
 ) -> Optional[Tuple[bytes, str, str]]:
     """
     Fetch portrait from Cricbuzz CDN using cricbuzz_player_id in auction_prices_full.
-    Does not call ESPN, TheSportsDB, or Wikipedia.
+    Disabled for arena — returns None when _skip_cricbuzz_portraits() is True.
     """
+    if _skip_cricbuzz_portraits():
+        return None
     clean = display_name.strip()
     if not clean:
         return None
@@ -1378,11 +1378,29 @@ def fetch_and_cache_portrait(
         conn = _connect()
     assert conn is not None
     try:
+        from ipl_facecards import has_ipl_facecard
+
+        if has_ipl_facecard(conn, clean):
+            cached = _read_cache(conn, player_key)
+            if cached and cached[2] == "initials":
+                return cached
+            svg = initials_svg(clean)
+            _write_cache(
+                conn,
+                player_key=player_key,
+                display_name=clean,
+                source="initials",
+                image_url=None,
+                content_type="image/svg+xml",
+                image_data=svg,
+            )
+            return svg, "image/svg+xml", "initials"
+
         cached = _read_cache(conn, player_key)
         if _use_cached_photo(cached):
             return cached
         local = _read_local_portrait(player_key)
-        if local and local[2] in PHOTO_SOURCES:
+        if local and local[2] in PHOTO_SOURCES and local[2] not in ("cricbuzz", "thesportsdb", "wikipedia"):
             if local[2] == "espncricinfo" or not _prefer_espn_portraits():
                 data, ct, source = local
                 _write_cache(conn, player_key=player_key, display_name=clean,

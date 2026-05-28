@@ -17,6 +17,7 @@ from war_room import load_bids_df, normalize_role
 
 from player_loader import get_player_stats, normalize_player_name
 from player_portrait_store import _normalize_key
+from espn_cricinfo import espn_uniform_url_map
 from ipl_facecards import facecard_url_map
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -253,10 +254,13 @@ def auction_pool_players(
 
     names = [str(r["player_name"]).strip() for _, r in yr.iterrows()]
     facecards = facecard_url_map(conn, names)
+    no_facecard_names = [n for n in names if not facecards.get(_normalize_key(n))]
+    espn_urls = espn_uniform_url_map(conn, no_facecard_names)
 
     out: List[Dict[str, Any]] = []
     for _, row in yr.iterrows():
         name = str(row["player_name"]).strip()
+        pkey = _normalize_key(name)
         stats = _stats_for_bid_player(conn, name)
         auction_role = str(row.get("role") or "")
         pool_role = _resolve_pool_role(name, auction_role, stats, year)
@@ -285,7 +289,8 @@ def auction_pool_players(
             "bubble_price_cr": bubble,
             "has_stats": stats is not None,
             "has_bid_data": bid_cr > 0 or int(row.get("num_bids") or 0) > 0,
-            "facecard_url": facecards.get(_normalize_key(name)),
+            "facecard_url": facecards.get(pkey),
+            "espn_portrait_url": espn_urls.get(pkey) if not facecards.get(pkey) else None,
         }
         if filt == "inform" and (rec.get("form_rating") or 0) <= 60:
             continue

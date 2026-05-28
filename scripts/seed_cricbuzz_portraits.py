@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Fetch Cricbuzz portraits for IPL 2026 auction pool players.
+DEPRECATED — Cricbuzz portraits are disabled for arena/dashboard (IPL → ESPN → initials).
 
-Uses cricbuzz_player_id from auction_prices_full (seed via seed_missing_cricbuzz_ids.py).
-Reuses player_portrait_store URL patterns and DB cache — no extra packages.
+This script no-ops while player_portrait_store._skip_cricbuzz_portraits() is always True.
+Auction data may still use cricbuzz_player_id from auction_prices_full.
 
 Usage (from auction-data-pipeline/):
   python3 scripts/seed_missing_cricbuzz_ids.py --apply
@@ -50,6 +50,12 @@ def _load_players(limit: int = 0, only: str = "") -> list[str]:
 
 
 def main() -> int:
+    from player_portrait_store import _skip_cricbuzz_portraits
+
+    if _skip_cricbuzz_portraits():
+        print("Cricbuzz portraits are disabled. Use seed_ipl_facecards.py and seed_espn_portraits.py.")
+        return 0
+
     parser = argparse.ArgumentParser(
         description="Seed Cricbuzz portraits for auction pool (ID-based CDN)",
     )

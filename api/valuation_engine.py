@@ -650,8 +650,9 @@ class ValuationResult:
     rule_based_value: Optional[float] = None
     ml_predicted_value: Optional[float] = None
     ml_confidence: Optional[int] = None
+    observability: Optional[Dict] = None
 
-    def to_api_dict(self) -> Dict:
+    def to_api_dict(self, *, include_observability: bool = False) -> Dict:
         d = {
             "player_name": self.player_name,
             "role": self.role,
@@ -692,6 +693,8 @@ class ValuationResult:
             d["rule_based_value"] = self.rule_based_value
             d["ml_confidence"] = self.ml_confidence
             d["pricing_method"] = self.pricing_method
+        if include_observability and self.observability:
+            d["observability"] = self.observability
         return d
 
 
@@ -728,6 +731,8 @@ class FranchiseValuationEngine:
         exp_factor = risk["experience_factor"]
         elite = is_elite_player(player)
         hist = self.market_model.get_historical_price(player.get("player_name", ""))
+        hist_weight = 0.0
+        w_ml = 0.0
 
         # Dampen z-score for small samples; allow more signal for elite players
         if elite:
@@ -780,6 +785,9 @@ class FranchiseValuationEngine:
             hist_weight = _clamp(0.30 + 0.40 * exp_factor + (0.15 if elite else 0), 0.35, 0.75)
             median = median * (1 - hist_weight) + hist * hist_weight
 
+        rule_median_pre_floor = median
+        if median < PRICE_MIN:
+            median = PRICE_MIN
         rule_median = median
         ml_price: Optional[float] = None
         ml_conf = 0
@@ -788,18 +796,26 @@ class FranchiseValuationEngine:
         if self.ml_model and self.ml_model.is_ready():
             ml_price, ml_conf = self.ml_model.predict(player, role)
             if ml_conf >= 25:
+                from model_observability import ml_model_health
+
+                ml_trusted = ml_model_health(getattr(self.ml_model, "metrics", None)).get(
+                    "trusted", False
+                )
                 # Learned auction prices blended with rule engine (guardrails stay on rule side)
                 w_ml = 0.55 if matches >= 30 and not elite else 0.40
                 if matches < 20:
                     w_ml = 0.22  # uncapped: mostly rules + shrinkage
                 if hist:
                     w_ml *= 0.45
-                median = (1 - w_ml) * rule_median + w_ml * ml_price
-                pricing_method = "ml_rules_blend"
-                # Re-apply uncapped caps after ML blend
-                if not hist and not elite and matches < 20:
-                    uncapped_cap = market["p50"] * scarcity * (1.15 + 0.35 * exp_factor)
-                    median = min(median, uncapped_cap)
+                if not ml_trusted:
+                    # Negative R² / thin training — keep ML in observability only, not pricing
+                    w_ml = 0.0
+                if w_ml > 0:
+                    median = (1 - w_ml) * rule_median + w_ml * ml_price
+                    pricing_method = "ml_rules_blend"
+                    if not hist and not elite and matches < 20:
+                        uncapped_cap = market["p50"] * scarcity * (1.15 + 0.35 * exp_factor)
+                        median = min(median, uncapped_cap)
 
         median = round(_clamp(median, PRICE_MIN, PRICE_MAX), 2)
 
@@ -812,6 +828,43 @@ class FranchiseValuationEngine:
         p90 = round(_clamp(median + 1.28 * spread, PRICE_MIN, PRICE_MAX), 2)
 
         verdict = derive_verdict(csk_fit, median, risk["confidence"], risk, metadata, hist)
+
+        ml_metrics = getattr(self.ml_model, "metrics", None) if self.ml_model else None
+        from model_observability import build_valuation_observability
+
+        observability = build_valuation_observability(
+            player=player,
+            metadata=metadata,
+            role=role,
+            role_detail=role_detail,
+            risk=risk,
+            market=market,
+            scarcity=scarcity,
+            market_premium=market_premium,
+            effective_z=effective_z,
+            raw_z=z,
+            elite=elite,
+            age_mult=age_mult,
+            age_upside=age_upside,
+            form_norm=form_norm,
+            form_bucket=form_bucket,
+            form_adj=form_adj,
+            csk_fit=csk_fit,
+            csk_adj=csk_adj,
+            rule_median=rule_median,
+            rule_median_pre_floor=rule_median_pre_floor,
+            ml_price=ml_price,
+            ml_conf=ml_conf,
+            w_ml=w_ml,
+            pricing_method=pricing_method,
+            hist=hist,
+            hist_weight=hist_weight,
+            shrink_weight=shrink_weight,
+            prior_anchor=prior_anchor,
+            median=median,
+            verdict=verdict,
+            ml_metrics=ml_metrics,
+        )
 
         return ValuationResult(
             player_name=player.get("player_name", ""),
@@ -850,4 +903,5 @@ class FranchiseValuationEngine:
             rule_based_value=round(rule_median, 2),
             ml_predicted_value=ml_price,
             ml_confidence=ml_conf if ml_price else None,
+            observability=observability,
         )

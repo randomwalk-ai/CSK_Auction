@@ -83,7 +83,11 @@ def main() -> int:
                     print(f"  [{idx}] MISS   {name}  (not on IPL squad pages)")
                     continue
 
-                url, year = find_working_facecard_url(client, match["id"])
+                url, year = find_working_facecard_url(
+                    client,
+                    match["id"],
+                    prefer_url=match.get("facecard_url"),
+                )
                 if not url:
                     miss += 1
                     print(

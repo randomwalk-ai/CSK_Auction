@@ -241,7 +241,12 @@ def _load_csk_squad_local(conn: sqlite3.Connection, auction_year: int = 2026) ->
     return squad
 
 
-def _build_valuation(conn: sqlite3.Connection, player_name: str) -> Dict:
+def _build_valuation(
+    conn: sqlite3.Connection,
+    player_name: str,
+    *,
+    include_observability: bool = False,
+) -> Dict:
     player = get_player_stats(conn, player_name)
     if not player:
         raise HTTPException(
@@ -250,7 +255,11 @@ def _build_valuation(conn: sqlite3.Connection, player_name: str) -> Dict:
         )
     metadata = get_player_metadata(player["player_name"], search_name=player_name)
     result = FranchiseValuationEngine(conn).valuate(player, metadata)
-    payload = result.to_api_dict()
+    if result.observability:
+        from model_observability import log_valuation_trace
+
+        log_valuation_trace(player["player_name"], result.observability)
+    payload = result.to_api_dict(include_observability=include_observability)
     payload["competition"] = player.get("competition", "ipl")
     payload["engine_version"] = "franchise_v2"
     return payload
@@ -697,13 +706,28 @@ def startup_warm_portraits() -> None:
 
 
 @app.get("/api/players/avatar")
-def player_avatar(name: str = Query(..., min_length=1)):
-    """Portrait metadata — served from player_portraits cache."""
+def player_avatar(
+    name: str = Query(..., min_length=1),
+    fallback: str | None = Query(
+        None,
+        description="When 'espn', skip IPL face card and use ESPN Cricinfo only",
+    ),
+):
+    """Portrait metadata — IPL CDN, else ESPN CDN, else same-origin /avatar/img."""
     from urllib.parse import quote
 
     clean = name.strip()
-    url, source = resolve_avatar(clean)
-    if source == "iplt20" and url:
+    skip_ipl = (fallback or "").strip().lower() in ("espn", "espncricinfo")
+    url, source = resolve_avatar(clean, skip_ipl=skip_ipl)
+    if source in ("iplt20", "espncricinfo") and url:
+        if source == "iplt20":
+            img_url = f"/api/players/facecard/img?name={quote(clean)}"
+            return {
+                "player_name": clean,
+                "url": img_url,
+                "img_url": img_url,
+                "source": source,
+            }
         return {
             "player_name": clean,
             "url": url,
@@ -719,6 +743,29 @@ def player_avatar(name: str = Query(..., min_length=1)):
     }
 
 
+@app.get("/api/players/facecard/img")
+def player_facecard_img(name: str = Query(..., min_length=1)):
+    """Same-origin proxy for IPL headshots (arena + dashboard)."""
+    from fastapi.responses import Response
+    from ipl_facecards import fetch_facecard_image_bytes
+
+    clean = name.strip()
+    hit = fetch_facecard_image_bytes(clean)
+    if not hit:
+        raise HTTPException(status_code=404, detail="No IPL face card for player")
+    data, content_type = hit
+    etag = hashlib.sha256(data).hexdigest()[:16]
+    return Response(
+        content=data,
+        media_type=content_type,
+        headers={
+            "Cache-Control": "public, max-age=86400, immutable",
+            "ETag": f'"{etag}"',
+            "X-Avatar-Source": "iplt20",
+        },
+    )
+
+
 @app.get("/api/players/avatar/img")
 def player_avatar_img(name: str = Query(..., min_length=1)):
     """Same-origin portrait bytes from player_portraits cache."""
@@ -729,7 +776,7 @@ def player_avatar_img(name: str = Query(..., min_length=1)):
     etag = hashlib.sha256(data).hexdigest()[:16]
     cache_control = (
         "public, max-age=86400, immutable"
-        if source in ("iplt20", "espncricinfo", "cricbuzz", "thesportsdb", "wikipedia")
+        if source in ("iplt20", "espncricinfo")
         else "no-cache, max-age=0"
     )
     return Response(
@@ -745,11 +792,17 @@ def player_avatar_img(name: str = Query(..., min_length=1)):
 
 @app.get("/api/players/valuation/{player_name}")
 @app.get("/api/v2/players/valuation/{player_name}")
-def player_valuation(player_name: str):
+def player_valuation(
+    player_name: str,
+    include_observability: bool = Query(
+        False,
+        description="Attach structured model trace (for scripts/ops, not dashboard UI)",
+    ),
+):
     conn = None
     try:
         conn = get_db()
-        return _build_valuation(conn, player_name)
+        return _build_valuation(conn, player_name, include_observability=include_observability)
     except HTTPException:
         raise
     except Exception as e:
@@ -948,6 +1001,49 @@ async def squad_gaps(retained: Optional[str] = Query(None), budget: float = Quer
             conn.close()
 
 
+@app.post("/api/squad/impact")
+@app.post("/api/v2/squad/impact")
+async def squad_impact(payload: Dict = Body(...)):
+    """
+    Who a pool player fills or upgrades vs current squad (CSK fit + gaps).
+    Body: { player, squad: [{name, role, price, country, retained?, price_verified?}], budget?, candidate_price_cr? }
+    """
+    conn = None
+    try:
+        player = (payload.get("player") or payload.get("player_name") or "").strip()
+        if not player:
+            raise HTTPException(status_code=400, detail="player required")
+        squad = payload.get("squad") or []
+        budget = float(payload.get("budget") or IPL_PURSE_CR)
+        candidate_price = payload.get("candidate_price_cr")
+        if candidate_price is not None:
+            candidate_price = float(candidate_price)
+
+        conn = get_db()
+
+        def metadata_fn(db_name: str, search_name: Optional[str] = None) -> Dict:
+            return get_player_metadata(db_name, search_name=search_name)
+
+        from squad_impact import squad_impact_insight
+
+        return squad_impact_insight(
+            conn,
+            player,
+            squad,
+            budget=budget,
+            candidate_price_cr=candidate_price,
+            metadata_fn=metadata_fn,
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("Squad impact error: %s", e)
+        raise HTTPException(status_code=500, detail="Squad impact failed")
+    finally:
+        if conn:
+            conn.close()
+
+
 @app.get("/api/war-room/strategy")
 def war_room_strategy(
     team: str = Query("CSK"),
@@ -958,6 +1054,36 @@ def war_room_strategy(
     return csk_strategy_summary(team=team.upper(), from_year=from_year, to_year=to_year)
 
 
+@app.get("/api/observability/model-health")
+@app.get("/api/v2/observability/model-health")
+def model_health():
+    """Ops snapshot: ML trust gate, engine version, last training metrics."""
+    from model_observability import ml_model_health
+
+    ml_info: Dict = {"trained": False}
+    try:
+        from ml_valuation import MLValuationModel, METRICS_PATH
+
+        m = MLValuationModel()
+        if m.is_ready():
+            ml_info = {"trained": True, **ml_model_health(m.metrics)}
+            ml_info["metrics"] = m.metrics
+        else:
+            ml_info = {"trained": False, "reason": "model_not_ready"}
+        ml_info["metrics_file"] = str(METRICS_PATH) if METRICS_PATH.exists() else None
+    except ImportError:
+        ml_info = {"trained": False, "error": "scikit-learn not installed"}
+    return {
+        "engine": "franchise_v2",
+        "war_room": "heuristic_v1",
+        "ml": ml_info,
+        "observability": {
+            "valuation_log_event": "valuation_trace",
+            "api_flag": "include_observability=1 on /api/players/valuation/{name}",
+        },
+    }
+
+
 @app.get("/api/war-room/decision")
 def war_room_decision(
     player: str = Query(..., description="Player on the block"),
@@ -966,6 +1092,7 @@ def war_room_decision(
     base_price: float = Query(2.0),
     auction_year: int = Query(2026),
     retained: Optional[str] = Query(None, description="Comma-separated squad from dashboard"),
+    include_observability: bool = Query(False, description="Attach valuation + bid decision trace"),
 ):
     """
     War Room quick-decision card: valuation + squad gaps + bid-history intelligence.
@@ -974,7 +1101,7 @@ def war_room_decision(
     conn = None
     try:
         conn = get_db()
-        valuation = _build_valuation(conn, player)
+        valuation = _build_valuation(conn, player, include_observability=include_observability)
 
         squad: List[Dict] = []
         if retained:
@@ -1001,6 +1128,13 @@ def war_room_decision(
             auction_year=auction_year,
         )
         decision["strategy_summary"] = csk_strategy_summary()
+        if include_observability:
+            from model_observability import build_bid_observability
+
+            decision["model_observability"] = {
+                "valuation": valuation.get("observability"),
+                "bid": build_bid_observability(valuation.get("observability"), decision),
+            }
         return decision
     except HTTPException:
         raise
@@ -1025,7 +1159,8 @@ async def war_room_decision_post(payload: Dict = Body(...)):
             raise HTTPException(status_code=400, detail="player required")
 
         conn = get_db()
-        valuation = _build_valuation(conn, player)
+        include_obs = bool(payload.get("include_observability"))
+        valuation = _build_valuation(conn, player, include_observability=include_obs)
         squad = payload.get("squad") or []
         budget = float(payload.get("budget") or IPL_PURSE_CR)
         squad_state = squad_gap_from_list(squad, budget=budget)
@@ -1038,6 +1173,13 @@ async def war_room_decision_post(payload: Dict = Body(...)):
             auction_year=int(payload.get("auction_year") or 2026),
         )
         decision["strategy_summary"] = csk_strategy_summary()
+        if include_obs:
+            from model_observability import build_bid_observability
+
+            decision["model_observability"] = {
+                "valuation": valuation.get("observability"),
+                "bid": build_bid_observability(valuation.get("observability"), decision),
+            }
         return decision
     except HTTPException:
         raise

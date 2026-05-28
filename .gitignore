@@ -1,4 +1,5 @@
 .env
+.espn_cookies
 *.db
 auction_data.db
 api/auction_data.db

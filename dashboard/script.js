@@ -51,19 +51,30 @@ function renderConfidenceWarning(v) {
 let currentSquad = [];
 let allPlayers = [];
 let _bidAdvisorPlayer = '';
+let _bidAdvisorSearchPrefill = '';
+let _bidAdvisorPendingRun = false;
 let _valuationPrefill = '';
+let _routeCompareP1 = '';
+let _routeCompareP2 = '';
 let _poolPreviewCache = null;
 let _poolFilter = 'batters';
 let _activeTab = 'squad';
 let _initialRouteDone = false;
 let squadXai = null;
 let squadProvenance = {};
+/** Cached tab HTML — instant re-open. Keys: squad:<fp>, players:<filter>:<q>, bidadvisor, compare, valuation */
+const _tabHtmlCache = Object.create(null);
+let _playersTabCacheKey = 'players:batters:';
+const _playerStatsCache = new Map();
+const STATS_CACHE_TTL_MS = 10 * 60 * 1000;
+let _wrStrategyBannerCache;
+window.__cskAuctionPoolCache = window.__cskAuctionPoolCache || null;
 
 const TAB_HINTS = {
     squad: 'Official IPL 2026 CSK squad (25). Roster ≠ 2025 DB. Form/SR/Econ = historical stats only.',
     bidadvisor: 'Should we bid, walk-away price, and rivals — uses your squad plus bid history.',
     players: 'Search any player — click for FMV, then Bid Advisor. Browse defaults to IPL 2026 auction pool.',
-    arena: 'Drag bubbles from the 2026 auction pool into your squad — purse & gaps update live.',
+    arena: '',
     compare: 'Compare two players side by side.',
     valuation: 'Fair price and CSK fit for one player.',
 };
@@ -85,6 +96,9 @@ const SQUAD_TARGET = 25;
 
 // Initialize dashboard — always fetch fresh squad from API
 document.addEventListener('DOMContentLoaded', async () => {
+    delete _tabHtmlCache.bidadvisor;
+    CSKPolish?.setPlayersProvider?.(() => allPlayers);
+    CSKPolish?.initTheme?.();
     setupEventListeners();
     showFileProtocolWarning();
     const apiOk = await checkApiHealth();
@@ -94,11 +108,97 @@ document.addEventListener('DOMContentLoaded', async () => {
             await reloadSquadFromApi({ rerender: false });
         }
         await loadLastUpdate();
+        preloadPlayerPool();
+        prefetchSquadStats();
     }
-    if (!_initialRouteDone) {
-        await showTab('squad');
-    }
+    await applyInitialRoute();
 });
+
+async function preloadPlayerPool() {
+    if (allPlayers.length) return allPlayers;
+    const cached = window.__cskAuctionPoolCache;
+    if (Array.isArray(cached) && cached.length) {
+        allPlayers = cached;
+        CSKPolish?.syncDatalist?.(allPlayers);
+        return allPlayers;
+    }
+    try {
+        const r = await fetch(
+            `${API_BASE}/players/auction-pool?filter=all&year=${IPL_AUCTION_YEAR}&limit=1000`,
+        );
+        if (!r.ok) return allPlayers;
+        const payload = await r.json();
+        const players = Array.isArray(payload) ? payload : (payload.players || []);
+        if (players.length) {
+            allPlayers = players;
+            window.__cskAuctionPoolCache = players;
+            CSKPolish?.syncDatalist?.(allPlayers);
+        }
+    } catch { /* pool optional until Scout tab */ }
+    return allPlayers;
+}
+
+async function ensureAuctionPoolForSearch() {
+    if (allPlayers.length) return allPlayers;
+    return preloadPlayerPool();
+}
+
+async function applyInitialRoute() {
+    const route = CSKPolish?.parseRoute?.() || { tab: '', player: '', player1: '', player2: '' };
+    if (route.player1) _routeCompareP1 = route.player1;
+    if (route.player2) _routeCompareP2 = route.player2;
+    if (route.tab === 'compare' || (route.player1 && route.player2)) {
+        await showTab('compare');
+        return;
+    }
+    if (route.player) {
+        if (route.tab === 'bidadvisor' && route.player) {
+            _bidAdvisorSearchPrefill = route.player;
+            CSKPolish?.updateRoute?.({ tab: 'bidadvisor', player: undefined });
+        }
+        if (route.tab === 'valuation') _valuationPrefill = route.player;
+        if (route.tab === 'players' || !route.tab) {
+            await showTab('players');
+            setTimeout(() => {
+                const el = document.getElementById('playerSearch');
+                if (el) {
+                    el.value = route.player;
+                    renderPlayersTab(route.player, _poolFilter);
+                }
+            }, 0);
+            return;
+        }
+    }
+    if (route.tab) {
+        await showTab(route.tab);
+        return;
+    }
+    if (!_initialRouteDone) await showTab('squad');
+}
+
+function routePlayerForTab(tabName) {
+    if (tabName === 'bidadvisor') {
+        return document.getElementById('baPlayerSearch')?.value.trim() || _bidAdvisorPlayer || '';
+    }
+    if (tabName === 'valuation') {
+        return document.getElementById('valuationSearch')?.value.trim() || _valuationPrefill || '';
+    }
+    if (tabName === 'compare') {
+        return document.getElementById('compareP1')?.value.trim() || _routeCompareP1 || '';
+    }
+    return '';
+}
+
+function pushAppRoute(tabName) {
+    if (tabName === 'compare') {
+        const p1 = document.getElementById('compareP1')?.value.trim() || _routeCompareP1 || '';
+        const p2 = document.getElementById('compareP2')?.value.trim() || _routeCompareP2 || '';
+        CSKPolish?.updateRoute?.({ tab: 'compare', player1: p1 || undefined, player2: p2 || undefined });
+        return;
+    }
+    const player = routePlayerForTab(tabName);
+    CSKPolish?.updateRoute?.({ tab: tabName, player: player || undefined });
+}
 
 function showFileProtocolWarning() {
     const el = document.getElementById('fileProtocolWarn');
@@ -427,6 +527,7 @@ async function resetSquadStorage() {
 }
 
 function saveSquad() {
+    invalidateTabCache('squad');
     if (currentSquad.length > 0) {
         localStorage.setItem('csk_squad', JSON.stringify(currentSquad));
     }
@@ -436,12 +537,19 @@ function saveSquad() {
 }
 
 function openBidAdvisor(playerName) {
-    if (playerName) _bidAdvisorPlayer = playerName.trim();
+    if (playerName) {
+        const name = playerName.trim();
+        _bidAdvisorSearchPrefill = name;
+        _bidAdvisorPlayer = name;
+        _bidAdvisorPendingRun = true;
+    }
+    CSKPolish?.updateRoute?.({ tab: 'bidadvisor', player: _bidAdvisorPlayer || undefined });
     showTab('bidadvisor');
 }
 
 function openValuation(playerName) {
     if (playerName) _valuationPrefill = playerName.trim();
+    CSKPolish?.updateRoute?.({ tab: 'valuation', player: _valuationPrefill });
     showTab('valuation');
 }
 
@@ -485,11 +593,15 @@ function updateExecutiveKpis(spent, remaining, pricedCount, groqCount = 0) {
     set('kpiPlayingXi', `Playing XI: ${Math.min(11, currentSquad.length)}`);
     set('kpiPursePct', allPriced && !groqCount ? `${pct}%` : `${pct}%*`);
     set('kpiOverseas', `${overseas} / 8`);
+    set('purseContextLine', `₹${Math.max(0, remaining).toFixed(1)} Cr left`);
 
     const bar = document.getElementById('budgetBarFill');
     if (bar) {
         bar.style.width = `${pct}%`;
-        bar.classList.toggle('budget-bar-fill--warn', pct > 85);
+        bar.classList.remove('budget-bar-fill--safe', 'budget-bar-fill--mid', 'budget-bar-fill--critical');
+        if (pct >= 88) bar.classList.add('budget-bar-fill--critical');
+        else if (pct >= 68) bar.classList.add('budget-bar-fill--mid');
+        else bar.classList.add('budget-bar-fill--safe');
     }
 
     const pills = document.getElementById('kpiRolePills');
@@ -522,6 +634,40 @@ function getProgressClass(score) {
     return score >= 70 ? 'progress-high' : score >= 50 ? 'progress-mid' : 'progress-low';
 }
 
+function squadFingerprint() {
+    return currentSquad.map(p => `${p.name}\x00${p.price ?? 0}\x00${p.role ?? ''}`).join('\x1e');
+}
+
+function invalidateTabCache(...tabs) {
+    if (!tabs.length) {
+        Object.keys(_tabHtmlCache).forEach(k => delete _tabHtmlCache[k]);
+        _wrStrategyBannerCache = undefined;
+        return;
+    }
+    tabs.forEach(t => {
+        Object.keys(_tabHtmlCache).forEach(k => {
+            if (k === t || k.startsWith(`${t}:`)) delete _tabHtmlCache[k];
+        });
+    });
+    if (tabs.includes('bidadvisor')) _wrStrategyBannerCache = undefined;
+}
+
+async function fetchPlayerStatsCached(playerName) {
+    const k = String(playerName || '').trim().toLowerCase();
+    if (!k) return null;
+    const hit = _playerStatsCache.get(k);
+    if (hit && Date.now() - hit.ts < STATS_CACHE_TTL_MS) return hit.data;
+    const data = await fetchPlayerStats(playerName);
+    _playerStatsCache.set(k, { data, ts: Date.now() });
+    return data;
+}
+
+function prefetchSquadStats() {
+    currentSquad.forEach(p => {
+        fetchPlayerStatsCached(p.name).catch(() => {});
+    });
+}
+
 async function fetchPlayerStats(playerName) {
     try {
         const r = await fetch(`${API_BASE}/players/valuation/${encodeURIComponent(playerName)}`);
@@ -551,6 +697,13 @@ function escapeAttr(str) {
     return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+function escapeHtml(str) {
+    return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+}
+
 function closePlayerPreview() {
     document.getElementById('playerPreviewOverlay')?.remove();
     _poolPreviewCache = null;
@@ -562,11 +715,18 @@ function _playerPreviewEscHandler(e) {
 }
 
 function renderPlayerPreviewBody(v, listPlayer, inSquad) {
+    const displayName = v?.player_name || listPlayer?.player_name || '';
     if (!v) {
+        const hero = typeof CSKPolish !== 'undefined'
+            ? CSKPolish.heroMarkup(displayName, allPlayers, 'player-hero__portrait--lg')
+            : '';
         return `
-            <div class="pp-loading">
-                <div class="pp-spinner"></div>
-                <p>Loading FMV, bid range & CSK fit…</p>
+            <div class="pp-header pp-header--hero">
+                ${hero}
+                <div class="pp-loading">
+                    <div class="pp-spinner"></div>
+                    <p>Loading FMV, bid range & CSK fit…</p>
+                </div>
             </div>`;
     }
     if (v.detail) {
@@ -587,9 +747,14 @@ function renderPlayerPreviewBody(v, listPlayer, inSquad) {
         : '';
     const jsSafe = String(v.player_name).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
 
+    const hero = typeof CSKPolish !== 'undefined'
+        ? CSKPolish.heroMarkup(v.player_name, allPlayers, 'player-hero__portrait--lg')
+        : '';
+
     return `
-        <div class="pp-header">
-            <div>
+        <div class="pp-header pp-header--hero">
+            ${hero}
+            <div class="pp-header-main">
                 <h2 class="pp-name">${v.player_name}</h2>
                 <p class="pp-meta">${v.role || 'Player'}${v.country ? ` · ${v.country}` : ''} · Form ${Math.round(formScore)}${formBucket ? ` (${formBucket})` : ''} · CSK fit ${v.csk_fit_score ?? '—'}%</p>
             </div>
@@ -662,11 +827,15 @@ async function openPlayerPreview(playerName) {
     const inSquad = currentSquad.some(p => p.name === name);
     const listPlayer = allPlayers.find(p => p.player_name === name) || {};
     mountPlayerPreviewModal(name, renderPlayerPreviewBody(null, listPlayer, inSquad));
+    CSKPolish?.bindHero?.(document.getElementById('playerPreviewBody'));
 
     const stats = await fetchPlayerStats(name);
     _poolPreviewCache = stats;
     const body = document.getElementById('playerPreviewBody');
-    if (body) body.innerHTML = renderPlayerPreviewBody(stats, listPlayer, inSquad);
+    if (body) {
+        body.innerHTML = renderPlayerPreviewBody(stats, listPlayer, inSquad);
+        CSKPolish?.bindHero?.(body);
+    }
 }
 
 function openBidAdvisorFromPreview(playerName) {
@@ -694,13 +863,25 @@ function addToSquadFromPreview() {
 
 async function renderSquadTab() {
     const tabAtStart = _activeTab;
+    const fp = squadFingerprint();
+    const cacheKey = `squad:${fp}`;
+    const cachedHtml = _tabHtmlCache[cacheKey];
+    if (cachedHtml) {
+        if (_activeTab !== 'squad') return;
+        const area = document.getElementById('contentArea');
+        area.innerHTML = cachedHtml;
+        if (typeof CSKAvatars !== 'undefined') {
+            CSKAvatars.bindAll(area, '[data-avatar]', { eager: true });
+        }
+        return;
+    }
+
     const playing11 = currentSquad.slice(0, 11);
     const bench     = currentSquad.slice(11);
 
-    // Fetch all stats in parallel
     const [xi_stats, bench_stats] = await Promise.all([
-        Promise.all(playing11.map(p => fetchPlayerStats(p.name))),
-        Promise.all(bench.map(p     => fetchPlayerStats(p.name))),
+        Promise.all(playing11.map(p => fetchPlayerStatsCached(p.name))),
+        Promise.all(bench.map(p => fetchPlayerStatsCached(p.name))),
     ]);
 
     function rowHtml(player, idx, stats, slotLabel) {
@@ -710,16 +891,22 @@ async function renderSquadTab() {
         const pct    = Math.min(100, form ?? 0);
         const fClass = getFormClass(form ?? 0);
         const pClass = getProgressClass(form ?? 0);
+        const poolP  = allPlayers.find(p => p.player_name === player.name) || {};
 
         return `
         <div class="squad-row ${slotLabel === 'PLAYING' ? 'squad-row--xi' : 'squad-row--bench'}">
             <div class="sr-slot">${slotLabel === 'PLAYING' ? idx : idx}</div>
 
             <div class="sr-identity">
-                <span class="player-name">${player.name}</span>
-                ${renderXaiTrustBadge(getPlayerXai(player), player)}
-                ${playerStatusBadge(player)}
-                <span class="role-badge ${getRoleClass(player.role)}">${player.role}</span>
+                ${CSKAvatars.markup(player.name, 'pcard__portrait pcard__portrait--sm', poolP.facecard_url || '', poolP.espn_portrait_url || '')}
+                <div class="sr-identity-text">
+                    <span class="player-name">${player.name}</span>
+                    <div class="sr-identity-tags">
+                        ${renderXaiTrustBadge(getPlayerXai(player), player)}
+                        ${playerStatusBadge(player)}
+                        <span class="role-badge ${getRoleClass(player.role)}">${player.role}</span>
+                    </div>
+                </div>
             </div>
 
             <div class="sr-stats">
@@ -844,7 +1031,12 @@ async function renderSquadTab() {
     }
 
     if (_activeTab !== 'squad' || tabAtStart !== 'squad') return;
-    document.getElementById('contentArea').innerHTML = html;
+    const area = document.getElementById('contentArea');
+    area.innerHTML = html;
+    _tabHtmlCache[cacheKey] = html;
+    if (typeof CSKAvatars !== 'undefined') {
+        CSKAvatars.bindAll(area, '[data-avatar]', { eager: true });
+    }
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -866,8 +1058,75 @@ function poolFilterLabel(key) {
     }[key] || 'Auction pool';
 }
 
+function afterTabPaint(tabName) {
+    const area = document.getElementById('contentArea');
+    if (!area) return;
+    if (tabName === 'squad' && typeof CSKAvatars !== 'undefined') {
+        CSKAvatars.bindAll(area, '[data-avatar]', { eager: true });
+    }
+    if (tabName === 'bidadvisor') {
+        ensureAuctionPoolForSearch().then(() => {
+            const searchEl = document.getElementById('baPlayerSearch');
+            CSKPolish?.wireAutocomplete?.(searchEl, () => allPlayers);
+            if (_bidAdvisorPendingRun && _bidAdvisorPlayer) {
+                _bidAdvisorPendingRun = false;
+                if (searchEl) searchEl.value = _bidAdvisorPlayer;
+                runBidAdvisorAnalysis();
+            } else if (!_bidAdvisorPlayer) {
+                CSKPolish?.updateRoute?.({ tab: 'bidadvisor', player: undefined });
+            }
+        });
+    }
+    if (tabName === 'compare') {
+        CSKPolish?.wireAutocompleteIds?.(['compareP1', 'compareP2'], allPlayers);
+    }
+    if (tabName === 'players') {
+        const grid = document.getElementById('playerPoolGrid');
+        if (grid && typeof CSKAvatars !== 'undefined') CSKAvatars.bindAll(grid);
+        document.getElementById('playerSearch')?.addEventListener('keypress', e => {
+            if (e.key === 'Enter') renderPlayersTab(e.target.value, _poolFilter);
+        });
+        grid?.addEventListener('click', e => {
+            const card = e.target.closest('.player-card--clickable');
+            if (!card?.dataset.player) return;
+            openPlayerPreview(card.dataset.player);
+        });
+        grid?.addEventListener('keydown', e => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const card = e.target.closest('.player-card--clickable');
+            if (!card?.dataset.player) return;
+            e.preventDefault();
+            openPlayerPreview(card.dataset.player);
+        });
+        CSKPolish?.wireFuzzySearch?.(document.getElementById('playerSearch'), {
+            players: () => allPlayers,
+            limit: 12,
+            onSelect: name => renderPlayersTab(name, _poolFilter),
+        });
+    }
+}
+
+function tabLoadingMessage(tabName) {
+    const labels = {
+        squad: 'Squad',
+        bidadvisor: 'Bid Advisor',
+        players: 'Scout',
+        compare: 'Compare',
+        valuation: 'Valuation',
+        arena: 'Arena',
+    };
+    return `Loading ${labels[tabName] || tabName}…`;
+}
+
 async function renderPlayersTab(searchTerm = '', roleFilter = _poolFilter) {
     _poolFilter = roleFilter || 'batters';
+    _playersTabCacheKey = `players:${_poolFilter}:${searchTerm}`;
+    const cached = _tabHtmlCache[_playersTabCacheKey];
+    if (cached && _activeTab === 'players') {
+        document.getElementById('contentArea').innerHTML = cached;
+        afterTabPaint('players');
+        return;
+    }
     let url;
     let poolMeta = null;
     if (searchTerm) {
@@ -883,6 +1142,7 @@ async function renderPlayersTab(searchTerm = '', roleFilter = _poolFilter) {
         const players = Array.isArray(payload) ? payload : (payload.players || []);
         poolMeta = Array.isArray(payload) ? null : payload;
         allPlayers = players;
+        CSKPolish?.syncDatalist?.(allPlayers);
 
         const isInSquad = name => currentSquad.some(p => p.name === name);
         const filters = [
@@ -924,26 +1184,27 @@ async function renderPlayersTab(searchTerm = '', roleFilter = _poolFilter) {
             const form = formVal != null ? Math.round(formVal) : null;
             const safeData = escapeAttr(player.player_name);
             html += `
-                <div class="player-row player-card--clickable" data-player="${safeData}" role="button" tabindex="0"
+                <div class="pcard pcard--scout player-card--clickable" data-player="${safeData}" role="button" tabindex="0"
                      aria-label="Scout ${escapeAttr(player.player_name)}">
-                    ${CSKAvatars.markup(player.player_name, 'player-row__avatar')}
-                    <div class="player-row__main">
-                        <div class="player-row__top">
-                            <span class="player-row__name">${player.player_name}</span>
+                    ${CSKAvatars.markup(player.player_name, 'pcard__portrait', player.facecard_url || '', player.espn_portrait_url || '')}
+                    <div class="pcard__body">
+                        <div class="pcard__top">
+                            <span class="pcard__name">${player.player_name}</span>
                             ${inSquad
-                                ? '<span class="player-row__chip player-row__chip--squad">In squad</span>'
+                                ? '<span class="pcard__chip pcard__chip--squad">In squad</span>'
                                 : ''}
-                            <span class="player-row__chip player-row__chip--form ${getFormClass(form ?? 0)}">${form !== null ? form : '—'} form</span>
+                            <span class="pcard__chip pcard__chip--role ${getRoleClass(player.pool_role || player.auction_role)}">${player.pool_role || player.auction_role || '—'}</span>
+                            <span class="pcard__chip pcard__chip--form ${getFormClass(form ?? 0)}">${form !== null ? form : '—'} form</span>
                         </div>
-                        <div class="player-row__stats">
+                        <div class="pcard__meta">
                             <span>${player.total_runs || 0} runs</span>
-                            <span class="player-row__dot">·</span>
+                            <span class="pcard__dot">·</span>
                             <span>${player.total_wickets || 0} wkts</span>
                         </div>
                     </div>
-                    <div class="player-row__cta">
-                        <span class="player-row__fmv-hint">FMV</span>
-                        <span class="player-row__chevron" aria-hidden="true">›</span>
+                    <div class="pcard__cta">
+                        <span class="pcard__cta-hint">FMV</span>
+                        <span class="pcard__chevron" aria-hidden="true">›</span>
                     </div>
                 </div>`;
         }
@@ -959,27 +1220,10 @@ async function renderPlayersTab(searchTerm = '', roleFilter = _poolFilter) {
             </div>`;
         }
 
-        document.getElementById('contentArea').innerHTML = html;
-
-        document.getElementById('playerSearch')?.addEventListener('keypress', e => {
-            if (e.key === 'Enter') renderPlayersTab(e.target.value, _poolFilter);
-        });
-
-        const grid = document.getElementById('playerPoolGrid');
-        grid?.addEventListener('click', e => {
-            const card = e.target.closest('.player-card--clickable');
-            if (!card?.dataset.player) return;
-            openPlayerPreview(card.dataset.player);
-        });
-        grid?.addEventListener('keydown', e => {
-            if (e.key !== 'Enter' && e.key !== ' ') return;
-            const card = e.target.closest('.player-card--clickable');
-            if (!card?.dataset.player) return;
-            e.preventDefault();
-            openPlayerPreview(card.dataset.player);
-        });
-
-        CSKAvatars.bindAll(grid);
+        const area = document.getElementById('contentArea');
+        area.innerHTML = html;
+        _tabHtmlCache[_playersTabCacheKey] = html;
+        afterTabPaint('players');
 
     } catch {
         document.getElementById('contentArea').innerHTML =
@@ -1016,26 +1260,34 @@ function removeFromSquad(playerName) {
 // ─────────────────────────────────────────────────────────────────────
 
 async function renderCompareTab() {
+    const cached = _tabHtmlCache.compare;
+    if (cached && _activeTab === 'compare' && !_routeCompareP1 && !_routeCompareP2) {
+        document.getElementById('contentArea').innerHTML = cached;
+        afterTabPaint('compare');
+        return;
+    }
+    const p1 = (_routeCompareP1 || '').replace(/"/g, '&quot;');
+    const p2 = (_routeCompareP2 || '').replace(/"/g, '&quot;');
+    const autoCompare = !!(_routeCompareP1 && _routeCompareP2);
     document.getElementById('contentArea').innerHTML = `
-        <p class="wr-muted" style="margin-bottom:12px">Compare stats, then open Bid Advisor on either player from the results.</p>
-        <div class="search-box">
-            <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;">
-                <input type="text" id="compareP1" class="search-input" placeholder="Player 1 name...">
-                <span class="vs-divider">VS</span>
-                <input type="text" id="compareP2" class="search-input" placeholder="Player 2 name...">
-            </div>
-            <div style="margin-top:14px;text-align:center;">
-                <button class="btn-compare-run" onclick="performComparison()">Compare Players</button>
-            </div>
-        </div>
-        <div id="comparisonResult"></div>`;
+        <section class="compare-panel" aria-label="Compare two players">
+            <p class="compare-hint">Compare stats, then open Bid Advisor on either player from the results.</p>
+            <form class="compare-form" onsubmit="event.preventDefault(); performComparison();">
+                <input type="text" id="compareP1" class="compare-input" placeholder="Player 1 name…" autocomplete="off" value="${p1}">
+                <span class="compare-vs" aria-hidden="true">vs</span>
+                <input type="text" id="compareP2" class="compare-input" placeholder="Player 2 name…" autocomplete="off" value="${p2}">
+                <button type="submit" class="btn-compare-run">Compare Players</button>
+            </form>
+        </section>
+        <div id="comparisonResult" class="compare-results"></div>`;
 
-    // Allow Enter key in either field
-    ['compareP1','compareP2'].forEach(id => {
-        document.getElementById(id)?.addEventListener('keypress', e => {
-            if (e.key === 'Enter') performComparison();
-        });
-    });
+    if (!autoCompare) _tabHtmlCache.compare = document.getElementById('contentArea').innerHTML;
+    afterTabPaint('compare');
+    if (autoCompare) {
+        _routeCompareP1 = '';
+        _routeCompareP2 = '';
+        performComparison();
+    }
 }
 
 async function performComparison() {
@@ -1045,7 +1297,10 @@ async function performComparison() {
 
     if (!p1 || !p2) { alert('Please enter both player names'); return; }
 
-    resultEl.innerHTML = `<div class="loading" style="padding:40px">Fetching comparison data…</div>`;
+    pushAppRoute('compare');
+
+    resultEl.innerHTML = CSKPolish?.loadingShell?.('Fetching comparison data…')
+        || '<div class="loading">Fetching comparison data…</div>';
 
     try {
         const r = await fetch(`${API_BASE}/players/compare?p1=${encodeURIComponent(p1)}&p2=${encodeURIComponent(p2)}`);
@@ -1143,11 +1398,16 @@ function renderComparisonResult(v1, v2) {
         <!-- Headline -->
         <div class="cmp-headline">
             <div class="cmp-head cmp-head--left ${wins1 >= wins2 ? 'cmp-head--active' : ''}">
-                <div class="cmp-head-name">${v1.player_name}</div>
-                <div class="cmp-head-meta">${v1.role || '—'}</div>
-                <div class="cmp-head-price">₹${v1.estimated_value || '—'} Cr</div>
-                <span class="verdict-badge ${verdictCls(v1.auction_verdict)}">${v1.auction_verdict || '—'}</span>
-                <div class="cmp-wins-badge">${wins1} wins</div>
+                ${typeof CSKPolish !== 'undefined' ? CSKPolish.heroMarkup(v1.player_name, allPlayers, 'player-hero__portrait--md') : ''}
+                <div class="cmp-head-text">
+                    <div class="cmp-head-name">${v1.player_name}</div>
+                    <div class="cmp-head-meta">${v1.role || '—'}</div>
+                    <div class="cmp-head-price">₹${v1.estimated_value || '—'} Cr</div>
+                    <div class="cmp-head-tags">
+                        <span class="verdict-badge ${verdictCls(v1.auction_verdict)}">${v1.auction_verdict || '—'}</span>
+                        <span class="cmp-wins-badge">${wins1} wins</span>
+                    </div>
+                </div>
             </div>
 
             <div class="cmp-vs-block">
@@ -1158,11 +1418,16 @@ function renderComparisonResult(v1, v2) {
             </div>
 
             <div class="cmp-head cmp-head--right ${wins2 >= wins1 ? 'cmp-head--active' : ''}">
-                <div class="cmp-head-name">${v2.player_name}</div>
-                <div class="cmp-head-meta">${v2.role || '—'}</div>
-                <div class="cmp-head-price">₹${v2.estimated_value || '—'} Cr</div>
-                <span class="verdict-badge ${verdictCls(v2.auction_verdict)}">${v2.auction_verdict || '—'}</span>
-                <div class="cmp-wins-badge">${wins2} wins</div>
+                ${typeof CSKPolish !== 'undefined' ? CSKPolish.heroMarkup(v2.player_name, allPlayers, 'player-hero__portrait--md') : ''}
+                <div class="cmp-head-text">
+                    <div class="cmp-head-name">${v2.player_name}</div>
+                    <div class="cmp-head-meta">${v2.role || '—'}</div>
+                    <div class="cmp-head-price">₹${v2.estimated_value || '—'} Cr</div>
+                    <div class="cmp-head-tags">
+                        <span class="verdict-badge ${verdictCls(v2.auction_verdict)}">${v2.auction_verdict || '—'}</span>
+                        <span class="cmp-wins-badge">${wins2} wins</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1207,7 +1472,9 @@ function renderComparisonResult(v1, v2) {
         </div>
     </div>`;
 
-    document.getElementById('comparisonResult').innerHTML = html;
+    const resultEl = document.getElementById('comparisonResult');
+    resultEl.innerHTML = html;
+    CSKPolish?.bindHero?.(resultEl);
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -1215,21 +1482,33 @@ function renderComparisonResult(v1, v2) {
 // ─────────────────────────────────────────────────────────────────────
 
 async function renderValuationTab() {
+    if (_tabHtmlCache.valuation && _activeTab === 'valuation' && !_valuationPrefill) {
+        document.getElementById('contentArea').innerHTML = _tabHtmlCache.valuation;
+        CSKPolish?.wireAutocomplete?.(document.getElementById('valuationSearch'), allPlayers);
+        return;
+    }
     document.getElementById('contentArea').innerHTML = `
-        <div class="search-box">
-            <div style="display:flex;gap:12px;">
-                <input type="text" id="valuationSearch" class="search-input" placeholder="Enter player name..." value="${_valuationPrefill.replace(/"/g, '&quot;')}">
-                <button class="btn-add" onclick="getValuation()">Get Valuation</button>
-            </div>
-        </div>
-        <p class="wr-muted" style="margin-bottom:12px">Valuation = fair price & fit. For bid/walk-away limits and rivals, use <button class="btn-link-inline" onclick="showTab('bidadvisor')">Bid Advisor</button>.</p>
-        <div id="valuationResult"></div>`;
+        <section class="valuation-panel" aria-label="Player valuation lookup">
+            <form class="valuation-form" onsubmit="event.preventDefault(); getValuation();">
+                <input type="text" id="valuationSearch" class="valuation-input"
+                       placeholder="Enter player name…" autocomplete="off"
+                       value="${_valuationPrefill.replace(/"/g, '&quot;')}">
+                <button type="submit" class="btn-valuation-run">Get Valuation</button>
+            </form>
+            <p class="valuation-hint">
+                Valuation = fair price &amp; fit. For bid/walk-away limits and rivals, use
+                <button type="button" class="btn-link-inline" onclick="showTab('bidadvisor')">Bid Advisor</button>.
+            </p>
+        </section>
+        <div id="valuationResult" class="valuation-results"></div>`;
 
-    document.getElementById('valuationSearch')?.addEventListener('keypress', e => {
-        if (e.key === 'Enter') getValuation();
-    });
+    CSKPolish?.wireAutocomplete?.(document.getElementById('valuationSearch'), allPlayers);
+    if (!_valuationPrefill) _tabHtmlCache.valuation = document.getElementById('contentArea').innerHTML;
+
     if (_valuationPrefill) {
+        const prefill = _valuationPrefill;
         _valuationPrefill = '';
+        document.getElementById('valuationSearch').value = prefill;
         getValuation();
     }
 }
@@ -1240,7 +1519,12 @@ async function getValuation() {
         alert('Please enter a player name');
         return;
     }
-    
+
+    const resultEl = document.getElementById('valuationResult');
+    resultEl.innerHTML = CSKPolish?.loadingShell?.('Loading valuation…')
+        || '<div class="loading">Loading valuation…</div>';
+    pushAppRoute('valuation');
+
     try {
         const response = await fetch(`${API_BASE}/players/valuation/${encodeURIComponent(playerName)}`);
         const valuation = await response.json();
@@ -1258,12 +1542,17 @@ async function getValuation() {
         const progressClass = formScore >= 70 ? 'progress-high' : (formScore >= 50 ? 'progress-mid' : 'progress-low');
         const injuryText = valuation.injury_risk === 'Low' ? 'Low Risk' : (valuation.injury_risk === 'High' ? 'High Risk' : 'Medium Risk');
         
+        const hero = typeof CSKPolish !== 'undefined'
+            ? CSKPolish.heroMarkup(valuation.player_name, allPlayers, 'player-hero__portrait--lg')
+            : '';
+
         const html = `
             <div class="valuation-card">
-                <div class="valuation-header">
-                    <div>
+                <div class="valuation-header valuation-header--hero">
+                    ${hero}
+                    <div class="valuation-header-main">
                         <div class="valuation-name">${valuation.player_name}</div>
-                        <div style="font-size: 13px; color: #64748b; margin-top: 4px;">
+                        <div class="valuation-role">
                             ${valuation.role}${valuation.role_detail ? ' · ' + valuation.role_detail : ''} | Age: ${valuation.age}${valuation.age_upside ? ' ↑' : ''} | ${injuryText}
                             ${valuation.confidence != null ? ` | Confidence: ${valuation.confidence}%` : ''}
                             ${valuation.volatility ? ` | ${valuation.volatility} volatility` : ''}
@@ -1333,10 +1622,11 @@ async function getValuation() {
             </div>
         `;
         
-        document.getElementById('valuationResult').innerHTML = html;
-        
+        resultEl.innerHTML = html;
+        CSKPolish?.bindHero?.(resultEl);
+
     } catch (error) {
-        document.getElementById('valuationResult').innerHTML = '<div class="empty-state">Error fetching valuation. Make sure API is running.</div>';
+        resultEl.innerHTML = '<div class="empty-state">Error fetching valuation. Make sure API is running.</div>';
     }
 }
 
@@ -1344,26 +1634,160 @@ async function getValuation() {
 // BID ADVISOR TAB — squad + valuation + bid-history (not valuation alone)
 // ─────────────────────────────────────────────────────────────────────
 
+const IDEAL_SQUAD_ROLES = { Batter: 6, Bowler: 6, 'All Rounder': 5, 'Wicket Keeper': 2 };
+
+function normalizeSquadRole(role) {
+    const r = String(role || '').trim();
+    const u = r.toUpperCase();
+    if (u.includes('WK') || r === 'Wicketkeeper' || r === 'Wicket Keeper') return 'Wicket Keeper';
+    if (r === 'Allrounder' || r === 'All-Rounder' || r === 'All Rounder') return 'All Rounder';
+    if (r === 'Batsman' || r === 'Batter') return 'Batter';
+    if (r === 'Bowler' || r === 'Bowling') return 'Bowler';
+    return r in IDEAL_SQUAD_ROLES ? r : 'Batter';
+}
+
 function squadRoleCounts() {
     const counts = { Batter: 0, Bowler: 0, 'All Rounder': 0, 'Wicket Keeper': 0 };
     currentSquad.forEach(p => {
-        const r = p.role || 'Batter';
+        const r = normalizeSquadRole(p.role);
         if (counts[r] !== undefined) counts[r]++;
     });
     return counts;
+}
+
+function formatSquadStatusStrip(sc) {
+    const rc = sc.role_counts || squadRoleCounts();
+    const ovs = sc.overseas ?? currentSquad.filter(p => {
+        const c = (p.country || '').toLowerCase();
+        return c && c !== 'india' && c !== 'indian';
+    }).length;
+    return `CSK STATUS · ₹${Number(sc.remaining_budget_cr ?? remainingBudget()).toFixed(1)} Cr left · `
+        + `Squad ${sc.squad_size ?? currentSquad.length}/25 · `
+        + `BAT ${rc.Batter ?? 0}/${IDEAL_SQUAD_ROLES.Batter} · `
+        + `BOWL ${rc.Bowler ?? 0}/${IDEAL_SQUAD_ROLES.Bowler} · `
+        + `AR ${rc['All Rounder'] ?? 0}/${IDEAL_SQUAD_ROLES['All Rounder']} · `
+        + `WK ${rc['Wicket Keeper'] ?? 0}/${IDEAL_SQUAD_ROLES['Wicket Keeper']} · `
+        + `OVS ${ovs}/8`;
+}
+
+function resolvePoolPlayerForUi(name) {
+    return CSKPolish?.resolvePoolPlayer?.(name, allPlayers) || null;
+}
+
+function canonicalPoolDisplayName(apiName) {
+    const raw = (apiName || '').trim();
+    if (!raw) return '';
+    return resolvePoolPlayerForUi(raw)?.player_name || raw;
+}
+
+function bidAdvisorPlayerHead(d) {
+    const apiName = (d.player_name || '').trim();
+    const pool = resolvePoolPlayerForUi(apiName);
+    const title = pool?.player_name || canonicalPoolDisplayName(apiName) || apiName;
+    const abbrev = apiName && title.toLowerCase() !== apiName.toLowerCase() ? apiName : '';
+    return { title, abbrev, pool };
+}
+
+function bidAdvisorExecutiveLine(q, bi) {
+    const should = q.should_bid || '—';
+    const wa = Number(q.walk_away_cr);
+    const war = bi.bid_war_probability_pct;
+    const final = bi.expected_final_price_cr || '—';
+    if (should === 'NO') {
+        return q.one_liner || 'Skip — does not clear fit, gap, or budget thresholds.';
+    }
+    if (should === 'MAYBE') {
+        return `Bid only if hammer stays below ₹${wa.toFixed(1)} Cr — ${war ?? '—'}% bid-war risk; expect ${final} Cr final.`;
+    }
+    if (should === 'YES') {
+        return `Green light — push toward FMV ₹${Number(q.fair_market_value_cr).toFixed(1)} Cr; hard stop ₹${wa.toFixed(1)} Cr (${war ?? '—'}% war risk).`;
+    }
+    return q.one_liner || '';
+}
+
+function walkAwayDisplay(q, sc) {
+    const wa = Number(q.walk_away_cr);
+    const rem = Number(sc.remaining_budget_cr ?? remainingBudget());
+    const fmv = Number(q.fair_market_value_cr);
+    const capped = Number.isFinite(wa) && Number.isFinite(rem) && Math.abs(wa - rem) < 0.12;
+    return {
+        label: capped ? 'Walk-away (purse cap)' : 'Walk-away',
+        hint: capped
+            ? `Cannot exceed ₹${rem.toFixed(1)} Cr remaining in purse`
+            : `Hard stop before ₹${wa.toFixed(1)} Cr · FMV ₹${fmv.toFixed(1)} Cr`,
+        capped,
+    };
+}
+
+function openBidGraphFromAdvisor(playerName, roleHint) {
+    const name = (playerName || '').trim();
+    const pool = resolvePoolPlayerForUi(name);
+    const squad = currentSquad.find(p => {
+        const n = (p.name || '').trim().toLowerCase();
+        const q = name.toLowerCase();
+        return n === q;
+    });
+    const player = {
+        player_name: pool?.player_name || squad?.name || name,
+        pool_role: pool?.pool_role || pool?.auction_role || squad?.role || roleHint,
+        auction_role: pool?.auction_role,
+        country: pool?.country || squad?.country || 'India',
+        facecard_url: pool?.facecard_url || '',
+        espn_portrait_url: pool?.espn_portrait_url || '',
+        bubble_price_cr: pool?.bubble_price_cr ?? squad?.price,
+        form_rating: pool?.form_rating,
+        matches_played: pool?.matches_played,
+    };
+    if (window.ArenaRadial?.open) {
+        window.ArenaRadial.open(player);
+        return;
+    }
+    alert('Bid graph not loaded — refresh the page (Cmd+Shift+R).');
 }
 
 function remainingBudget() {
     return IPL_PURSE_CR - currentSquad.reduce((s, p) => s + (p.price || 0), 0);
 }
 
-async function fetchBidAdvisorDecision(playerName, currentBid = 0, basePrice = 2) {
-    const squad = currentSquad.map(p => ({
-        name: p.name,
-        role: p.role || 'Player',
+function squadRowsForWarRoom(squadRows) {
+    return (squadRows || []).map(p => ({
+        name: p.name || p.player_name,
+        role: p.role || p.pool_role || 'Player',
         price: p.price || 0,
         country: p.country || 'India',
     }));
+}
+
+async function fetchWarRoomDecision(playerName, opts = {}) {
+    const {
+        currentBid = 0,
+        basePrice = 2,
+        squadOverride = null,
+        budget = IPL_PURSE_CR,
+    } = opts;
+    const squad = squadOverride
+        ? squadRowsForWarRoom(squadOverride)
+        : squadRowsForWarRoom(currentSquad);
+    const r = await fetch(`${API_BASE}/war-room/decision`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            player: playerName,
+            budget,
+            current_bid: currentBid,
+            base_price: basePrice,
+            auction_year: IPL_AUCTION_YEAR,
+            squad,
+        }),
+    });
+    if (!r.ok) {
+        const err = await r.json().catch(() => ({}));
+        throw new Error(err.detail || 'War room API error');
+    }
+    return r.json();
+}
+
+async function fetchBidAdvisorDecision(playerName, currentBid = 0, basePrice = 2) {
     const r = await fetch(`${API_BASE}/war-room/decision`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1372,8 +1796,8 @@ async function fetchBidAdvisorDecision(playerName, currentBid = 0, basePrice = 2
             budget: IPL_PURSE_CR,
             current_bid: currentBid,
             base_price: basePrice,
-            auction_year: 2026,
-            squad,
+            auction_year: IPL_AUCTION_YEAR,
+            squad: squadRowsForWarRoom(currentSquad),
         }),
     });
     if (!r.ok) {
@@ -1393,134 +1817,180 @@ function renderBidAdvisorDecision(d) {
     const q = d.quick_decision || {};
     const bi = d.bidding_intelligence || {};
     const sc = d.squad_context || {};
-    const rc = sc.role_counts || {};
     const win = d.budget_impact?.if_win || {};
     const lose = d.budget_impact?.if_lose || {};
     const live = d.live_bid || {};
     const pa = d.player_analysis || {};
+    const playerRole = d.role || 'Unknown';
+    const jsName = (d.player_name || '').replace(/'/g, "\\'");
+    const head = bidAdvisorPlayerHead(d);
+    const walk = walkAwayDisplay(q, sc);
+    const execLine = bidAdvisorExecutiveLine(q, bi);
 
     const compsHtml = (bi.similar_players || []).map(c =>
         `<div class="wr-comp-row">
-            <span>${c.player}</span>
+            <span>${escapeHtml(c.player)}</span>
             <span>${c.num_bids} bids</span>
             <span>₹${c.final_price_cr} Cr</span>
-            <span class="wr-comp-result">${c.csk_result !== '—' ? 'CSK ' + c.csk_result : c.winner_team}</span>
+            <span class="wr-comp-result">${c.csk_result !== '—' ? 'CSK ' + escapeHtml(c.csk_result) : escapeHtml(c.winner_team)}</span>
         </div>`
     ).join('') || '<div class="wr-muted">No similar bid comps in 2026 data</div>';
 
-    const rivalsHtml = (bi.likely_competitors || []).map(c =>
-        `<div class="wr-rival-row">
-            <strong>${c.team}</strong>
-            <span>${c.threat_level}</span>
+    const threatRank = { 'VERY HIGH': 0, HIGH: 1, MEDIUM: 2, LOW: 3 };
+    const rivalsSorted = [...(bi.likely_competitors || [])].sort(
+        (a, b) => (threatRank[a.threat_level] ?? 9) - (threatRank[b.threat_level] ?? 9),
+    );
+    const rivalsHtml = rivalsSorted.map(c =>
+        `<div class="wr-rival-row wr-rival-row--${(c.threat_level || '').toLowerCase().replace(/\s+/g, '-')}">
+            <strong>${escapeHtml(c.team)}</strong>
+            <span class="wr-threat">${escapeHtml(c.threat_level)}</span>
             <span>${c.targets_in_role} targets · avg ${c.avg_bids} bids · ₹${c.avg_price_cr} Cr</span>
         </div>`
     ).join('') || '<div class="wr-muted">No competitor data</div>';
 
-    const gaps = (sc.gaps || []).slice(0, 4).map(g =>
-        `<span class="wr-gap-chip ${g.priority === 'Critical' ? 'wr-gap-critical' : ''}">${g.role}: ${g.have}/${g.ideal}</span>`
-    ).join('');
+    const gapList = (sc.gaps || []).filter(g => (g.need || 0) > 0);
+    const playerGap = gapList.find(g => g.role === playerRole);
+    const gapChips = [
+        playerGap
+            ? `<span class="wr-gap-chip wr-gap-player">${escapeHtml(playerRole)} need ${playerGap.need} (${playerGap.have}/${playerGap.ideal})</span>`
+            : '',
+        ...gapList.filter(g => g.role !== playerRole).slice(0, 3).map(g =>
+            `<span class="wr-gap-chip ${g.priority === 'Critical' ? 'wr-gap-critical' : ''}">${escapeHtml(g.role)}: ${g.have}/${g.ideal}</span>`,
+        ),
+    ].join('');
+
+    const hero = typeof CSKPolish !== 'undefined'
+        ? CSKPolish.heroMarkup(head.title, allPlayers, 'player-hero__portrait--lg')
+        : '';
 
     return `
     <div class="wr-layout">
-        <!-- SECTION 1: Quick Decision -->
         <div class="wr-quick ${bidAdvisorVerdictClass(q.should_bid)}">
             <div class="wr-quick-top">
-                <div class="wr-squad-strip">
-                    CSK STATUS · Budget ₹${sc.remaining_budget_cr ?? remainingBudget().toFixed(1)} Cr ·
-                    Squad ${sc.squad_size ?? currentSquad.length}/25 ·
-                    AR ${rc['All Rounder'] ?? 0}/${5} · WK ${rc['Wicket Keeper'] ?? 0}/2
-                </div>
-                <div class="wr-gaps">${gaps}</div>
+                <div class="wr-squad-strip">${formatSquadStatusStrip(sc)}</div>
+                ${gapChips ? `<div class="wr-gaps">${gapChips}</div>` : ''}
             </div>
             <div class="wr-quick-main">
-                <div class="wr-player-title">${d.player_name} · ${d.role} · ${d.country || '—'}</div>
-                <div class="wr-should-bid">SHOULD WE BID? <span>${q.should_bid || '—'}</span></div>
-                <div class="wr-price-row">
-                    <div><label>Entry</label><strong>₹${q.entry_bid_cr} Cr</strong></div>
-                    <div><label>FMV</label><strong>₹${q.fair_market_value_cr} Cr</strong></div>
-                    <div><label>Walk-away</label><strong>₹${q.walk_away_cr} Cr</strong></div>
-                    <div><label>Strategy</label><strong>${q.strategy}</strong></div>
-                    <div><label>Confidence</label><strong>${q.confidence_pct}%</strong></div>
+                <div class="wr-player-head">
+                    ${hero}
+                    <div class="wr-player-head-text">
+                        <div class="wr-player-title">${escapeHtml(head.title)}</div>
+                        <div class="wr-player-sub">
+                            ${escapeHtml(head.abbrev ? `Listed as ${head.abbrev} · ` : '')}${escapeHtml(d.role || '—')} · ${escapeHtml(d.country || '—')}
+                        </div>
+                    </div>
                 </div>
-                <p class="wr-one-liner">${q.one_liner || ''}</p>
-                <button class="btn-link-sm" onclick="openValuation('${(d.player_name || '').replace(/'/g, "\\'")}')">Full Valuation →</button>
+                <div class="wr-should-bid">SHOULD WE BID? <span class="wr-verdict-pill">${q.should_bid || '—'}</span></div>
+                <p class="wr-executive-line">${escapeHtml(execLine)}</p>
+                <div class="wr-price-row">
+                    <div class="wr-price-cell"><label>Entry</label><strong>₹${q.entry_bid_cr} Cr</strong></div>
+                    <div class="wr-price-cell"><label>FMV</label><strong>₹${q.fair_market_value_cr} Cr</strong></div>
+                    <div class="wr-price-cell wr-price-cell--walk ${walk.capped ? 'wr-price-cell--capped' : ''}">
+                        <label>${escapeHtml(walk.label)}</label>
+                        <strong>₹${q.walk_away_cr} Cr</strong>
+                        <em class="wr-price-hint">${escapeHtml(walk.hint)}</em>
+                    </div>
+                    <div class="wr-price-cell"><label>Strategy</label><strong>${escapeHtml(q.strategy || '—')}</strong></div>
+                    <div class="wr-price-cell"><label>Confidence</label><strong>${q.confidence_pct}%</strong></div>
+                </div>
+                <p class="wr-one-liner">${escapeHtml(q.one_liner || '')}</p>
+                <div class="wr-quick-actions">
+                    <button type="button" class="btn-secondary btn-sm" onclick="openBidGraphFromAdvisor('${jsName}', '${(d.role || '').replace(/'/g, "\\'")}')">Bid graph →</button>
+                    <button type="button" class="btn-link-sm" onclick="openValuation('${jsName}')">Full valuation →</button>
+                </div>
             </div>
         </div>
 
-        <div class="wr-columns">
-            <!-- Left: Player + Market -->
-            <div class="wr-panel">
-                <h3>Player & CSK Fit</h3>
-                <div class="wr-kv"><span>Form</span><strong>${pa.form_score ?? '—'}%</strong></div>
-                <div class="wr-kv"><span>CSK Fit</span><strong>${pa.csk_fit_score ?? '—'}%</strong></div>
-                <div class="wr-kv"><span>Verdict</span><strong>${pa.auction_verdict || '—'}</strong></div>
-                <div class="wr-kv"><span>Base price</span><strong>₹${pa.base_price_cr ?? 2} Cr</strong></div>
-                <div class="wr-kv"><span>CSK band win rate</span><strong>${bi.csk_band_win_rate_pct ?? '—'}%</strong></div>
-                <ul class="wr-reasons">
-                    ${(d.reasons || []).map(r => `<li>${r}</li>`).join('')}
-                </ul>
+        <div class="wr-panel wr-live wr-live--prominent">
+            <div class="wr-live-head">
+                <h3>Live bid (auction table)</h3>
+                <span class="wr-live-badge">Use now</span>
             </div>
-
-            <!-- Right: Bid Intelligence -->
-            <div class="wr-panel">
-                <h3>Bidding Intelligence</h3>
-                <div class="wr-kv"><span>Expected bids</span><strong>${bi.expected_bids_range || '—'}</strong></div>
-                <div class="wr-kv"><span>Bid war probability</span><strong>${bi.bid_war_probability_pct ?? '—'}%</strong></div>
-                <div class="wr-kv"><span>Expected final</span><strong>₹${bi.expected_final_price_cr || '—'} Cr</strong></div>
-                <div class="wr-subhead">Similar players (2026 bid sheet)</div>
-                ${compsHtml}
-                <div class="wr-subhead">Likely competitors</div>
-                ${rivalsHtml}
-            </div>
-        </div>
-
-        <!-- Live bid simulator -->
-        <div class="wr-panel wr-live">
-            <h3>Live Bid Simulator</h3>
-            <p class="wr-muted">Enter current table bid (Cr) — updates recommendation in real time. Wire to live feed later.</p>
+            <p class="wr-muted">Enter the current hammer price — updates bid / pass / walk-away call instantly.</p>
             <div class="wr-live-controls">
-                <input type="number" id="baCurrentBid" class="search-input" step="0.25" min="0" placeholder="Current bid e.g. 5.5" value="">
-                <button class="btn-add" onclick="updateBidAdvisorLive()">Update Live Call</button>
+                <input type="number" id="baCurrentBid" class="search-input wr-live-input" step="0.25" min="0" placeholder="Current bid e.g. 5.5" value="">
+                <button type="button" class="btn-primary" onclick="updateBidAdvisorLive()">Update live call</button>
             </div>
-            <div class="wr-live-call wr-live-${(live.status || 'wait').toLowerCase().replace(' ', '-')}">
-                <strong>${live.status || 'WAIT'}</strong> — ${live.message || ''}
+            <div class="wr-live-call wr-live-${(live.status || 'wait').toLowerCase().replace(/\s+/g, '-')}">
+                <strong>${escapeHtml(live.status || 'WAIT')}</strong> — ${escapeHtml(live.message || '')}
                 ${live.recommended_bid_cr ? `<div>Recommended next bid: <strong>₹${live.recommended_bid_cr} Cr</strong></div>` : ''}
             </div>
         </div>
 
-        <!-- Budget impact -->
+        <div class="wr-columns">
+            <div class="wr-panel">
+                <h3>Player & CSK fit</h3>
+                <div class="wr-kv"><span>Form</span><strong>${pa.form_score ?? '—'}%</strong></div>
+                <div class="wr-kv"><span>CSK fit</span><strong>${pa.csk_fit_score ?? '—'}%</strong></div>
+                <div class="wr-kv"><span>Valuation</span><strong>${escapeHtml(pa.auction_verdict || '—')}</strong></div>
+                <div class="wr-kv"><span>Base price</span><strong>₹${pa.base_price_cr ?? 2} Cr</strong></div>
+                <div class="wr-kv"><span>CSK band win rate</span><strong>${bi.csk_band_win_rate_pct ?? '—'}%</strong></div>
+                <ul class="wr-reasons">
+                    ${(d.reasons || []).map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+                </ul>
+            </div>
+
+            <div class="wr-panel">
+                <h3>Bidding intelligence</h3>
+                <div class="wr-kv"><span>Expected bids</span><strong>${bi.expected_bids_range || '—'}</strong></div>
+                <div class="wr-kv"><span>Bid war probability</span><strong class="${(bi.bid_war_probability_pct || 0) >= 80 ? 'wr-text-warn' : ''}">${bi.bid_war_probability_pct ?? '—'}%</strong></div>
+                <div class="wr-kv"><span>Expected final</span><strong>₹${bi.expected_final_price_cr || '—'} Cr</strong></div>
+                <div class="wr-subhead">Similar players (2026)</div>
+                ${compsHtml}
+                <div class="wr-subhead">Likely competitors (threat ↓)</div>
+                ${rivalsHtml}
+            </div>
+        </div>
+
         <div class="wr-budget-grid">
             <div class="wr-panel wr-budget-win">
-                <h3>If CSK Wins</h3>
+                <h3>If CSK wins</h3>
                 <div class="wr-kv"><span>Squad</span><strong>${sc.squad_size ?? currentSquad.length} → ${win.squad_size_after ?? '?'}</strong></div>
-                <div class="wr-kv"><span>Role fill</span><strong>${win.role_after || '—'}</strong></div>
+                <div class="wr-kv"><span>Role fill</span><strong>${escapeHtml(win.role_after || '—')}</strong></div>
                 <div class="wr-kv"><span>Budget left</span><strong>₹${win.budget_after_cr ?? '—'} Cr</strong></div>
                 <div class="wr-kv"><span>Status</span><strong>${win.on_track ? 'ON TRACK ✓' : 'TIGHT'}</strong></div>
             </div>
             <div class="wr-panel wr-budget-lose">
-                <h3>If CSK Loses</h3>
+                <h3>If CSK loses</h3>
                 <div class="wr-kv"><span>Squad</span><strong>${lose.squad_size ?? currentSquad.length}/25</strong></div>
                 <div class="wr-kv"><span>Still need (role)</span><strong>${lose.role_still_need ?? '—'}</strong></div>
                 <div class="wr-kv"><span>Budget</span><strong>₹${lose.budget_unchanged_cr ?? '—'} Cr</strong></div>
-                <div class="wr-kv"><span>Next</span><strong>${lose.next_action || '—'}</strong></div>
+                <div class="wr-kv"><span>Next</span><strong>${escapeHtml(lose.next_action || '—')}</strong></div>
             </div>
         </div>
     </div>`;
 }
 
 async function runBidAdvisorAnalysis() {
-    const player = document.getElementById('baPlayerSearch')?.value.trim();
+    const searchEl = document.getElementById('baPlayerSearch');
+    const typed = searchEl?.value.trim();
     const basePrice = parseFloat(document.getElementById('baBasePrice')?.value) || 2;
     const resultEl = document.getElementById('bidAdvisorResult');
-    if (!player) { alert('Enter player name'); return; }
+    if (!typed) { alert('Enter player name'); return; }
 
-    resultEl.innerHTML = '<div class="loading">Building bid recommendation…</div>';
+    await ensureAuctionPoolForSearch();
+    const poolHit = resolvePoolPlayerForUi(typed);
+    if (!poolHit) {
+        alert('Pick the player from the dropdown list (full name required).');
+        searchEl?.focus();
+        return;
+    }
+    const player = poolHit.player_name;
+
+    resultEl.innerHTML = CSKPolish?.loadingShell?.('Building bid recommendation…')
+        || '<div class="loading">Building bid recommendation…</div>';
     _bidAdvisorPlayer = player;
+    if (searchEl) {
+        searchEl.value = player;
+        searchEl.dataset.poolPick = player;
+    }
+    pushAppRoute('bidadvisor');
 
     try {
         const currentBid = parseFloat(document.getElementById('baCurrentBid')?.value) || 0;
         const data = await fetchBidAdvisorDecision(player, currentBid, basePrice);
         resultEl.innerHTML = renderBidAdvisorDecision(data);
+        CSKPolish?.bindHero?.(resultEl);
         if (document.getElementById('baCurrentBid')) {
             document.getElementById('baCurrentBid').addEventListener('keypress', e => {
                 if (e.key === 'Enter') updateBidAdvisorLive();
@@ -1539,6 +2009,7 @@ async function updateBidAdvisorLive() {
     try {
         const data = await fetchBidAdvisorDecision(_bidAdvisorPlayer, currentBid, basePrice);
         resultEl.innerHTML = renderBidAdvisorDecision(data);
+        CSKPolish?.bindHero?.(resultEl);
         const bidEl = document.getElementById('baCurrentBid');
         const searchEl = document.getElementById('baPlayerSearch');
         if (bidEl) bidEl.value = currentBid || '';
@@ -1548,7 +2019,8 @@ async function updateBidAdvisorLive() {
     }
 }
 
-async function renderBidAdvisorTab() {
+async function getBidAdvisorStrategyHtml() {
+    if (_wrStrategyBannerCache !== undefined) return _wrStrategyBannerCache;
     let strategyHtml = '';
     try {
         const sr = await fetch(`${API_BASE}/war-room/strategy`);
@@ -1562,7 +2034,15 @@ async function renderBidAdvisorTab() {
                 Top rival: ${(st.career_rivals && st.career_rivals[0]?.rival) || '—'}
             </div>`;
         }
-    } catch {}
+    } catch { /* optional */ }
+    _wrStrategyBannerCache = strategyHtml;
+    return strategyHtml;
+}
+
+async function renderBidAdvisorTab() {
+    const searchPrefill = (_bidAdvisorSearchPrefill || _bidAdvisorPlayer || '').replace(/"/g, '&quot;');
+    _bidAdvisorSearchPrefill = '';
+    const strategyHtml = await getBidAdvisorStrategyHtml();
 
     const rc = squadRoleCounts();
     const squadWarn = currentSquad.length === 0
@@ -1570,42 +2050,50 @@ async function renderBidAdvisorTab() {
         : '';
 
     document.getElementById('contentArea').innerHTML = `
+        <div class="ba-panel">
         ${strategyHtml}
         <div class="ba-intro">
             <strong>Bid Advisor</strong> ≠ Valuation alone. It merges fair price, <em>your squad gaps</em>, purse left, and <em>2018–2026 bid-war history</em> into a YES/NO/Maybe with walk-away price.
             <button class="btn-link-inline" onclick="showTab('valuation')">Valuation tab</button> = player worth · Bid Advisor = should CSK bid right now.
         </div>
         ${squadWarn}
-        <div class="wr-search-bar">
-            <input type="text" id="baPlayerSearch" class="search-input"
-                   placeholder="Player on block — e.g. Rahul Chahar, Jason Holder…" value="${_bidAdvisorPlayer.replace(/"/g, '&quot;')}">
-            <input type="number" id="baBasePrice" class="search-input wr-base-input"
-                   step="0.25" min="0.2" placeholder="Base ₹ Cr" value="2">
-            <button class="btn-compare-run" onclick="runBidAdvisorAnalysis()">Get Bid Advice</button>
-        </div>
-        <div class="wr-context-line">
-            Squad ${currentSquad.length}/25 · ₹${remainingBudget().toFixed(1)} Cr left ·
-            AR ${rc['All Rounder']}/5 · Bowler ${rc.Bowler}/6 ·
-            <button class="btn-link-inline" onclick="showTab('squad')">Edit squad</button>
-        </div>
+        <section class="ba-search-panel" aria-label="Bid advisor lookup">
+            <form class="ba-search-form" onsubmit="event.preventDefault(); runBidAdvisorAnalysis();">
+                <input type="text" id="baPlayerSearch" class="ba-search-input"
+                       placeholder="Player on block — e.g. Deepak Chahar…" autocomplete="off"
+                       value="${searchPrefill}">
+                <input type="number" id="baBasePrice" class="ba-base-input"
+                       step="0.25" min="0" placeholder="Base ₹ Cr" value="2" aria-label="Auction base price in crores">
+                <button type="submit" class="btn-ba-run">Get Bid Advice</button>
+            </form>
+            <p class="ba-search-hint">
+                Squad ${currentSquad.length}/25 · ₹${remainingBudget().toFixed(1)} Cr left ·
+                AR ${rc['All Rounder']}/5 · Bowler ${rc.Bowler}/6 ·
+                <button type="button" class="btn-link-inline" onclick="showTab('squad')">Edit squad</button>
+            </p>
+        </section>
         <div id="bidAdvisorResult">
             <div class="empty-state wr-empty-hint">
                 Enter a player and hit <strong>Get Bid Advice</strong>.
             </div>
+        </div>
         </div>`;
 
-    document.getElementById('baPlayerSearch')?.addEventListener('keypress', e => {
-        if (e.key === 'Enter') runBidAdvisorAnalysis();
-    });
-
-    if (_bidAdvisorPlayer) {
-        runBidAdvisorAnalysis();
-    }
+    afterTabPaint('bidadvisor');
 }
 
 // ─────────────────────────────────────────────────────────────────────
 // TAB ROUTER + EVENT SETUP
 // ─────────────────────────────────────────────────────────────────────
+
+function getInstantTabHtml(tabName) {
+    if (tabName === 'squad') return _tabHtmlCache[`squad:${squadFingerprint()}`];
+    if (tabName === 'players') return _tabHtmlCache[_playersTabCacheKey];
+    if (tabName === 'bidadvisor') return null;
+    if (tabName === 'compare' && !_routeCompareP1 && !_routeCompareP2) return _tabHtmlCache.compare;
+    if (tabName === 'valuation' && !_valuationPrefill) return _tabHtmlCache.valuation;
+    return null;
+}
 
 async function showTab(tabName) {
     _initialRouteDone = true;
@@ -1613,18 +2101,49 @@ async function showTab(tabName) {
         Arena.unmount();
         updatePurseDisplay();
     }
+
     _activeTab = tabName;
     document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
     document.querySelector(`[data-tab="${tabName}"]`)?.classList.add('active');
     updateTabHint(tabName);
-    switch (tabName) {
-        case 'bidadvisor': await renderBidAdvisorTab(); break;
-        case 'squad':      await renderSquadTab();      break;
-        case 'players':    await renderPlayersTab('');  break;
-        case 'arena':      await Arena.mount(document.getElementById('contentArea')); break;
-        case 'compare':    await renderCompareTab();    break;
-        case 'valuation':  await renderValuationTab();  break;
+
+    const area = document.getElementById('contentArea');
+    if (!area) return;
+
+    const instant = tabName !== 'arena' ? getInstantTabHtml(tabName) : null;
+    area.classList.remove('content-area--enter');
+    void area.offsetWidth;
+
+    if (instant) {
+        area.innerHTML = instant;
+        area.classList.add('content-area--enter');
+        afterTabPaint(tabName);
+        pushAppRoute(tabName);
+        return;
     }
+
+    if (tabName !== 'arena') {
+        area.innerHTML = CSKPolish?.loadingShell?.(tabLoadingMessage(tabName))
+            || `<div class="async-shell" role="status"><p>${tabLoadingMessage(tabName)}</p></div>`;
+    }
+    area.classList.add('content-area--enter');
+
+    try {
+        switch (tabName) {
+            case 'bidadvisor': await renderBidAdvisorTab(); break;
+            case 'squad':      await renderSquadTab();      break;
+            case 'players':    await renderPlayersTab('');  break;
+            case 'arena':      await Arena.mount(area); break;
+            case 'compare':    await renderCompareTab();    break;
+            case 'valuation':  await renderValuationTab();  break;
+        }
+    } catch (err) {
+        console.error('Tab render failed:', tabName, err);
+        if (_activeTab === tabName) {
+            area.innerHTML = `<div class="empty-state">Could not load ${tabName}. Check API on :8000.</div>`;
+        }
+    }
+    pushAppRoute(tabName);
 }
 
 function applyArenaSquad(arenaPlayers) {
@@ -1645,17 +2164,62 @@ function applyArenaSquad(arenaPlayers) {
     updatePurseDisplay();
 }
 
+/** Same loader as Squad tab — API first, then localStorage. */
+async function ensureSquadLoaded(forceApi = false) {
+    if (!forceApi && currentSquad.length > 0) {
+        return { loaded: true, source: 'memory', count: currentSquad.length };
+    }
+    const result = await loadSquad(forceApi);
+    return { ...result, count: currentSquad.length };
+}
+
+function getCurrentSquadSnapshot() {
+    return currentSquad.map(p => ({ ...p }));
+}
+
+window.openBidGraphFromAdvisor = openBidGraphFromAdvisor;
+
 window.CSKDashboard = {
     API_BASE,
     IPL_PURSE_CR,
     IPL_AUCTION_YEAR,
+    getAllPlayers: () => allPlayers,
     openPlayerPreview,
     openBidAdvisor,
+    openValuation,
+    openBidGraphFromAdvisor,
     applyArenaSquad,
+    ensureSquadLoaded,
+    getCurrentSquad: getCurrentSquadSnapshot,
+    fetchWarRoomDecision,
+    fetchSquadImpact: async (playerName, squad, opts = {}) => {
+        const r = await fetch(`${API_BASE}/squad/impact`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            signal: opts.signal,
+            body: JSON.stringify({
+                player: playerName,
+                squad: squadRowsForWarRoom(squad),
+                budget: opts.budget ?? IPL_PURSE_CR,
+                candidate_price_cr: opts.candidate_price_cr,
+            }),
+        });
+        if (!r.ok) {
+            const err = await r.json().catch(() => ({}));
+            throw new Error(err.detail || 'Squad impact API error');
+        }
+        return r.json();
+    },
 };
 
 function setupEventListeners() {
     document.querySelectorAll('.nav-tab').forEach(btn => {
         btn.addEventListener('click', () => showTab(btn.dataset.tab));
+    });
+    document.getElementById('themeToggle')?.addEventListener('click', () => {
+        CSKPolish?.toggleTheme?.();
+    });
+    window.addEventListener('popstate', () => {
+        applyInitialRoute();
     });
 }

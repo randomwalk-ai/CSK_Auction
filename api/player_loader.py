@@ -38,6 +38,7 @@ PLAYER_NAME_ALIASES: Dict[str, str] = {
     "prithvi shaw": "PP Shaw",
     "sahil parakh": "SU Parakh",
     "danish malewar": "DV Malewar",
+    "josh hazlewood": "JR Hazlewood",
 }
 
 # IPL stats for auction/squad names missing from ball-by-ball ingest (Cricinfo abbrev or no JSON coverage).
@@ -166,6 +167,86 @@ def find_player_by_fuzzy_name(conn: sqlite3.Connection, search_name: str) -> Opt
     return None
 
 
+def find_player_via_auction_roster(
+    conn: sqlite3.Connection,
+    search_name: str,
+    *,
+    years: tuple = (2025, 2026),
+) -> Optional[str]:
+    """
+    Link auction roster full names (e.g. Josh Hazlewood) to stats rows (e.g. JR Hazlewood).
+    Used when the player is in auction_prices_full but fuzzy stats match failed.
+    """
+    clean = (search_name or "").strip()
+    if not clean:
+        return None
+
+    norm = normalize_player_name(clean)
+    on_roster = False
+    for year in years:
+        row = conn.execute(
+            """
+            SELECT 1 FROM auction_prices_full
+            WHERE year = ?
+              AND (
+                    LOWER(TRIM(player_name)) = LOWER(?)
+                 OR LOWER(TRIM(player_name)) = LOWER(?)
+              )
+            LIMIT 1
+            """,
+            (year, clean, norm),
+        ).fetchone()
+        if row:
+            on_roster = True
+            break
+
+    if not on_roster:
+        return None
+
+    parts = norm.split()
+    if len(parts) < 2:
+        return None
+
+    search_last = parts[-1].lower()
+    search_first = parts[0]
+
+    ipl_names = [
+        r[0]
+        for r in conn.execute(
+            """
+            SELECT DISTINCT player_name FROM player_auction_stats
+            WHERE LOWER(competition) = 'ipl'
+            """
+        ).fetchall()
+    ]
+    all_names = ipl_names or [
+        r[0]
+        for r in conn.execute(
+            "SELECT DISTINCT player_name FROM player_auction_stats"
+        ).fetchall()
+    ]
+
+    candidates = [
+        n for n in all_names
+        if len(n.split()) >= 2 and n.split()[-1].lower() == search_last
+    ]
+    if not candidates:
+        return None
+    if len(candidates) == 1:
+        return candidates[0]
+
+    for cand in candidates:
+        if _initials_compatible(search_first, cand.split()[0]):
+            return cand
+
+    matches = get_close_matches(norm, candidates, n=3, cutoff=0.82)
+    if matches:
+        return matches[0]
+
+    candidates.sort(key=lambda n: (len(n.split()[0]), n))
+    return candidates[0]
+
+
 def _row_to_dict(row: sqlite3.Row) -> Dict:
     return {k: row[k] for k in row.keys()}
 
@@ -183,6 +264,8 @@ def get_player_stats(conn: sqlite3.Connection, name: str) -> Optional[Dict]:
     Falls back to curated seeds when ball-by-ball data is missing.
     """
     matched = find_player_by_fuzzy_name(conn, name)
+    if not matched:
+        matched = find_player_via_auction_roster(conn, name)
     if matched:
         conn.row_factory = sqlite3.Row
         rows = conn.execute(

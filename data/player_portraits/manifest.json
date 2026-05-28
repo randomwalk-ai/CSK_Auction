@@ -77,6 +77,13 @@
       "file": "brijesh_sharma.svg",
       "source": "initials"
     },
+    "brydon carse": {
+      "bytes": 113477,
+      "content_type": "image/jpeg",
+      "display_name": "Brydon Carse",
+      "file": "brydon_carse.jpg",
+      "source": "thesportsdb"
+    },
     "corbin bosch": {
       "bytes": 279,
       "content_type": "image/svg+xml",
@@ -91,6 +98,55 @@
       "file": "daksh_kamra.svg",
       "source": "initials"
     },
+    "dan lawrence": {
+      "bytes": 78767,
+      "content_type": "image/jpeg",
+      "display_name": "Dan Lawrence",
+      "file": "dan_lawrence.jpg",
+      "source": "thesportsdb"
+    },
+    "daryl mitchell": {
+      "bytes": 130146,
+      "content_type": "image/jpeg",
+      "display_name": "Daryl Mitchell",
+      "file": "daryl_mitchell.jpg",
+      "source": "thesportsdb"
+    },
+    "deepak hooda": {
+      "bytes": 108782,
+      "content_type": "image/jpeg",
+      "display_name": "Deepak Hooda",
+      "file": "deepak_hooda.jpg",
+      "source": "thesportsdb"
+    },
+    "devon conway": {
+      "bytes": 90816,
+      "content_type": "image/jpeg",
+      "display_name": "Devon Conway",
+      "file": "devon_conway.jpg",
+      "source": "thesportsdb"
+    },
+    "dl chahar": {
+      "bytes": 279,
+      "content_type": "image/svg+xml",
+      "display_name": "DL Chahar",
+      "file": "dl_chahar.svg",
+      "source": "initials"
+    },
+    "fazalhaq farooqi": {
+      "bytes": 19945,
+      "content_type": "image/jpeg",
+      "display_name": "Fazalhaq Farooqi",
+      "file": "fazalhaq_farooqi.jpg",
+      "source": "wikipedia"
+    },
+    "gus atkinson": {
+      "bytes": 98849,
+      "content_type": "image/jpeg",
+      "display_name": "Gus Atkinson",
+      "file": "gus_atkinson.jpg",
+      "source": "thesportsdb"
+    },
     "himmat singh": {
       "bytes": 279,
       "content_type": "image/svg+xml",
@@ -98,12 +154,75 @@
       "file": "himmat_singh.svg",
       "source": "initials"
     },
+    "j yadav": {
+      "bytes": 279,
+      "content_type": "image/svg+xml",
+      "display_name": "J Yadav",
+      "file": "j_yadav.svg",
+      "source": "initials"
+    },
+    "jack edwards": {
+      "bytes": 71958,
+      "content_type": "image/jpeg",
+      "display_name": "Jack Edwards",
+      "file": "jack_edwards.jpg",
+      "source": "thesportsdb"
+    },
+    "jake fraser-mcgurk": {
+      "bytes": 121102,
+      "content_type": "image/jpeg",
+      "display_name": "Jake Fraser-McGurk",
+      "file": "jake_fraser-mcgurk.jpg",
+      "source": "thesportsdb"
+    },
+    "jamie overton": {
+      "bytes": 33332,
+      "content_type": "image/jpeg",
+      "display_name": "Jamie Overton",
+      "file": "jamie_overton.jpg",
+      "source": "espncricinfo"
+    },
+    "jamie smith": {
+      "bytes": 137382,
+      "content_type": "image/jpeg",
+      "display_name": "Jamie Smith",
+      "file": "jamie_smith.jpg",
+      "source": "thesportsdb"
+    },
     "jayant yadav": {
       "bytes": 279,
       "content_type": "image/svg+xml",
       "display_name": "Jayant Yadav",
       "file": "jayant_yadav.svg",
       "source": "initials"
+    },
+    "jhye richardson": {
+      "bytes": 63313,
+      "content_type": "image/jpeg",
+      "display_name": "Jhye Richardson",
+      "file": "jhye_richardson.jpg",
+      "source": "thesportsdb"
+    },
+    "jj bumrah": {
+      "bytes": 67260,
+      "content_type": "image/jpeg",
+      "display_name": "JJ Bumrah",
+      "file": "jj_bumrah.jpg",
+      "source": "thesportsdb"
+    },
+    "jo holder": {
+      "bytes": 77438,
+      "content_type": "image/jpeg",
+      "display_name": "JO Holder",
+      "file": "jo_holder.jpg",
+      "source": "thesportsdb"
+    },
+    "jonny bairstow": {
+      "bytes": 63437,
+      "content_type": "image/jpeg",
+      "display_name": "Jonny Bairstow",
+      "file": "jonny_bairstow.jpg",
+      "source": "thesportsdb"
     },
     "jordan cox": {
       "bytes": 279,
@@ -126,6 +245,13 @@
       "file": "kartik_tyagi.svg",
       "source": "initials"
     },
+    "km asif": {
+      "bytes": 60504,
+      "content_type": "image/jpeg",
+      "display_name": "Km Asif",
+      "file": "km_asif.jpg",
+      "source": "thesportsdb"
+    },
     "kuldeep sen": {
       "bytes": 279,
       "content_type": "image/svg+xml",
@@ -147,11 +273,25 @@
       "file": "madhav_tiwari.svg",
       "source": "initials"
     },
+    "manan vohra": {
+      "bytes": 86339,
+      "content_type": "image/jpeg",
+      "display_name": "Manan Vohra",
+      "file": "manan_vohra.jpg",
+      "source": "thesportsdb"
+    },
     "manimaran siddharth": {
       "bytes": 279,
       "content_type": "image/svg+xml",
       "display_name": "Manimaran Siddharth",
       "file": "manimaran_siddharth.svg",
+      "source": "initials"
+    },
+    "manisankar murasingh": {
+      "bytes": 279,
+      "content_type": "image/svg+xml",
+      "display_name": "Manisankar Murasingh",
+      "file": "manisankar_murasingh.svg",
       "source": "initials"
     },
     "matthew breetzke": {
@@ -168,11 +308,39 @@
       "file": "mayank_rawat.svg",
       "source": "initials"
     },
+    "mitchell santner": {
+      "bytes": 69911,
+      "content_type": "image/jpeg",
+      "display_name": "Mitchell Santner",
+      "file": "mitchell_santner.jpg",
+      "source": "thesportsdb"
+    },
     "mohammed salahuddin izhar": {
       "bytes": 279,
       "content_type": "image/svg+xml",
       "display_name": "Mohammed Salahuddin Izhar",
       "file": "mohammed_salahuddin_izhar.svg",
+      "source": "initials"
+    },
+    "mujeeb ur rahman": {
+      "bytes": 52493,
+      "content_type": "image/jpeg",
+      "display_name": "Mujeeb Ur Rahman",
+      "file": "mujeeb_ur_rahman.jpg",
+      "source": "thesportsdb"
+    },
+    "murugan ashwin": {
+      "bytes": 62631,
+      "content_type": "image/jpeg",
+      "display_name": "Murugan Ashwin",
+      "file": "murugan_ashwin.jpg",
+      "source": "thesportsdb"
+    },
+    "n thushara": {
+      "bytes": 279,
+      "content_type": "image/svg+xml",
+      "display_name": "N Thushara",
+      "file": "n_thushara.svg",
       "source": "initials"
     },
     "naman tiwari": {
@@ -181,6 +349,13 @@
       "display_name": "Naman Tiwari",
       "file": "naman_tiwari.svg",
       "source": "initials"
+    },
+    "nathan ellis": {
+      "bytes": 55178,
+      "content_type": "image/jpeg",
+      "display_name": "Nathan Ellis",
+      "file": "nathan_ellis.jpg",
+      "source": "thesportsdb"
     },
     "prithvi raj yarra": {
       "bytes": 279,
@@ -203,6 +378,13 @@
       "file": "quinton_de_kock.svg",
       "source": "initials"
     },
+    "rahmanullah gurbaz": {
+      "bytes": 101220,
+      "content_type": "image/jpeg",
+      "display_name": "Rahmanullah Gurbaz",
+      "file": "rahmanullah_gurbaz.jpg",
+      "source": "thesportsdb"
+    },
     "rahul tripathi": {
       "bytes": 279,
       "content_type": "image/svg+xml",
@@ -217,6 +399,20 @@
       "file": "ravi_singh.svg",
       "source": "initials"
     },
+    "riley meredith": {
+      "bytes": 63512,
+      "content_type": "image/jpeg",
+      "display_name": "Riley Meredith",
+      "file": "riley_meredith.jpg",
+      "source": "thesportsdb"
+    },
+    "rj gleeson": {
+      "bytes": 74749,
+      "content_type": "image/jpeg",
+      "display_name": "RJ Gleeson",
+      "file": "rj_gleeson.jpg",
+      "source": "thesportsdb"
+    },
     "robin minz": {
       "bytes": 279,
       "content_type": "image/svg+xml",
@@ -230,6 +426,13 @@
       "display_name": "Ryan Rickelton",
       "file": "ryan_rickelton.svg",
       "source": "initials"
+    },
+    "sam curran": {
+      "bytes": 75656,
+      "content_type": "image/jpeg",
+      "display_name": "Sam Curran",
+      "file": "sam_curran.jpg",
+      "source": "thesportsdb"
     },
     "sameer rizvi": {
       "bytes": 279,
@@ -259,6 +462,13 @@
       "file": "satvik_deswal.svg",
       "source": "initials"
     },
+    "sean abbott": {
+      "bytes": 80313,
+      "content_type": "image/jpeg",
+      "display_name": "Sean Abbott",
+      "file": "sean_abbott.jpg",
+      "source": "thesportsdb"
+    },
     "shubham dubey": {
       "bytes": 279,
       "content_type": "image/svg+xml",
@@ -266,11 +476,32 @@
       "file": "shubham_dubey.svg",
       "source": "initials"
     },
+    "sv samson": {
+      "bytes": 61298,
+      "content_type": "image/jpeg",
+      "display_name": "SV Samson",
+      "file": "sv_samson.jpg",
+      "source": "thesportsdb"
+    },
     "swapnil singh": {
       "bytes": 279,
       "content_type": "image/svg+xml",
       "display_name": "Swapnil Singh",
       "file": "swapnil_singh.svg",
+      "source": "initials"
+    },
+    "tom banton": {
+      "bytes": 58470,
+      "content_type": "image/jpeg",
+      "display_name": "Tom Banton",
+      "file": "tom_banton.jpg",
+      "source": "thesportsdb"
+    },
+    "tu deshpande": {
+      "bytes": 279,
+      "content_type": "image/svg+xml",
+      "display_name": "TU Deshpande",
+      "file": "tu_deshpande.svg",
       "source": "initials"
     },
     "umran malik": {
@@ -287,12 +518,33 @@
       "file": "urvil_patel.svg",
       "source": "initials"
     },
+    "v kohli": {
+      "bytes": 77886,
+      "content_type": "image/jpeg",
+      "display_name": "V Kohli",
+      "file": "v_kohli.jpg",
+      "source": "thesportsdb"
+    },
+    "v shankar": {
+      "bytes": 68099,
+      "content_type": "image/jpeg",
+      "display_name": "V Shankar",
+      "file": "v_shankar.jpg",
+      "source": "thesportsdb"
+    },
     "vicky ostwal": {
       "bytes": 279,
       "content_type": "image/svg+xml",
       "display_name": "Vicky Ostwal",
       "file": "vicky_ostwal.svg",
       "source": "initials"
+    },
+    "vijay shankar": {
+      "bytes": 68099,
+      "content_type": "image/jpeg",
+      "display_name": "Vijay Shankar",
+      "file": "vijay_shankar.jpg",
+      "source": "thesportsdb"
     },
     "vipraj nigam": {
       "bytes": 279,
@@ -314,6 +566,27 @@
       "display_name": "Vishnu Vinod",
       "file": "vishnu_vinod.svg",
       "source": "initials"
+    },
+    "wanindu hasaranga": {
+      "bytes": 78355,
+      "content_type": "image/jpeg",
+      "display_name": "Wanindu Hasaranga",
+      "file": "wanindu_hasaranga.jpg",
+      "source": "thesportsdb"
+    },
+    "wiaan mulder": {
+      "bytes": 109919,
+      "content_type": "image/jpeg",
+      "display_name": "Wiaan Mulder",
+      "file": "wiaan_mulder.jpg",
+      "source": "thesportsdb"
+    },
+    "will sutherland": {
+      "bytes": 44502,
+      "content_type": "image/jpeg",
+      "display_name": "Will Sutherland",
+      "file": "will_sutherland.jpg",
+      "source": "wikipedia"
     },
     "xavier bartlett": {
       "bytes": 279,
@@ -345,5 +618,5 @@
     }
   },
   "portrait_dir": "/Users/rithanipriyankaasr/Desktop/CSK_2/auction-data-pipeline/data/player_portraits",
-  "updated_at": "2026-05-26T06:13:48Z"
+  "updated_at": "2026-05-27T12:54:31Z"
 }

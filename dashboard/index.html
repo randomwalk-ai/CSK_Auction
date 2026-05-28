@@ -6,7 +6,7 @@
     <title>CSK | IPL Auction Intelligence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=22">
+    <link rel="stylesheet" href="styles.css?v=46">
 </head>
 <body>
     <div class="app-shell">
@@ -21,6 +21,7 @@
                     </div>
                 </div>
                 <div class="header-meta">
+                    <button type="button" id="themeToggle" class="meta-chip meta-chip--theme" aria-pressed="false">Auction night</button>
                     <span class="meta-chip meta-chip--live">Auction Ready</span>
                     <span class="meta-date" id="lastUpdate">Loading…</span>
                 </div>
@@ -35,10 +36,16 @@
                     <span class="kpi-value" id="kpiSquadSize">0 / 25</span>
                     <span class="kpi-sub" id="kpiPlayingXi">Playing XI: 0</span>
                 </div>
-                <div class="kpi-card">
+                <div class="kpi-card kpi-card--purse">
                     <span class="kpi-label">Purse Used</span>
                     <span class="kpi-value" id="kpiPursePct">0%</span>
-                    <div class="budget-bar"><div class="budget-bar-fill" id="budgetBarFill"></div></div>
+                    <div class="budget-bar budget-bar--live" aria-hidden="true">
+                        <div class="budget-bar__band budget-bar__band--safe"></div>
+                        <div class="budget-bar__band budget-bar__band--mid"></div>
+                        <div class="budget-bar__band budget-bar__band--critical"></div>
+                        <div class="budget-bar-fill" id="budgetBarFill"></div>
+                    </div>
+                    <span class="kpi-sub" id="purseContextLine">₹125 Cr left</span>
                 </div>
                 <div class="kpi-card kpi-card--roles">
                     <span class="kpi-label">Role Balance</span>
@@ -85,22 +92,22 @@
             <div class="nav-block">
                 <nav class="nav-tabs" aria-label="Dashboard sections">
                     <button class="nav-tab active" data-tab="squad">
-                        <span class="nav-tab-icon">◆</span> Squad
+                        <span class="nav-tab-icon" aria-hidden="true"></span> Squad
                     </button>
                     <button class="nav-tab" data-tab="bidadvisor">
-                        <span class="nav-tab-icon">◆</span> Bid Advisor
+                        <span class="nav-tab-icon" aria-hidden="true"></span> Bid Advisor
                     </button>
                     <button class="nav-tab" data-tab="players">
-                        <span class="nav-tab-icon">◆</span> Scout
+                        <span class="nav-tab-icon" aria-hidden="true"></span> Scout
                     </button>
                     <button class="nav-tab" data-tab="arena">
-                        <span class="nav-tab-icon">◎</span> Arena
+                        <span class="nav-tab-icon" aria-hidden="true"></span> Arena
                     </button>
                     <button class="nav-tab" data-tab="compare">
-                        <span class="nav-tab-icon">◆</span> Compare
+                        <span class="nav-tab-icon" aria-hidden="true"></span> Compare
                     </button>
                     <button class="nav-tab" data-tab="valuation">
-                        <span class="nav-tab-icon">◆</span> Valuation
+                        <span class="nav-tab-icon" aria-hidden="true"></span> Valuation
                     </button>
                 </nav>
                 <p class="nav-hint" id="tabHint">Build your retained XI, then use Bid Advisor when a player comes up at auction.</p>
@@ -119,8 +126,11 @@
         </div>
     </div>
 
-    <script src="avatars.js?v=17"></script>
-    <script src="arena.js?v=22"></script>
-    <script src="script.js?v=15"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" crossorigin="anonymous"></script>
+    <script src="avatars.js?v=24"></script>
+    <script src="polish.js?v=7"></script>
+    <script src="arena-radial.js?v=11"></script>
+    <script src="arena.js?v=46"></script>
+    <script src="script.js?v=32"></script>
 </body>
 </html>

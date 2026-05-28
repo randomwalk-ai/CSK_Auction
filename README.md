@@ -2,7 +2,6 @@
 
 IPL auction planning toolkit for **Chennai Super Kings** — franchise valuations, bid history (2018–2026), auction pool scout/arena UI, and player portraits.
 
-Built by [RandomWalk AI](https://github.com/randomwalk-ai) (`randomwalk-ai/CSK_Auction`).
 
 ## Features
 
